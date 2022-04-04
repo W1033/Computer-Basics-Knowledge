@@ -144,6 +144,7 @@ git push -f origin master
 ## ◆ 使用 git pull 强制覆盖本地文件的方式
 ```sh
 # 如果你不想要本地的所有修改的情况下，这条命令特别好用
+# 请谨慎使用，这条命令会删除你本地仓库的所有内容，如果当前内容还没有同步到远程仓库的话
 git fetch --all
 git reset --hard origin/master
 git pull origin master
