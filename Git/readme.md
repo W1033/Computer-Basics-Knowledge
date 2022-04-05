@@ -248,6 +248,34 @@ git remote set-url origin https://github.com/your/repository
 
 
 
+## ◆git pull 和 git pull --rebase 区别理解
+
+```sh
+[root@master GitTest]# git pull
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+git config pull.rebase false  # merge (the default strategy)
+git config pull.rebase true   # rebase
+git config pull.ff only       # fast-forward only
+```
+
+```sh
+
+git config pull.rebase false  # merge (the default strategy)
+git pull = git fetch + git merge
+ 
+git config pull.rebase true   # rebase
+git pull = git fetch + git rebase
+```
+
+> 参考文章：https://blog.csdn.net/TomorrowAndTuture/article/details/107677939
+
+==待做笔记==
+
+
+
 ## ◆ 使用 SSH 拉取和提交代码到 Github
 
 SSH(Secure Shell Protocol)
