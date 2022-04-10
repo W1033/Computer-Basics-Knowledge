@@ -268,7 +268,7 @@ Additional Info: 下图来自维基百科。
 
 即使只是用布莱叶盲文在本书中印上几页，造价也实在是有点儿高，所以我在书中使用一种符号来表示布莱叶盲文。在这种表示方法中，点码单元中所有的6个点都会被表示出来。大点表示这是一个凸起的点，小点则表示其对应的位置是平的。例如，下面的布莱叶盲文：
 
-<img alt="img" src="./readme.assets/00021.jpeg" style="display:block; width:5%;"/>
+<img alt="img" src="./readme.assets/00021.jpeg" style="display:block; width:3%;"/>
 
 其中，第1，3，5点是凸起的，而第2，4，6点的位置是平的。
 
@@ -666,9 +666,9 @@ Additional Info: 下图来自维基百科。
 
 你可能注意到，前面两幅图中所画的电池，其负极都接地了，如下图所示。
 
-<img alt="img" src="./readme.assets/00056.jpeg" style="display:block; width:20%;"/>
+<img alt="img" src="./readme.assets/00056.jpeg" style="display:block; width:10%;"/>
 
-以后，我将不再画这个图例了。我将用大写字母“V”（表示电压）来代替它。因此单向的灯泡电报系统的电路示意图就变成了如下这个样子。
+以后，我将不再画这个图例了。==我将用大写字母“V”（表示电压）来代替它==。因此单向的灯泡电报系统的电路示意图就变成了如下这个样子。
 
 <img alt="img" src="./readme.assets/00057.jpeg" style="display:block; width:40%;"/>
 
@@ -918,19 +918,15 @@ Additional Info: 下图来自维基百科。
 
 我们知道，3加4等于7。类似地，30加40等于70，300加400等于700，3000加4000等于7000。这就是阿拉伯数字的“闪光”之处。任何长度的十进制数相加时，只要根据一种方法将问题分成几步即可，而每个步骤最多只是将两个一位数字相加而已。这就是为什么以前有人会强迫你记住加法表的原因。
 
-<img src="./readme.assets/00083.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00083.jpeg" style="display:block; width:60%;">
 
 从最上边的一行和最左边的一列分别找出要相加的两个数字，这一行与这一列的交叉点就是所要得到的和。例如，4加6等于10。
 
 同样，当你想将两个十进制数相乘的时候，方法可能稍微复杂些，但是你仍然只需要将问题分解成几步，做加法和一位数的乘法即可。在你的小学时代你一定也被要求必须记住下面的乘法表。
 
-<img src="./readme.assets/00084.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00084.jpeg" style="display:block; width:60%;">
 
-
-<p class="picture_table_tit
-
-
-<img src="./readme.assets/00085.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00085.jpeg" style="display:block; width:60%;">
 
 位置计数系统的好处并不在于它有多么好用，而在于对非十进制的系统而言，它仍然是易于实现计数的。我们现有的计数系统并不适用于每种情况。以10为基数的数字系统最大的问题是它对于卡通人物没有任何意义。大多数卡通人物每只手（或爪子）只有4根手指，因此它们需要一个以8为基数的计数系统。而有意思的是，许多我们在十进制数中所了解到的知识同样适合卡通朋友们所钟爱的八进制计数系统。
 
@@ -1380,7 +1376,7 @@ Additional Info: 下图来自维基百科。
 
 《娱乐周刊》杂志常常举行一些评级活动，评级的对象除了电影之外还有电视节目、CD、书籍、CD-ROM、网站等其他一些东西。等级的范围是从A+～F（尽管似乎只有波利·舒尔的电影才能堪此殊荣）。计算一下，一共有13个可能的等级。我们需要用4个比特位来表示这些等级。
 
-<img src="./readme.assets/00128.jpeg" style="display:block; width:20%;">
+<img src="./readme.assets/00128.jpeg" style="display:block; width:10%;">
 
 这里我们有3个编码没有用到，即1101，1110和1111，加上这3个总共有16个编码。
 
@@ -1396,15 +1392,15 @@ Additional Info: 下图来自维基百科。
 
 如果已知所要用到编码的数量，如何计算需要多少比特位呢？换句话说，在上表中，如何才能由码字数反推出比特位数呢？
 
-所要用到的方法叫做以2为底的对数运算，对数运算是指数运算的逆运算。我们知道2的7次幂等于128。那么以2为底的128的对数就是7。用数学符号来表示：
+所要用到的方法叫做以 2 为底的对数运算，对数运算是指数运算的逆运算。我们知道 2 的 7 次幂等于 128。那么以 2 为底的 128 的对数就是 7。用数学符号来表示：
 
-2<span class="superscript">7 </span>= 128
+<p style="text-align:center;">$2^7$ = 128</p>
 
 等价于：
 
-log<span class="subscript">2</span>128 = 7
+$log_2{128}$ = 7
 
-因此，如果以2为底的128的对数是7，以2为底256的对数就是8。那么，以2为底200的对数是多少呢？大约是7.64，但实际上并不需要知道具体的值。如果我们要用二进制来表示200种不同的事物，共需要8个比特位。
+因此，如果以 2 为底的 128 的对数是 7，以2为底256的对数就是8。那么，以2为底200的对数是多少呢？大约是7.64，但实际上并不需要知道具体的值。如果我们要用二进制来表示200种不同的事物，共需要8个比特位。
 
 比特通常无法从日常观察中找到，它深藏于电子设备中。我们看不到压缩磁盘（CD）、数字手表或计算机中被编码的比特，但有时比特也会清晰地呈现在我们眼前。
 
@@ -1464,14 +1460,14 @@ log<span class="subscript">2</span>128 = 7
 
 最左边的护线之后是6组比特串，每串含有7个比特位。其中每一组都可以是数字0～9的编码，后面我会做一个简短的说明。接下来是一个5比特位的中间护线，这是一个固定的模式（始终是01010），它是一个内置式的检错码。如果计算机扫描仪没有在应有的位置找到中间护线，它就无法破解UPC码。这条中间护线是用来预防条形码被篡改或被印错的一种方法。
 
-<img alt="img" src="./readme.assets/00136.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00136.jpeg" style="display:block; width:30%;"/>
 
 
 中间护线后面仍然是6组比特串，每组中含有7个比特位。之后是最右边的护线，最右边的护线通常都为101。最右边的护线可以实现UPC的反向扫描（也就是从右到左扫描），这一点我们将在后面解释。
 
 因此，整个UPC对12个数字进行了编码。UPC的左边含有6个编码数字，每个数字占有7个比特位。你可以利用如下的表格来解码。
 
-<img src="./readme.assets/00137.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00137.jpeg" style="display:block; width:30%;">
 
 注意，这里每个7位编码都是以0开头，以1结尾的。如果扫描仪遇到了一个位于左边的7位编码，这个编码是以1开头以0结尾的，那么它就知道自己没有将UPC正确地读入或者条形码被篡改了。另外我们还注意到每组编码都仅有两组连续为1的比特位，这就暗示每个数字对应着UPC码中的两个垂直条纹。
 
@@ -1497,21 +1493,28 @@ log<span class="subscript">2</span>128 = 7
 
 最后一个数字（在这里是7）称为模校验字符。这个字符可用来进行另外一种错误检验。为了了解它是如何工作的，我们将前11个数字（在这个例子中是0 51000 01251）各用一个字母来代替：
 
-<span class="emphasis_bold">A　BCDEF　GHIJK</span>
-
+$$
+    A　BCDEF　GHIJK
+$$
 然后，计算下式的值：
 
-3 × ( A + C + E + G + I + K ) + (B + D + F + H + J)
+$$
+    3 * ( A + C + E + G + I + K ) + (B + D + F + H + J)
+$$
 
 从离这个值最近并且大于或等于它的一个10的整倍数中减去它，其结果称为模校验字符（modulo check character）。在Campbell鸡汁面的例子中，有：
 
-3×(0 + 1 + 0 + 0 + 2 + 1) + (5 + 0 + 0 + 1 + 5) = 3×4 + 11 = 23
+$$
+    3 * (0 + 1 + 0 + 0 + 2 + 1) + (5 + 0 + 0 + 1 + 5) = 3 * 4 + 11 = 23
+$$
 
-紧挨23并大于或等于23的10的整倍数是30，因此：
+紧挨 23 并大于或等于 23 的 10 的整倍数是 30，因此：
 
-30－23 = 7
+$$
+    30－23 = 7
+$$
 
-这就是印在外包装上并以UPC形式编码的模校验字符，这是一种冗余措施。如果扫描仪没有扫描到与计算机计算结果相同的模校验字符，那么计算机就视这个UPC无效。
+这就是印在外包装上并以 UPC 形式编码的模校验字符，这是一种冗余措施。如果扫描仪没有扫描到与计算机计算结果相同的模校验字符，那么计算机就视这个UPC无效。
 
 通常情况下，要表示0～9的十进制数字只需要4个比特位就足够了。UPC中每个数字用了7个比特位。这样，UPC总共享了95个比特位来表示11个有效的十进制数。实际上，UPC中还有空白位置（相当于9个0比特），它们位于左、右护线的两侧。这就意味着，整个UPC需要113个比特位来编码11个十进制数，平均每个十进制数所用的比特位超过了10个！
 
@@ -1519,11 +1522,11 @@ log<span class="subscript">2</span>128 = 7
 
 UPC可以从两个方向读，这一点是非常方便的。如果扫描装置解码的第一个数是符合偶校验（即7位编码中有偶数个1）的，扫描仪就会知道，它正从右向左扫描UPC码。计算机就会使用如下表来解码。
 
-<img src="./readme.assets/00139.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00139.jpeg" style="display:block; width:30%;">
 
 以下是对左边数字的解码表。
 
-<img src="./readme.assets/00140.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00140.jpeg" style="display:block; width:30%;">
 
 所有这些7位编码都与由左向右扫描时得到的UPC完全不同。这里不会有模棱两可的现象存在。
 
@@ -1531,16 +1534,25 @@ UPC可以从两个方向读，这一点是非常方便的。如果扫描装置�
 
 回顾一下莫尔斯码的编码规则：划的长度等于点长度的三倍；单个字母内，点或划之间以长度与点相等的空格来分开；单词内的各个字母之间用长度等于划的空格分隔；各单词之间由长度等于两倍的划的空格分开。
 
+- **Note：**作者这里的说法和上面第一章的 `Additional Info: 下图来自维基百科` 的定义稍有不同
+  
+  > 国际摩尔斯电码
+    1. 一点的长度是一个单位，
+    2. 一划是三个单位，
+    3. 在一个字母中点划之间的间隔是一点。
+    4. 两个字母之间的间隔是三点（一划）。
+    5. 两个单词之间的间隔是七点。
+
 让我们将分析简化一些，假设一个划的长度是点长度的两倍，而不是三倍。这就意味着一个点就是一个值为1的比特位，一个划是两个值为1的比特位，空格则是值为0的比特位。
 
 下面是第2章中莫尔斯码的基本表。
 
-<img alt="img" src="./readme.assets/00141.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00141.jpeg" style="display:block; width:50%;"/>
 
 
 以下是转化为比特的结果。
 
-<img alt="img" src="./readme.assets/00142.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00142.jpeg" style="display:block; width:50%;"/>
 
 注意，这里所有编码都是以1开头，以两个0结尾。结尾处的两个0代表单词内各个字母之间的空格。单词之间的空格编码则是另外一对0。因此，在莫尔斯码中“hi there”通常是这样表示的：
 
@@ -6313,7 +6325,7 @@ for语句将变量<span class="emphasis_italic">a</span>初始化为3，并执�
 
 下面的ALGOL程序用来筛选2～10,000之间的所有素数，程序中定义了一个布尔数组，用来对所有的数进行标识。该程序如下：
 
-<img src="./readme.assets/00747.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00747.jpeg" style="display:block; width:50%;">
 
 第一个for循环将数组<span class="emphasis_bold"><span class="emphasis_italic">a</span></span>的每一个元素的初始值设置为布尔值true。这里的true表示该位置的数是素数，因此现在程序默认所有的数都是素数。第二个for循环的范围是1～100（100刚好是10000的平方根）。在第二个for循环中，如果判断条件成立，该数为素数，即<span class="emphasis_bold"><span class="emphasis_italic">a</span></span>[<span class="emphasis_italic">i</span>]为true，则第三个for循环则会把该数的所有小于或等于10000的倍数（除了其本身）设置为false，因为这些数都不是素数。最后的for循环用来输出所有的素数，这里的判断条件是：若<span class="emphasis_bold"><span class="emphasis_italic">a</span></span>[<span class="emphasis_italic">i</span>]为true，则<span class="emphasis_italic">i</span>为素数。
 
@@ -6350,15 +6362,15 @@ Pascal对Ada的影响也非常大。Ada是为美国国防部开发应用的一�
 
 C是一种风格非常简洁的语言。例如，ALGOL和Pascal使用关键字begin和end来界定程序块，而在C中这两个单词被一对大括号“{}”取代。下面给出一个例子，程序员常常会把一个常量和一个变量相加，比如：
 
-<img src="./readme.assets/00749.jpeg" style="display:block; width:20%;">
+<img src="./readme.assets/00749.jpeg" style="display:block; width:15%;">
 
 在C程序中，你可以将上面的语句简写为：
 
-<img src="./readme.assets/00750.jpeg" style="display:block; width:20%;">
+<img src="./readme.assets/00750.jpeg" style="display:block; width:10%;">
 
 如果只需要把变量加1（即增量），则该语句还可以精简成下面这样：
 
-<img alt="img" src="./readme.assets/00751.jpeg" style="display:block; width:20%;"/>
+<img alt="img" src="./readme.assets/00751.jpeg" style="display:block; width:10%;"/>
 
 在16位或32位微处理器中，i++这种语句仅需要一条机器码指令就可以执行。
 
@@ -6393,11 +6405,11 @@ C是一种风格非常简洁的语言。例如，ALGOL和Pascal使用关键字be
 
 其实Escape的编码1Bh只占据一个字节，且它的含义是唯一的。Escape如果作为一串序列的前缀字符，那么这串字符序列的含义也随之改变。比如下面这串序列：
 
-<img alt="img" src="./readme.assets/00752.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00752.jpeg" style="display:block; width:30%;"/>
 
 可以看出Escape 编码随后紧跟的是字符“[”“2”“J”的ASCII码，现在这一串字符的含义为“清屏”然后移动光标至左上角。这种定义在电传打字机上是不可能出现的。下面这串序列：
 
-<img alt="img" src="./readme.assets/00753.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00753.jpeg" style="display:block; width:50%;"/>
 
 即Escape编码随后紧跟的是字符“[”、“5”、“；”、“2”、“9”、“H”，这串字符的作用是把光标移到第5行的第29列。
 
@@ -6423,8 +6435,7 @@ CRT上的色彩空间由三个电子枪产生，每一个电子枪分别产生�
 
 在最简单的彩色显示适配器中，表示每个像素点需要3个比特。最直观的编码方式就是每一种原色对应编码中的1位。
 
-
-<img src="./readme.assets/00754.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00754.jpeg" style="display:block; width:20%;">
 
 这种方案可能只适合简单的类似卡通画的图像。真实世界出现的几乎所有颜色都是由红、绿、蓝三原色的不同色阶（levels）组合而成的。如果为每个像素赋予2个字节的存储空间，这样一来，可以给每一个原色分配5位（1位保留）存储空间，这种方法可以表示出红、绿、蓝三种颜色且每种颜色具备32种不同的色阶，这样算下来总共有32,768种不同的颜色。这种模式通常称做高彩色（high color）或数千种颜色（thousands of colors）。
 
