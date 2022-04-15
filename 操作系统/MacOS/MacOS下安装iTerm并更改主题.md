@@ -5,6 +5,9 @@
 > https://segmentfault.com/a/1190000040316352
 
 
+iTerm2 的界面配置参考视频
+> https://www.bilibili.com/video/BV1cf4y157sv?spm_id_from=333.880.my_history.page.click
+
 
 ## 生词(New Words)
 
