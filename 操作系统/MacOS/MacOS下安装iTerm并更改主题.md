@@ -1,17 +1,12 @@
 # MacOs 下安装 iTerm 并更改主题
 
-## 目录(Catalog)
-1. 安装 `iTerm`
-2. 安装 `XCode's Command line tools (Xcode 的命令行工具)`
-3. 安装 `zsh`
-4. 安装 `Oh-My-Zsh`
-5. 安装下一步自定义主题需要的 `Powerline fonts`
-6. 配置主题 `agnoster`
-7. 配置 `zsh` 命令语法高亮
+当前笔记待更新，更新参考文章如下：
+
+> https://segmentfault.com/a/1190000040316352
+
+
 
 ## 生词(New Words)
-
-
 
 ## 内容(Content)
 ### 1. 安装 `iTerm`
@@ -30,7 +25,7 @@
             - `Xcode` 同时也是一种语言, 作为一种基于 `XML` 的语言, `Xcode` 
               可以设想各种使用场景.
               它提供了一种独立于工具的可扩展的方法来描述编译时组件的各个方面.
-
+    
       简单来讲 `Command Line Tools` 就是一个小型独立包, 
       为 mac 终端用户提供了许多常用的工具, 实用程序和编译器. 包括`svn`, `git`,
       `make`, `GCC`, `clang`, `perl`, `size`, `strip`, `strings`,`libtool`,
@@ -38,7 +33,7 @@
       
       `MacOS` 从 10.13+ 开始便需先安装整个`Xcode`软件包, 也无需登录开发人员帐户,
       就可以单独安装 `Command Line Tools`.
-
+    
     + 安装: 启动 `Terminal/iTerm` 终端, 输入: 
       ````shell
         xcode-select --install
@@ -81,7 +76,7 @@
       ```shell
         sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
       ```
-  安装过程会询问:
+    安装过程会询问:
   ```bash
     Time to change your default shell to zsh:
     Do you want to change your default shell to zsh? [Y/n]
