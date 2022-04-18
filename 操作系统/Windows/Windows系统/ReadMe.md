@@ -301,3 +301,9 @@ USB2.0的图：[File:USB.svg](https://link.zhihu.com/?target=http%3A//zh.wikiped
 
 找到注册表项 `HEKY_CURRENT-USER\Control Panel\Keyboard` ，此时双击右侧的 `InitialKeyboardIndicators`，把数值改为 `2`, 然后点击确定，此设置完毕后，以后每次开机 Num Lock 就会默认开启。
 
+
+
+## ▲ Windows 从 Microsoft store 中下载的主题(Theme) 的保存目录
+
+按 `Window + R`，打开运行窗口，输入 `AppData` 后回车，打开 AppData 文件夹，按如下路径：`\AppData\Local\Microsoft\Windows\Themes`  进入到 Themes 主题后显示的就是下载的各个主题的名称，选择一个主题点击进入后，`DesktopBackground`文件夹中即为保存的主题图片。
+
