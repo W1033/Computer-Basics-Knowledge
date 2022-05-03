@@ -347,3 +347,9 @@ sudo spctl --master-disable
 输入密码
 
 恭喜您，`您已成功开启任何来源`。
+
+
+### 34. 关闭百度网盘后台(一到多个)同步进程 baiduNetdiskSync
+打开 Finder, 按快捷键组合 `Shift` + `Command` + `G` 查找文件,
+输入 `/Applications/BaiduNetdisk_mac.app/Contents/PlugIns/ ` 把下面的文件全部删除。
+- 注：每次升级百度网盘后都要再次删除。
