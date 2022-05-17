@@ -211,7 +211,7 @@
 - 空格 = 屏幕下滚一页
 
 ### 26. Mac 包管理器
-- 见当前同级目录 `./MacOS 包管理器 Homebrew`
+- 见当前同级目录 `./MacOS 包管理器 Homebrew`
 
 ### 27. Mac 下弹出 U盘/SSD
 - 选中要弹出的 U盘/SSD 然后按下 `Command` + `E`

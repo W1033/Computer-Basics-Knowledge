@@ -19,6 +19,17 @@
 
 
 
+
+## ◆ 在 Github 仓库中启用 Web VSCode
+
+在当前仓库中的任何一个页面点击键盘上的 `.` 按键，直接进入 web vscode
+
+![image-20220516164255036](readme.assets/image-20220516164255036.png)
+
+
+
+
+
 ## ◆ Git 常用命令
 
 ### 基本命令见同级目录的：`../Git全栈开发使用指南/readme.md`
@@ -386,10 +397,35 @@ git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了�
 
 #### 3. 实施：
 
-在网站 [https://www.ipaddress.com/](https://link.segmentfault.com/?enc=r8hFjO2Av2Y9qgcCzWs3gg%3D%3D.W0OoH1SmJRf9bum8wW2pys83XflAyaXlD1BCaKclGfs%3D) 分别搜索：`github.global.ssl.fastly.net` 和 `github.com` 得到 2 个 IP. 
+在网站 [https://www.ipaddress.com/](https://link.segmentfault.com/?enc=r8hFjO2Av2Y9qgcCzWs3gg%3D%3D.W0OoH1SmJRf9bum8wW2pys83XflAyaXlD1BCaKclGfs%3D) 分别搜索：
+
+`github.global.ssl.fastly.net` 和
+
+`github.com` 
+
+得到 2 个 IP. 
+
+**2022.05.16 添加**
+
+起因是发现在浏览器中预览笔记内的图片都无法打开，通过 google 查到网友说把 `raw.githubusercontent.com` 的 ipaddress 内对应的 IP 添加到 hosts 中，05.16 查询对应的四个 IP 如下：
+
+```md
+# raw.githubusercontent.com resolves to 4 IPv4 addresses and 4 IPv6 addresses:
+
+185.199.108.133
+185.199.109.133
+185.199.110.133
+185.199.111.133
+2606:50c0:8000::154
+2606:50c0:8001::154
+2606:50c0:8002::154
+2606:50c0:8003::154
+```
+
 
 
 #### 4. 打开hosts文件
+
 - Windows 上的 hosts 文件路径在: `C:\Windows\System32\drivers\etc`
 - Linux的hosts文件路径在：`sudo vim /etc/hosts`
 - Mac 中
