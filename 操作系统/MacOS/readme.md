@@ -43,10 +43,11 @@
 - (2) 快捷键返回桌面: `Fn + F11`
 
 ### 3. 剪切-复制
-- 复制粘贴：`Command` + `C` --> `Commadn` + `V`
+- 复制粘贴：`Command` + `C` --> `Command` + `V`
 - 剪切粘贴：`Command` + `C` --> `Commadn` + `Option` + `V`
 
 ### 4. Mac 刷新 DNS 解析
+
 - (1st) 在 "iTerm/终端" 中输入: 
     ```shell
         sudo Killall -HUP mDNSResponder 
