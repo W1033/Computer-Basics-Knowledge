@@ -1,6 +1,6 @@
 # Structured Computer Organization, Sixth Edition
 
-计算机组成：结构化方法 （第 6 版）
+计算机组成：结构化方法（第 6 版）
 
 
 (荷) Andrew S. Tanenbaum
@@ -49,7 +49,7 @@
 
 除汇编语言的工具之外，本书网站还包含一个配合第 4 章使用的图形模拟器。它是由 Oberlin学院的 Richard Salter 教授编制的，可用于帮助同学们掌握第 4 章讨论的基本原理。十分感谢 Richard Salter 教授提供该软件。
 
-包含这些工具以及其他内容的本书网站的网址是： http:// www. pearsonhighered. com/ tanenbaum
+包含这些工具以及其他内容的本书网站的网址是： http://www.pearsonhighered.com/tanenbaum
 
 从网页上点击本书的链接，并从菜单项中选择你所找寻的页面。其中的学生资源包括：
 

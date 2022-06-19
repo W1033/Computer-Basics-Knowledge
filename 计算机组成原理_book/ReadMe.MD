@@ -8,6 +8,16 @@
 
 
 
+<div style="color:red; font-weight:bold;">
+<p>Notice: 2022.06.18 Added</p>
+<p>: 这本书的笔记一年内不会再更新，因为去看《计算机组成：结构化方法》（第 6 版）了</p>
+</div>
+
+
+
+
+
+
 中英文扫描 PDF 下载链接：
 
 > 链接: https://pan.baidu.com/s/1U6EkdRuQsL5gPpRgEgM0nQ?pwd=em08 
