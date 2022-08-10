@@ -22,7 +22,7 @@
 
 ## ◆ 在 Github 仓库中启用 Web VSCode
 
-在当前仓库中的任何一个页面点击键盘上的 `.` 按键，直接进入 web vscode
+在当前仓库中的任何一个页面点击键盘上的 `.` 按键，直接进入 web vscode
 
 ![image-20220516164255036](readme.assets/image-20220516164255036.png)
 
@@ -101,9 +101,10 @@ git add .
 ```sh
 git commit -m "注释语句"
 ```
-### 4. 去 github 上创建自己的 Repository，(也可以使用现有的仓库)
+### 4. 去 github 上创建自己的 Repository (也可以使用现有的仓库)
 
 ### 5. 将本地的仓库关联到github上
+
 ```sh
 # url: 可以是 https 或 SSH 
 git remote add origin url
@@ -300,31 +301,14 @@ SSH(Secure Shell Protocol)
 
 > https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-```
-Your identification has been saved in /Users/WANG/.ssh/id_ed25519.
-Your public key has been saved in /Users/WANG/.ssh/id_ed25519.pub.
-The key fingerprint is:
-SHA256:Xu3J4TH97X4toM0+9M8WMAzOpHDkm31qV8s1tzaQc8I forownwang@gmail.com
-The key's randomart image is:
-+--[ED25519 256]--+
-|        ..       |
-|       ... o     |
-|        o.= o    |
-|         .++.=.  |
-|        So..=E++o|
-|       . . +==BoB|
-|        .  B=+ *=|
-|          o = +o=|
-|           ... =*|
-+----[SHA256]-----+
-```
 生成的 3 个文件内容见 随笔记 备份
 
 ### 将 SSH 密钥添加到 ssh-agent
+
 1. 在后台启动 ssh 代理。
 ```shell
-    eval "$(ssh-agent -s)"
-    > Agent pid 16559
+eval "$(ssh-agent -s)"
+> Agent pid 16559
 ```
 根据您的环境，您可能需要使用不同的命令。 例如，您可能需要在启动 ssh 代理之前运行 sudo-s-H 来使用根访问，或者您可能需要使用 `exec ssh-agent bash` 或 `exec ssh-agent zsh` 来运行 ssh-agent。
 2. 见在线文档
