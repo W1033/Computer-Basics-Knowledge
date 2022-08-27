@@ -5,15 +5,19 @@
 
 - `[1]`: Bill Gates 中的 Gates 在英文中有 "门" 的意思 -- 译者注。
 
-在上一章中，你走进了一家宠物店，并且说： "我想要一只公猫(male)，已绝育(neuter `/'njuːtə/` -adj.(名词、代词等)中性的；阉割(动物))的，白色(white) 或 褐色(tan) 都可以；或者一只母猫(female)，已绝育的，除了白色任何颜色都可以；或者，只要是一只黑猫(black)就行。" 这句话被总结为如下布尔表达式：
+在上一章中，你走进了一家宠物店，并且说："我想要一只公猫(male)，已绝育(neuter)的，白色(white) 或 褐色(tan) 都可以；或者一只母猫(female)，已绝育的，除了白色任何颜色都可以；或者，只要是一只黑猫(black)就行。"
 
+- neuter `/'njuːtə/` -adj.(名词、代词等)中性的；阉割(动物)
+
+ 这句话被总结为如下布尔表达式：
 $$
 (M \times N \times (W + T)) + (F \times N \times (1 - W)) + B
 $$
 
 同样也可以用这样一个由开关和灯泡组成的电路来表示，如下图所示。
 
-![image-20220713111041538](Unit11.assets/image-20220713111041538.png)
+<img alt="img" src="./Unit11.assets/image-20220713111041538.png" style="display:block; width:65%;"/>
+
 
 **这样的电路有时被称为网络（network），而如今这个词更多地被用来描述计算机之间的连接，而不仅指多个开关的集合。**
 
@@ -70,7 +74,7 @@ $$
 
 由于括号太多，这个表达式看起来并不简单。但是这个表达式中少了一个变量，也就意味着在网络中少了一个开关。以下就是简化(revise `/rɪ'vaɪz/` -vt.改变，修正)后的电路图。
 
-![image-20220713111243937](Unit11.assets/image-20220713111243937.png)
+<img alt="img" src="./Unit11.assets/image-20220713111243937.png" style="display:block; width:65%;"/>
 
 确实，证明修改前后的两个电路功能等价要比去证明两个表达式功能相同简单许多。
 
@@ -94,11 +98,11 @@ $$
 
 就我们的目的而言，我们对于继电器放大微弱信号的功能并不感兴趣。我们真正感兴趣的是继电器可以作为一个电流控制而非人工控制的开关。我们可以将继电器、开关、灯泡和两节电池按照下图连接。
 
-<img alt="img" src="./readme.assets/00175.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00175.jpeg" style="display:block; width:35%;"/>
 
 注意，左边的开关是断开的，灯泡没有发光。当闭合开关的时候，左端电池产生电流流过缠在铁芯上的圆线圈。于是铁芯产生了磁性，将上面的弹性金属簧片拉下，使回路接通，灯泡发光。
 
-<img alt="img" src="./readme.assets/00176.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00176.jpeg" style="display:block; width:35%;"/>
 
 
 当电磁铁将金属簧片拉下来时，我们称继电器被 "触发" （triggered）。当左边的开关断开的时候，铁芯的磁性消失，金属簧片回到原位。
@@ -107,7 +111,7 @@ $$
 
 在这一章中，（在逻辑门创建之前）我们将多次运用继电器，因此就需要将上面那幅电路图简化。我们可以利用接地的方式减少一些电线。在这种情况下，大地仅代表了一个公共端，并不是真正意义上的物理接地。
 
-<img alt="img" src="./readme.assets/00177.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00177.jpeg" style="display:block; width:35%;"/>
 
 这看起来并不像简化的结果，但到现在我们还没有完成。注意两节电池的负极都是接地的。因此，我们可以看到这样的符号。
 
@@ -115,12 +119,12 @@ $$
 
 和第5章、第6章中一样，可以用大写字母V（代表电压）来代替上图中的电池。这样，继电器看上去就如下图所示。
 
-<img alt="img" src="./readme.assets/00179.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00179.jpeg" style="display:block; width:35%;"/>
 
 
 开关闭合，电流从V端流出，经过电磁铁芯流到大地上。产生磁效应吸合金属簧片，从而连通了V、灯泡和地之间的电路，使灯泡发光。
 
-<img alt="img" src="./readme.assets/00180.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00180.jpeg" style="display:block; width:35%;"/>
 
 上面的图显示了两个电源和两个接地端。但是在这一章的所有电路中，所有电源，即 "V" 是可以彼此互连的，接地端也如此。在本章和下一章的电路中，所有继电器网络和逻辑门只需要一节电池，尽管可能是一节很大容量的电池。例如，上述电路图可以画为如下只用一节电池的方式。
 
@@ -129,7 +133,7 @@ $$
 
 但是，这个电路图中没有清楚地表明，为什么我们要使用继电器。可以先不看回路，单单看继电器，像前面的控制面板一样，从输出和输入开始。
 
-<img alt="img" src="./readme.assets/00182.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00182.jpeg" style="display:block; width:35%;"/>
 
 当电流流经输入时（例如，用一个开关把输入连到 "V" 端），电磁铁就会被触发，输出就得到一个电压。
 
@@ -158,20 +162,20 @@ $$
 
 前面提到，两个开关可以串联，同样地，两个继电器也可以串联。
 
-<img alt="img" src="./readme.assets/00187.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00187.jpeg" style="display:block; width:32%;"/>
 
 上面继电器的输出为下面继电器提供电压。如上图所示，当两个开关都断开的时候，灯泡不发光。我们先闭合上面的开关。
 
-<img alt="img" src="./readme.assets/00188.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00188.jpeg" style="display:block; width:32%;"/>
 
 
 灯泡仍然不亮，因为下面的开关一直是断开的，这个继电器没有被触发。我们现在断开上面的开关，并闭合下面的开关。
 
-<img alt="img" src="./readme.assets/00189.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00189.jpeg" style="display:block; width:32%;"/>
 
 灯泡仍然不亮。由于上面的继电器没有被触发，电流无法流过灯泡。只有两个开关都闭合的时候灯泡才会被点亮。
 
-<img alt="img" src="./readme.assets/00190.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00190.jpeg" style="display:block; width:32%;"/>
 
 这时，两个继电器都被触发，电流从V流经灯泡后流入到地中。
 
@@ -183,28 +187,28 @@ $$
 
 有两个继电器、两个开关和一个灯泡的原始电路图如下所示。
 
-<img alt="img" src="./readme.assets/00192.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00192.jpeg" style="display:block; width:32%;"/>
 
 使用 "与门" 符号，上图可以画为如下所示的图。
 
-<img alt="img" src="./readme.assets/00193.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00193.jpeg" style="display:block; width:30%;"/>
 
 注意，与门的符号不仅仅代替了两个串联的继电器，而且还暗示着上面的继电器与电源相连，两个继电器都接地。只有当上面的开关与下面的开关都闭合的时候，灯泡才会发光。这就是称它为 "与门" 的原因。
 
 
 与门的输入未必一定要和开关相连，而且输出也不一定只能与灯泡相连。我们真正要处理的是输入端的电压和输出端的电压。例如，一个与门的输出可以作为另一个与门的输入，如下所示。
 
-<img alt="img" src="./readme.assets/00194.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00194.jpeg" style="display:block; width:30%;"/>
 
 只有当三个开关全部闭合的时候，灯泡才会亮。只有当上面两个开关全闭合的时候，第一个与门的输出才会触发第二个与门中的第一个继电器。而最下面的开关闭合会触发第二个与门中的第二个触发器。
 
 如果我们将低电平视为0，将高电平视为1，那么与门的输入和输出之间的关系如下所示。
 
-<img alt="img" src="./readme.assets/00195.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00195.jpeg" style="display:block; width:35%;"/>
 
 像两个开关串联一样，与门的输入与输出之间的关系同样可用下表来描述。
 
-<img src="./readme.assets/00196.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00196.jpeg" style="display:block; width:35%;">
 
 同样可以让与门有多个输入端。例如，将三个继电器串联，如下图所示。
 
@@ -213,7 +217,7 @@ $$
 
 只有当三个开关全部闭合时灯泡才会发光。这个结构可以用如下符号来表示。
 
-<img alt="img" src="./readme.assets/00198.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00198.jpeg" style="display:block; width:26%;"/>
 
 它被称为三输入端与门。
 
@@ -243,63 +247,63 @@ $$
 
 或门的两个输入中，只要有一个加上电压，输出就是高电平。如果将低电平看做0，高电平看做1，那么或门也有四种可能的组合状态。
 
-<img alt="img" src="./readme.assets/00204.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00204.jpeg" style="display:block; width:30%;"/>
 
 像总结与门一样，我们可以将或门的输入和输出关系总结为一个表，如下所示。
 
-<img src="./readme.assets/00205.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00205.jpeg" style="display:block; width:30%;">
 
 或门也可以有多个输入端（只要任一个输入端为1，其输出端就为1，只有所有的输入端都为0时，输出端才为0）。
 
 前面解释了为什么我们所用的继电器叫双掷继电器，这是因为其输出有两种不同的连接方式。通常在开关断开的时候，灯泡不会亮。
 
-<img alt="img" src="./readme.assets/00206.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00206.jpeg" style="display:block; width:30%;"/>
 
 
 当开关闭合时，灯泡发光。
 
 也可以用另外一种连接方式，使开关断开时灯泡被点亮。
 
-<img alt="img" src="./readme.assets/00207.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00207.jpeg" style="display:block; width:30%;"/>
 
 这样的话，开关闭合，灯泡就会熄灭。以这种方式连接的继电器叫做反向器（inverter）。反向器不是逻辑门（一个逻辑门通常有两个或多个输入），尽管如此，它的用处还是很广。反向器可以用如下的专门符号来表示。
 
-<img alt="img" src="./readme.assets/00208.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00208.jpeg" style="display:block; width:30%;"/>
 
 由于它能将0（低电平）转换为1（高电平），因此被称为反向器，反过来也是一样的。
 
-<img alt="img" src="./readme.assets/00209.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00209.jpeg" style="display:block; width:30%;"/>
 
 利用反向器、与门和或门，我们就可以着手去设计一个自动选择理想猫咪的控制面板了。首先从开关开始，第一个开关闭合表示母猫，断开表示公猫。因此，我们可以得到两个信号，把它们分别叫做F和M，如下图所示。
 
-<img alt="img" src="./readme.assets/00210.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00210.jpeg" style="display:block; width:30%;"/>
 
 当F为1时，M为0，反之亦然。同样，第二个开关闭合表示这只猫已绝育，断开则表示这只猫未绝育。
 
-<img alt="img" src="./readme.assets/00211.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00211.jpeg" style="display:block; width:30%;"/>
 
 下面两个开关更加复杂。两个开关的不同组合分别表示四种不同的颜色。以下为两个接有电源的开关。
 
-<img alt="img" src="./readme.assets/00212.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00212.jpeg" style="display:block; width:30%;"/>
 
 当两个开关都断开时（如上图所示），表示白色。以下就是如何运用两个反向器和一个与门来得到W信号的方式。如果你选择一只白猫，W就为高电平（1）；否则，就为低电平（0）。
 
-<img alt="img" src="./readme.assets/00213.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00213.jpeg" style="display:block; width:30%;"/>
 
 当两个开关断开时，两个反向器的输入均为0，两个反向器的输出（也就是与门的输入）都为1。这就意味着与门的输出为1。如果有一个开关闭合，与门的输出就为0。
 
 要想用闭合第一个开关表示一只黑猫，可以利用一个反向器和一个与门实现。
 
-<img alt="img" src="./readme.assets/00214.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00214.jpeg" style="display:block; width:30%;"/>
 
 只有当第一个开关闭合而第二个开关断开的时候，与门输出才为1。同样，如果第二个开关闭合而第一个开关断开，与门的输出也为1，我们用此来表示褐色的猫。
 
-<img alt="img" src="./readme.assets/00215.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00215.jpeg" style="display:block; width:30%;"/>
 
 
 如果两个开关同时闭合则表示其他颜色的猫。
 
-<img alt="img" src="./readme.assets/00216.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00216.jpeg" style="display:block; width:30%;"/>
 
 现在，我们将四个小电路合并成一个大电路（按照惯例，黑实心点表示交叉线之间是连接的，没有黑实心点的交叉线则表示仅仅是穿过，没有连接）。
 
@@ -343,45 +347,45 @@ $$
 
 这些结果恰恰与或门相反，这个门称为 "或非门" ，简称NOR，用以下符号表示。
 
-<img alt="img" src="./readme.assets/00223.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00223.jpeg" style="display:block; width:30%;"/>
 
 除去输出部分的小圆圈，这个符号与或门非常相像。小圆圈表示 "反向" ，所以或非门也可用下面的符号表示。
 
-<img alt="img" src="./readme.assets/00224.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00224.jpeg" style="display:block; width:30%;"/>
 
 或非门的输出如下表所示。
 
-<img src="./readme.assets/00225.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00225.jpeg" style="display:block; width:30%;">
 
 这个表所显示的结果与或门正好相反，在或门中，两个输入中有一个为1输出就为1，只有两个输入都为0，输出才为0。
 
 下面是另一种连接两个继电器的方法。
 
-<img alt="img" src="./readme.assets/00226.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00226.jpeg" style="display:block; width:32%;"/>
 
 
 在这种情况下，两个输出连接在一起，与或门的布局类似，但是却采用了另一种输出接法。灯泡在两个开关全断开时被点亮。
 
 当上面的开关闭合时，灯泡依然是亮的。
 
-<img alt="img" src="./readme.assets/00227.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00227.jpeg" style="display:block; width:32%;"/>
 
 同样，当只有下面的开关闭合时，灯泡也依然是亮的。
 
-<img alt="img" src="./readme.assets/00228.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00228.jpeg" style="display:block; width:32%;"/>
 
 
 只有当两个开关全闭合的时候，灯泡才会熄灭。
 
-<img alt="img" src="./readme.assets/00229.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00229.jpeg" style="display:block; width:32%;"/>
 
 这一结果和与门恰恰相反。这种逻辑门被称为与非门，或简称NAND。与非门的符号和与门类似，但在输出部位多了一个小圆圈，意思是输出和与门正好相反。
 
-<img alt="img" src="./readme.assets/00230.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00230.jpeg" style="display:block; width:30%;"/>
 
 与非门的输出如下表所示。
 
-<img src="./readme.assets/00231.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00231.jpeg" style="display:block; width:30%;">
 
 
 注意与非门的输出是和与门完全相反的。与门只有当输入全为1的时候输出才为1，否则输出就为0。
@@ -392,15 +396,15 @@ $$
 
 现在，我们已经有四个逻辑门和一个反向器。把这些工具组合到一起其实就是原始的继电器，如下图所示。
 
-<img alt="img" src="./readme.assets/00233.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00233.jpeg" style="display:block; width:30%;"/>
 
 这叫做缓冲器（buffer），可用如下符号表示。
 
-<img alt="img" src="./readme.assets/00234.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00234.jpeg" style="display:block; width:30%;"/>
 
 除了输入端的小圆圈，这个符号与反向器是很相似的。很明显，缓冲器 "没有什么作用" ，它的输入与输出是相同的。
 
-<img alt="img" src="./readme.assets/00235.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00235.jpeg" style="display:block; width:30%;"/>
 
 
 但是在输入信号很微弱的时候，缓冲器就可以派上用场。之前提到过，这也就是很多年前在电报机中使用继电器的原因。另外，缓冲器还可以用于延迟一个信号。这是因为继电器需要一点时间——几分之一秒——才会被触发。
@@ -409,23 +413,23 @@ $$
 
 前面在创建2-4译码器的时候，曾出现过这样一个小电路。
 
-<img alt="img" src="./readme.assets/00236.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00236.jpeg" style="display:block; width:30%;"/>
 
 两个输入信号经过反向器后作为与门的输入。这样的组合有时可以去掉反向器而画成如下的形式。
 
-<img alt="img" src="./readme.assets/00237.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00237.jpeg" style="display:block; width:30%;"/>
 
 注意与门输入端的小圆圈。这些小圆圈表示信号在那一点被反转——将0（低电平）转换为1（高电平），反之亦然。
 
 实际上，带有两个反向输入的与门和或非门是等价的。
 
-<img alt="img" src="./readme.assets/00238.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00238.jpeg" style="display:block; width:30%;"/>
 
 只有当输入都为0的时候，其输出才为1。
 
 类似的，带有两个反向输入的或门和与非门也是等价的。
 
-<img alt="img" src="./readme.assets/00239.jpeg" style="display:block; width:40%;"/>
+<img alt="img" src="./readme.assets/00239.jpeg" style="display:block; width:30%;"/>
 
 
 只有当输入全为1时，输出才为0。
@@ -440,8 +444,8 @@ A和B是两个布尔操作数。在第一个表达式中，两个操作数先被
 
 摩根定律是简化布尔表达式的一种重要手段，因此也可以用来简化电路。从历史的角度来说，这正是香农的论文带给电气工程师们的真正意义。但在本书中简化电路不是重点，我们关注的是让一切有效地运转而不是以最简的形式运转。我们下面要做的就是一台加法器。
 
-<hr class="calibre1"/>
-<p class="footnote_content"><a id="footnote_content_txt011_1" href="part0018.html#footnote_quote_txt011_1" class="calibre2">[1]</a>Bill Gates中的Gates在英文中有 "门" 的意思——译者注
+
+
 
 
 
