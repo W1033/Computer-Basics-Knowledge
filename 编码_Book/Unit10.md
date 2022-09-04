@@ -278,7 +278,7 @@
 
 也就是说，只有当运算符AND左右两端都为1的时候，结果才为1。这个运算与常规的乘法是完全相同的，该规则可以总结为如下这样一个表格，这与第8章中加法和乘法表的形式类似。
 
-<img src="./readme.assets/00150.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00150.jpeg">
 
 当符号 "+" 表示OR的时候，有以下几种可能的结果：
 
@@ -292,7 +292,7 @@
 
 如果运算符 OR 左右两端有一个操作数为 1，则其运算结果就为 1。这个运算与常规的加法类似，但是在 1 + 1 = 1 这里例外。运算符 OR 可以概括为如下这样一个表格。
 
-<img src="./readme.assets/00151.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00151.jpeg">
 
 我们应用这两个表格来计算一下原表达式的结果：
 
@@ -328,74 +328,73 @@
 
 在实验的开始，将灯泡和电池正常连接起来，但是，你用了两个开关，而不是一个，如下图所示。
 
-<img alt="img" src="./readme.assets/00152.jpeg" style="display:block; width:40%;"/>
+![image-20220904223445017](Unit10.assets/image-20220904223445017.png)
 
 像这样一个接着一个首尾相连的接线方式称做**串联 (series)**。如果你闭合左端的开关，什么都不会发生。
 
-<img alt="img" src="./readme.assets/00153.jpeg" style="display:block; width:40%;"/>
+![image-20220904223458092](Unit10.assets/image-20220904223458092.png)
 
 
 如果让左边的开关保持断开，而闭合右边的开关，同样什么都不会发生。只有当左右两个开关都闭合时灯泡才会亮，如下图所示。
 
-<img alt="img" src="./readme.assets/00154.jpeg" style="display:block; width:40%;"/>
+![image-20220904223514030](Unit10.assets/image-20220904223514030.png)
 
 这里的关键词是 "与" 。当左右两个开关必须都是闭合的时候电流才流过回路。
 
 这个电路是一个简单的逻辑演示。实际上，灯泡是在回答 "两个开关是否都闭合？" 这样一个问题。这个电路的运转情况，我们可以总结为如下表格。
 
-
-<img src="./readme.assets/00155.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00155.jpeg">
 
 在之前的章节中，我们已经知道二进制数是如何表示信息的——而信息是无所不包的，无论是简单的数字还是罗杰·艾伯特[1]<拇指的方向都是信息。我们可以说二进制 0 代表 "艾伯特的拇指向下" ，二进制 1 代表 "艾伯特的拇指向上。" 一个开关有两个状态，因此可以代表二进制数。我们可以说 0 代表 "开关断开" ，1 代表 "开关闭合" 。一个灯泡有两种状态，因此，它也可以用二进制数来表示。我们可以说 0 代表 "灯泡不亮" ，1 代表 "灯泡亮" 。根据以上表述，我们可以将表格简化为如下形式。
 -  [1]</a>美国影评家—译者注
 
-<img src="./readme.assets/00156.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00156.jpeg">
 
 注意，如果将左边的开关和右边的开关调换位置，结果是一样的。我们不用分辨开关哪个是哪个。所以，上面的表也可以写为和 AND 表或 OR 表类似的形式。
 
-<img src="./readme.assets/00157.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00157.jpeg">
 
 的确，这与 AND 表是一样的。
 
-<img src="./readme.assets/00158.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00158.jpeg">
 
 这个简单的电路演示了布尔代数中的AND运算。
 
 接下来，稍微改变一下开关连接方式，如下图所示。
 
-<img alt="img" src="./readme.assets/00159.jpeg" style="display:block; width:40%;"/>
+![image-20220904223614297](Unit10.assets/image-20220904223614297.png)
 
 这种连接方式叫做**并联 (parallel)**。这种连接与上一种连接的不同之处就在于，闭合上面的开关，灯泡就会亮。
 
-<img alt="img" src="./readme.assets/00160.jpeg" style="display:block; width:40%;"/>
+![image-20220904223631323](Unit10.assets/image-20220904223631323.png)
 
 
 或者闭合下面的开关，灯泡也会亮。
 
-<img alt="img" src="./readme.assets/00161.jpeg" style="display:block; width:40%;"/>
+![image-20220904223649646](Unit10.assets/image-20220904223649646.png)
 
 或者闭合所有的开关，灯泡还是会亮。
 
-<img alt="img" src="./readme.assets/00162.jpeg" style="display:block; width:40%;"/>
+![image-20220904223704614](Unit10.assets/image-20220904223704614.png)
 
 
 如果上面的开关闭合或者下面的开关闭合或者都闭合，灯泡都会亮。这里的关键词为 "或" 。
 
 电路又一次做了一个逻辑上的演示。灯泡回答了 "是否有开关闭合？" 的问题。下表总结了这样一个电路的工作原理。
 
-<img src="./readme.assets/00163.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00163.jpeg">
 
 同样用0来表示开关断开或者灯泡不亮，用1表示开关闭合或灯泡亮，这个表可以写为如下形式。
 
-<img src="./readme.assets/00164.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00164.jpeg">
 
 同样的，两个开关可以调换，因此上表也可以写为如下形式。
 
-<img src="./readme.assets/00165.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00165.jpeg">
 
 你可能已经猜到了，这与布尔代数中的 OR 是一样的。
 
-<img src="./readme.assets/00166.jpeg" style="display:block; width:40%;">
+<img src="./readme.assets/00166.jpeg">
 
 这就是说，两个开关并联相当于布尔代数中的OR运算。
 
@@ -405,21 +404,21 @@
 
 既然你知道两个开关串联表示逻辑 AND（用符号 "×" 表示）；两个开关并联表示逻辑 OR（用符号 "+" 表示），因此你可以将 8 个开关做如下连接。
 
-<img src="./readme.assets/00167.jpeg" style="display:block; width:40%;">
+![image-20220904223725995](Unit10.assets/image-20220904223725995.png)
 
 此电路中的每个开关都用一个字母来标记——与在布尔表达式中所用的字母一样（$\overline{W}$ 表示 NOT $W$，它是$1-W$ 的另一种表示方式）。如果按照从左到右、从上到下的顺序遍历电路图，你就会以同样次序遇到出现在表达式中的字母。在表达式中每个符号 "$×$"(交集) 对应电路中的两个开关（或者两组开关）串联的点。在表达式中每个符号 "$+$"(并集) 对应电路中两个开关（或两组开关）并联的位置。
 
 与之前一样，店员首先拿出了一只未绝育的褐色公猫。闭合相应的开关，如下图所示。
 
-<img src="./readme.assets/00169.jpeg" style="display:block; width:40%;">
+![image-20220904223741819](Unit10.assets/image-20220904223741819.png)
 
 尽管开关 $M、T$ 和 $\overline{W}$ 闭合了，但是没有成功地点亮灯泡。接着，店员又拿出了一只已绝育的白色母猫。
 
-<img src="./readme.assets/00170.jpeg" style="display:block; width:40%;">
+![image-20220904223755421](Unit10.assets/image-20220904223755421.png)
 
 相应的开关闭合后依然没有点亮灯泡。但是，最后店员拿出了一只已绝育的灰色母猫。
 
-<img src="./readme.assets/00171.jpeg" style="display:block; width:40%;">
+![image-20220904223811854](Unit10.assets/image-20220904223811854.png)
 
 这次，灯泡被成功点亮了，表明这只猫符合你的全部要求。
 
