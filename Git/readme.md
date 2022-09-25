@@ -20,7 +20,7 @@
 
 
 
-## ◆ 在 Github 仓库中启用 Web VSCode
+## ▲ 在 Github 仓库中启用 Web VSCode
 
 在当前仓库中的任何一个页面点击键盘上的 `.` 按键，直接进入 web vscode
 
@@ -30,7 +30,7 @@
 
 
 
-## ◆ Git 常用命令
+## ▲ Git 常用命令
 
 ### 基本命令见同级目录的：`../Git全栈开发使用指南/readme.md`
 
@@ -72,7 +72,7 @@ $ git remote update origin --prune
 
 
 
-## ◆ VSCode-git 中的 U, M 和 D 文件标记含义 
+## ▲ VSCode-git 中的 U, M 和 D 文件标记含义 
 - **M (modified):** 你已经在 github 中添加过该文件，然后你对这个文件进行了修改，就会文件后标记 M
 - **U (untracked):** 你在本地新建了这个文件，还未提交到 github 上，就会标记 U
 - **D (delete):** 你删除了这个文件，vscode-git 会记录下这个状态
@@ -80,7 +80,7 @@ $ git remote update origin --prune
 
 
 
-## ◆ 提交代码到 `Github`
+## ▲ 提交代码到 `Github`
 
 ### 1. 创建 git 仓库
 **注：** 如果是 Windows 上传代码之前请尽量把本地的 git 升级到最新版本，以防提交的时候出现莫名其妙的问题。
@@ -153,7 +153,7 @@ git push -f origin master
 
 
 
-## ◆ 使用 git pull 强制覆盖本地文件的方式
+## ▲ 使用 git pull 强制覆盖本地文件的方式
 ```sh
 # 如果你不想要本地的所有修改的情况下，这条命令特别好用
 # 请谨慎使用，这条命令会删除你本地仓库的所有内容，如果当前内容还没有同步到远程仓库的话
@@ -163,7 +163,7 @@ git pull origin master
 ```
 
 
-## ◆ I am using Git. I did a pull from a remote repo and got an error message:
+## ▲ I am using Git. I did a pull from a remote repo and got an error message:
 ```md
 Please enter a commit message to explain why this merge is necessary,
 especially if it merges an updated upstream into a topic branch.
@@ -202,7 +202,7 @@ error: failed to push some refs to 'ssh://xxxxx.com/project.git'
 
 
 
-## ◆ "Remote origin already exists" error
+## ▲ "Remote origin already exists" error
 
 The error `fatal: remote origin already exists` is caused when you attempt to create a link to a remote repository called “origin” when a remote link with that name is already configured.
 
@@ -216,7 +216,7 @@ git remote set-url origin https://github.com/your/repository
 
 
 
-## ◆ 通过命令行在本地仓库中删除远程 github 仓库中的文件/夹
+## ▲ 通过命令行在本地仓库中删除远程 github 仓库中的文件/夹
 
 前几天在 webstorm 中修改了仓库中几个文件夹, 最后提交到 github 后, 有一个
 名为 `《SQL基础教程》` 的文件夹一直存在(注意: 此文件夹内部为空),
@@ -238,7 +238,7 @@ git remote set-url origin https://github.com/your/repository
 
 
 
-## ◆ 使用 `Git` 回退到 `Github` 的某个历史版本：
+## ▲ 使用 `Git` 回退到 `Github` 的某个历史版本：
 - 1、进入到项目文件夹，
     + 命令行中输入 `git log` 查看所有历史版本，获取 git 的某个历史版本的 commit id,
       (id 为 40 位的 16 进制数字，通过 SHA1 计算得到). 如果命令行窗口过小，不会一次
@@ -260,7 +260,7 @@ git remote set-url origin https://github.com/your/repository
 
 
 
-## ◆git pull 和 git pull --rebase 区别理解
+## ▲git pull 和 git pull --rebase 区别理解
 
 ```sh
 [root@master GitTest]# git pull
@@ -288,7 +288,7 @@ git pull = git fetch + git rebase
 
 
 
-## ◆ 使用 SSH 拉取和提交代码到 Github
+## ▲ 使用 SSH 拉取和提交代码到 Github
 
 SSH(Secure Shell Protocol)
 
@@ -341,7 +341,7 @@ $ git remote -v
 
 
 
-## ◆ 拉取代码时报如下黄色提示：
+## ▲ 拉取代码时报如下黄色提示：
 
 ```md
 hint: Pulling without specifying how to reconcile divergent branches is
@@ -362,7 +362,7 @@ hint: invocation.
 
 
 
-## ◆ 解决git clone速度太慢的问题
+## ▲ 解决git clone速度太慢的问题
 
 > 参考文章：https://segmentfault.com/a/1190000039768491
 
