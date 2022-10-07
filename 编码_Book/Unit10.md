@@ -390,11 +390,13 @@
 
 同样的，两个开关可以调换，因此上表也可以写为如下形式。
 
-<img src="./readme.assets/00165.jpeg">
+![image-20221003204520993](Unit10.assets/image-20221003204520993.png)
+
+- Switches in Parallel (并联的开关)
 
 你可能已经猜到了，这与布尔代数中的 OR 是一样的。
 
-<img src="./readme.assets/00166.jpeg">
+![image-20221003204457640](Unit10.assets/image-20221003204457640.png)
 
 这就是说，两个开关并联相当于布尔代数中的OR运算。
 
