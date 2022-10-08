@@ -91,13 +91,17 @@ cd 到你的本地项目根目录下，执行 git 命令：
 git init
 ```
 
-### 2. 将项目的所有文件添加到仓库中
+### 2. 将项目的所有文件添加到仓库中 
+
+**Notice：如果本地仓库为空，跳过第 2、3 步.**
+
 ```sh
 # . 代表全部. 如果只想添加某个特定的文件，只需要把 . 换成特定的文件名即可  
 git add .
 ```
 
 ### 3. 将第二步添加的文件先提交(commit)到本地仓库
+
 ```sh
 git commit -m "注释语句"
 ```
@@ -131,6 +135,7 @@ $ git remote -v
 ```
 
 ### 6. 上传 github 之前，尽量先拉取(pull) 一下代码，以防远程仓库初始化时有 README.md 文档，代码如下：
+
 ```sh
 git pull origin master
 ```
@@ -142,7 +147,22 @@ git pull origin master
 git pull origin master --allow-unrelated-histories
 ```
 
+Added：2022.10.02.  下面的错误提示记录。
+
+当天我从 github 创建了一个名为 "1033-english-docs"  的仓库，用来做英语笔记的静态文档以便在线预览，我在本地 Github-Clone 目录下新建了一个和线上同名的文件夹后里面并没有创建文件，接着我执行了第 1、2、3 步，然后执行 `git pull origin master` 后错误提示如下：
+
+```bash
+fatal: Updating an unborn branch with changes added to the index. (致命的：使用添加到索引的更改来更新未出生的分支。)
+```
+
+这个问题我知道是什么原因，在 2022.10.02 之前我都是这样操作的，但为什么现在就不行了。。。
+
+我的解决方法是：如果本地项目(/文件夹)为空，建议先略先略过第 2、3 步，先执行完第 5 步添加完 remote 仓库后 pull 远程文件，更新文件后再执行 `git add .`
+
+
+
 ### 7. 最后一步上传代码到 github 远程仓库
+
 ```sh
 # 提示: github 在 2021 年把默认的 master 改为了 main
 git push -u origin master
@@ -264,9 +284,7 @@ git remote set-url origin https://github.com/your/repository
 
 ```sh
 [root@master GitTest]# git pull
-warning: Pulling without specifying how to reconcile divergent branches is
-discouraged. You can squelch this message by running one of the following
-commands sometime before your next pull:
+warning: Pulling without specifying how to reconcile divergent branches is discouraged. You can squelch this message by running one of the following commands sometime before your next pull:
 
 git config pull.rebase false  # merge (the default strategy)
 git config pull.rebase true   # rebase
