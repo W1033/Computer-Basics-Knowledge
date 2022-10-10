@@ -1,10 +1,10 @@
-# Github
+#  Github
 
 
 
 ## New Words
 
-### ambiguous `/æmˈbɪɡjuəs/` ●●○ AWL adjective  
+- **ambiguous `/æmˈbɪɡjuəs/` --adjective**
 ```css
 ├── adj
 │   ├── (1) something that is ambiguous is unclear, confusing, or not certain, 
@@ -32,7 +32,7 @@
 
 ## ▲ Git 常用命令
 
-### 基本命令见同级目录的：`../Git全栈开发使用指南/readme.md`
+**基本命令见同级目录的：`../Git全栈开发使用指南/readme.md`**
 
 1. 初始化仓库
 1. 配置
@@ -44,13 +44,11 @@
 1. 远程同步
 1. 撤销
 
-### 详细命令讲解见同级目录的:
-
+**详细命令讲解见同级目录的:**
 - `../《Pro-Git》/01-起步.md`
 - `../《Pro-Git》/02-Git基础.md`
 
-### 简要命令：
-
+**简要命令：**、
 ```sh
 $ git push origin master
 ```
@@ -79,10 +77,9 @@ $ git remote update origin --prune
 
 
 
-
 ## ▲ 提交代码到 `Github`
 
-### 1. 创建 git 仓库
+**1. 创建 git 仓库**
 **注：** 如果是 Windows 上传代码之前请尽量把本地的 git 升级到最新版本，以防提交的时候出现莫名其妙的问题。
 
 cd 到你的本地项目根目录下，执行 git 命令：
@@ -91,7 +88,7 @@ cd 到你的本地项目根目录下，执行 git 命令：
 git init
 ```
 
-### 2. 将项目的所有文件添加到仓库中 
+**2. 将项目的所有文件添加到仓库中 **
 
 **Notice：如果本地仓库为空，跳过第 2、3 步.**
 
@@ -100,21 +97,19 @@ git init
 git add .
 ```
 
-### 3. 将第二步添加的文件先提交(commit)到本地仓库
+**3. 将第二步添加的文件先提交(commit)到本地仓库**
 
 ```sh
 git commit -m "注释语句"
 ```
-### 4. 去 github 上创建自己的 Repository (也可以使用现有的仓库)
+**4. 去 github 上创建自己的 Repository (也可以使用现有的仓库)**
 
-### 5. 将本地的仓库关联到github上
-
+**5. 将本地的仓库关联到github上**
 ```sh
 # url: 可以是 https 或 SSH 
 git remote add origin url
 ```
-
-#### 5.1 如果本地仓库之前已经关联了在线仓库，重新配置的方式
+**5.1 如果本地仓库之前已经关联了在线仓库，重新配置的方式**
 
 下图以 `Vue-learning` 仓库为例：
 
@@ -134,7 +129,7 @@ git remote set-url origin git@github.com:W1033/Vue-learning.git
 $ git remote -v
 ```
 
-### 6. 上传 github 之前，尽量先拉取(pull) 一下代码，以防远程仓库初始化时有 README.md 文档，代码如下：
+**6. 上传 github 之前，尽量先拉取(pull) 一下代码，以防远程仓库初始化时有 README.md 文档，代码如下：**
 
 ```sh
 git pull origin master
@@ -161,7 +156,7 @@ fatal: Updating an unborn branch with changes added to the index. (致命的：�
 
 
 
-### 7. 最后一步上传代码到 github 远程仓库
+**7. 最后一步上传代码到 github 远程仓库**
 
 ```sh
 # 提示: github 在 2021 年把默认的 master 改为了 main
@@ -207,7 +202,7 @@ To solve this:
 
 
 
-## 关于 `src ref spec master does not match any` 的解决方法
+## ▲ 关于 `src ref spec master does not match any` 的解决方法
 
 ```md
 error: src ref spec master does not match any.  
@@ -259,24 +254,31 @@ git remote set-url origin https://github.com/your/repository
 
 
 ## ▲ 使用 `Git` 回退到 `Github` 的某个历史版本：
-- 1、进入到项目文件夹，
-    + 命令行中输入 `git log` 查看所有历史版本，获取 git 的某个历史版本的 commit id,
-      (id 为 40 位的 16 进制数字，通过 SHA1 计算得到). 如果命令行窗口过小，不会一次
-      显示完所有的历史版本，根据提示按下 return 便可以一直回退到最原始的版本。
-    + Tip: 可以从 github 的 commits 提交记录对比找到想要的历史版本。
-- 1-1、如果只想显示提交的历史版本的 commit id 号和对应的注释。可以在命令行中输入:
-    + `git log --pretty=oneline`     
-- 2、把本地项目中的文件恢复到历史版本
-    + `git reset --hard id` (id 即为上面的 40 位随机字符)
-    + 执行完 `git reset --hard id` 之后当前本地项目中的内容既是历史版本中的内容了。
-- 3、把当前本地得到的历史版本推到远程服务器：
-    + `git push -f -u origin master` (Tip: `-u` 可以省略)
-    + 如果执行完上面的输入后，命令行提示 `Everything up-to-data` 文件并没有提交，
-      原因可能是当前文件夹并没有执行过用 git 提交代码到 github 的操作，可以重新执行下面
-      命令:
-        - `git add .`
-        - `git commit -m "message"`
-        - `git push -f origin master`
+
+**1. 进入到项目文件夹，**
+
+命令行中输入 `git log` 查看所有历史版本，获取 git 的某个历史版本的 commit id, (id 为 40 位的 16 进制数字，通过 SHA1 计算得到). 如果命令行窗口过小，不会一次显示完所有的历史版本，根据提示按下 return 便可以一直回退到最原始的版本。
+
+Tip: 可以从 github 的 commits 提交记录对比找到想要的历史版本。
+
+**1-1. 如果只想显示提交的历史版本的 commit id 号和对应的注释。可以在命令行中输入:**
+
+`git log --pretty=oneline`     
+
+**2. 把本地项目中的文件恢复到历史版本**
+
+`git reset --hard id` (id 即为上面的 40 位随机字符)
+
+执行完 `git reset --hard id` 之后当前本地项目中的内容既是历史版本中的内容了。
+
+**3. 把当前本地得到的历史版本推到远程服务器：**
+
+`git push -f -u origin master` (Tip: `-u` 可以省略)
+
+如果执行完上面的输入后，命令行提示 `Everything up-to-data` 文件并没有提交，原因可能是当前文件夹并没有执行过用 git 提交代码到 github 的操作，可以重新执行下面命令:
+- `git add .`
+- `git commit -m "message"`
+- `git push -f origin master`
 
 
 
