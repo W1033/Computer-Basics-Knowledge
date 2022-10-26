@@ -21,7 +21,7 @@
 
 ## ▲ Windows 系统截屏快捷键
 - win10 系统截屏快捷键: Win+PrtSc
-- win7: 点击zuo下角 `开始` 图标 --> 所有程序 --> 附件 --> 截图工具
+- win7: 点击左下角 `开始` 图标 --> 所有程序 --> 附件 --> 截图工具
 
 ## ▲ 如何打开注册表编辑器
 Win + R 调出 “运行” 对话框， 输入 “regedit”
@@ -61,10 +61,10 @@ https://www.ithome.com/html/win10/282909.htm
 
 
 ## ▲ 在 Windows 10 中显示桌面图标
-答: 依次选择“开始”菜单  >“设置” >“个性化”>“主题”>“桌面图标设置”。
-
+答: 依次选择 “开始” 菜单  > “设置”  > “个性化” > “主题” > “桌面图标设置”。
 
 ## ▲ 如何删除Windows.old文件夹?
+
 答: windows10 升级后产生的 Windows.old 文件夹，先按 C 盘属性-磁盘清理-清理系统文件流程清理一遍，剩下Windows.old文件夹残留，手动删除提示“权限不够”不允许删除，再进入该Windows.old文件夹属性授权，但是依然说授权不够。
 
 了解到您遇到了关于Windows.old文件夹 。该文件夹会在10天后自动删除。您无需手动删除该文件夹。
@@ -124,21 +124,23 @@ A: `C:\Windows\Fonts`
     + `F3`：查找下一个
     + `Ctrl + R`：替换
 2. 标选中快捷键
-	+`Shift + ← / → (方向键)`：光标向左/向右选中一个字符
+	
+	+ `Shift + ← / → (方向键)`：光标向左/向右选中一个字符
+	
 	+ `Ctrl + Shift + ← / →` (方向键)：光标向左/向右选中一个单词
-	+ `Shift + Home`：光标从当前位置一直选中到行首
+   + `Shift + Home`：光标从当前位置一直选中到行首
 	+ `Shift + End`：光标从当前位置一直选中到行尾
-   3、光标跳转快捷键
-	+ `Home`：光标跳转至行首
-	+ `End`： 光标跳转至行尾
+	3、光标跳转快捷键
+   + `Home`：光标跳转至行首
+   + `End`： 光标跳转至行尾
     + `PgUp`：光标跳转至首行
     + `PgDn`：光标跳转至末行
     + `Ctrl + ← / →` (方向键)：光标向左/向右跳转一个单词
     + `Ctrl + Home`：光标跳转至首行首个字符前面(文件开头)
     + `Ctrl + End`：光标跳转至末行最后一个字符后面(文件结尾)
 
-
 ## ▲ win7 / win10 常用軟件推荐：
+
 - (内存)監控軟件:
     + (1) TrafficMonitor (https://github.com/zhongyang219/TrafficMonitor/releases/tag/V1.80.3)
     + (2) Wise System Monitor
@@ -146,7 +148,6 @@ A: `C:\Windows\Fonts`
 - 安全软件+清理垃圾 -- 火絨
 - 系统清理工具
     + Dism++ (http://www.chuyu.me/zh-Hans/index.html)
-    +
 - 搜索軟件 -- everything / Listary
 - 卸載工具 -- Geek uninstaller
 - 數學公式編輯器 -- Mathtype (一般都是用網頁的，這個實際上並用不到)
@@ -154,7 +155,7 @@ A: `C:\Windows\Fonts`
 - 压缩软件 -- Bandizip / 7ZIP
 - 视频播放 -- Potplayer / VLC
 - 下载工具 -- 百度雲盤 /  瀏覽器
-- 文件恢复 -- DiskGinus
+- 文件恢复 -- DiskGinus；收费：EasyRecovery
 - 剪切板加强工具 -- Ditto
 - pdf 转 word -- ABBYYFineReader / smallPDF
 - 英语词典 -- Google translate + 欧路词典
@@ -163,13 +164,16 @@ A: `C:\Windows\Fonts`
 - 跨平台 todolist -- 小黄条
 - Markdown 编辑器 -- Typora
 - 截圖工具 -- Snipaste
-- 壁纸切换软件( John's Background Switcher): https://johnsad.ventures/software/backgroundswitcher/
+- 壁纸切换软件:
+    - win10 系统自带的主题，可以把多个主题的图片放到一个主题中即可。
+    - ( John's Background Switcher): https://johnsad.ventures/software/backgroundswitcher/
+
 - 录屏软件 -- oCam / ScreenToGif (开源便捷式捕获工具)
 - 磁盘分析工具 -- TreeSize / WizTree
 
 
 ## ▲ win10 开机有两个系统怎么删除其中一个
-1. 按下windwos+R快捷键打开运行窗口输入“msconfig”然后点击确定。
+1. 按下 `windwos + R` 快捷键打开运行窗口输入 `msconfig` 然后点击确定。
 2. 在打开的**系统配置**窗口选择【引导】选项。 如图所示可以看到多**个系统**启动引导。
 3. 选取没用的**系统**引导选项，再点击**删除**。
 
