@@ -401,13 +401,17 @@ git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了�
 
 #### 3. 实施：
 
-在网站 [https://www.ipaddress.com/](https://link.segmentfault.com/?enc=r8hFjO2Av2Y9qgcCzWs3gg%3D%3D.W0OoH1SmJRf9bum8wW2pys83XflAyaXlD1BCaKclGfs%3D) 分别搜索：
+在 ipaddress 网站 https://www.ipaddress.com分别搜索：
 
-`github.global.ssl.fastly.net` 和
+`github.global.ssl.fastly.net` 和 `github.com`  得到 2 个 IP. 
 
-`github.com` 
-
-得到 2 个 IP. 
+- 2022.11.09 更新：在 ipaddress  中输入 `github.global.ssl.fastly.net` 后查询的 IP 地址有 4 个了。如下：
+  
+  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.1.194 |
+  >  | ------------------------------- | ---- | -------------- |
+  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.65.194 |
+  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.129.194 |
+  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.193.194 |
 
 **2022.05.16 添加**
 
@@ -442,8 +446,16 @@ git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了�
 #### 5. 在hosts文件末尾添加两行(对应上面查到的ip)
 
 ```access
-199.232.XX.XXX github.global-ssl.fastly.net
-140.82.XXX.X github.com 
+# 下面更新日期是 2022.11.09
+
+151.101.1.194 github.global-ssl.fastly.net
+151.101.65.194 github.global-ssl.fastly.net
+151.101.129.194 github.global-ssl.fastly.net
+151.101.193.194 github.global-ssl.fastly.net
+
+140.82.112.4 github.com
+
+# 重点提示：不知道 sb government 对 140.82.112.4:22 做了什么限制，即使添加了 ip,也不可能提交仓库。建议打开 v2r 的全局代理模式即可提交。
 ```
 
 #### 6. 保存并 更新DNS
