@@ -6,8 +6,6 @@
 
 ## ▲ 解决 VSCode 从 github 拉取代码后，中文路径乱码的问题
 
-
-
 ### 解决办法
 
 ```bash
@@ -62,7 +60,7 @@ alias code="/Applications/Visual\Studio\Code.app/Contents/Resources/app/bin/code
 
 (3) **Esc** 退出编辑模式
 
-(4) 按 **:wq** 键 保存退出 vi 模式
+(4)  输入 `:wq` 键 保存退出 vi 模式
 
 
 **赠如下常用 vi 命令:**
