@@ -13,8 +13,8 @@
 
 
 
-
 ## 解决 Mac 下使用 V2ray 提交代码报 `Failed to connect to github.com port 443: Operation timed out` 的问题.
+
 - `V2ray`客户端的代理导致的, webstorm 无法提交代码到 github, 从 `iTerm` 中也可以测试, 测试代码如下:
   ```shell
     git clone https://chromium.googlesource.com/v8/v8.git
@@ -64,6 +64,7 @@
 
 
 ##  把 `V2RayU` 客户端的代理 IP 添加到 `/Users/WANG/.gitconfig` 中
+
 - 查看电脑顶部的 `V2RayU` 客户端, 右键点击 `查看 config.json`, 在浏览器中打开后会看到
   ```js
     inbounds": [
