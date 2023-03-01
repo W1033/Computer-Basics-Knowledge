@@ -4,6 +4,12 @@
 
 
 
+## ▲ 2023 new token
+
+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
+
+
+
 ## ▲ 解决 VSCode 从 github 拉取代码后，中文路径乱码的问题
 
 ### 解决办法
