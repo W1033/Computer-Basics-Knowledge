@@ -40,10 +40,6 @@
 
 
 
-
-
-
-
 ## ▲ 自己已安装的软件
 
 
@@ -60,7 +56,9 @@
 >
 > 截图快捷键： `Option + A`
 
-注：iShot 截图自带 OCR (optical character recognition 光学字符识别) 文字识别功能，截图的文字可以很容易得到。 
+注：iShot 截图自带 OCR (optical`/ˈɑːptɪkl/` character recognition 光学字符识别) 文字识别功能，截图的文字可以很容易得到。(tip：诚实的说 iShot 的 OCR 没有 白描准确。)
+
+### 白描（OCR 光学字符）
 
 ### Magnet (分屏软件)
 
