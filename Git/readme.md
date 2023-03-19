@@ -24,10 +24,6 @@
 
 在当前仓库中的任何一个页面点击键盘上的 `.` 按键，直接进入 web vscode
 
-![image-20220516164255036](readme.assets/image-20220516164255036.png)
-
-
-
 
 
 ## ▲ Git 常用命令
@@ -152,7 +148,7 @@ fatal: Updating an unborn branch with changes added to the index. (致命的：�
 
 这个问题我知道是什么原因，在 2022.10.02 之前我都是这样操作的，但为什么现在就不行了。。。
 
-我的解决方法是：如果本地项目(/文件夹)为空，建议先略先略过第 2、3 步，先执行完第 5 步添加完 remote 仓库后 pull 远程文件，更新文件后再执行 `git add .`
+我的解决方法是：如果本地项目(/文件夹)为空，建议先略先略过第 2、3 步，先执行完第 5 步添加完 remote 仓库后 pull 远程文件，更新文件后再执行 `git add .`
 
 
 
@@ -179,7 +175,35 @@ git pull origin master
 ```
 
 
+
+## ▲  推送代码报错：Updated were rejected because a pushed branch tip is behind its remote counterpart.
+
+```
+To github.com:W1033/English-Notes.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'github.com:W1033/English-Notes.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart(副本). Check out this branch and integrate(整合) the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+这个错误在 StackOverflow 上最高赞的回答是这样的:
+
+> 原问答：https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind-its-remot
+>
+> The `-f` **is** actually required because of the rebase. Whenever you do a rebase you would need to do a force push because the remote branch cannot be fast-forwarded to your commit. You'd **always** want to make sure that you do a pull before pushing, but if you don't like to force push to master or dev for that matter, you can create a new branch to push to and then merge or make a PR.
+>
+> (事实上，由于 rebase 的缘故，需要 `-f`。每当你做 rebase 时，你需要做一个强制推送，因为远程分支不能快速转到你的提交。你总是想确保在推送之前做一次拉取，但如果你不喜欢强制推送到 master 或 dev ，你可以创建一个新的分支来推送，然后合并或做一个PR。)
+
+在发生这个错误之前，我确实 merge 了拉取远程仓库产生的 conflict，按照上面的回答，只需要使用 `-f` 强制推送即可：`git push -f origin master`
+
+
+
+
+
 ## ▲ I am using Git. I did a pull from a remote repo and got an error message:
+
 ```md
 Please enter a commit message to explain why this merge is necessary,
 especially if it merges an updated upstream into a topic branch.
