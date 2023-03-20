@@ -12,41 +12,45 @@
     + I need a cask of wine and some apples. 我需要一桶酒和一些苹果.
 
 
+## ▲ Mac 键盘符号说明:
+| **`⌘`** |  Command |
+| :-: |   ---   |
+| **`⇧`** |  Shift |
+| **`⌥`** |  Alt/Option |
+| **`⌃`** |  Control |
+| **`⇪`** |  Caps Lock |
+| **`↩`** |  Return/Enter |
+| **`⌫`** |  Delete |
+| **`⌦`** |  向后删除键（Fn+Delete） |
+| **`↑`** |  上箭头 |
+| **`↓`** |  下箭头 |
+| **`←`** |  左箭头 |
+| **`→`** |  右箭头 |
+| **`⇞`** |  Page Up（Fn+↑）|
+| **`⇟`** |  Page Down（Fn+↓） |
+| **`Home`** |  Fn + ← |
+| **`End`** |  Fn + → |
+| **`⇥`** |  右制表符（Tab键） |
+| **`⇤`** |  左制表符（Shift+Tab） |
+| **`⎋`** |  Escape (Esc) |
+| **`⏏`** |  电源开关键 |
+
+## ▲ Mac 系统缩放
+
+<img src="readme.assets/image-20230312115455318.png" alt="image-20230312115455318" style="zoom:67%;" />
 
 
-## 内容(Content)
-### 1. Mac 键盘符号说明:
-- `⌘` == Command
-- `⇧` == Shift
-- `⌥` == Alt/Option
-  + <img src="macos-images/shortcut-3.png" style="width:20%; margin-left:0;">
-- `⌃` == Control
-- `⇪` == Caps Lock
-- `↩` == Return/Enter
-- `⌫` == Delete
-- `⌦` == 向后删除键（Fn+Delete）
-- `↑` == 上箭头
-- `↓` == 下箭头
-- `←` == 左箭头
-- `→` == 右箭头
-- `⇞`== Page Up（Fn+↑）
-- `⇟` == Page Down（Fn+↓）
-- `Home` == Fn + ←
-- `End` == Fn + →
-- `⇥` == 右制表符（Tab键）
-- `⇤` == 左制表符（Shift+Tab）
-- `⎋` == Escape (Esc)
-- `⏏` == 电源开关键
 
-### 2. Mac 一键返回到桌面
+## ▲ Mac 一键返回到桌面
+
 - (1) 在 `程序坞` 旁边的桌面空白部分点击一下, 同时按住 `Command + Option + h` 可返回桌面.
 - (2) 快捷键返回桌面: `Fn + F11`
 
-### 3. 剪切-复制
+## ▲ 剪切-复制
 - 复制粘贴：`Command` + `C` --> `Command` + `V`
 - 剪切粘贴：`Command` + `C` --> `Commadn` + `Option` + `V`
 
-### 4. Mac 刷新 DNS 解析
+## ▲ Mac 刷新 DNS 解析
 
 - (1st) 在 "iTerm/终端" 中输入: 
     ```shell
@@ -57,18 +61,18 @@
     + 打开软件后点击 "TookKit (工具套装)" --> "Maintenance (维修, 保养)"
         点击 "View" --> 单击左侧的 "Flush DNS" 然后点击右侧的 "Clean" 完成.
 
-### 5. 打开没有授权的 App
+## ▲ 打开没有授权的 App
 - 若要覆盖安全性设置, 从而仍打开应用：
 - 在 Mac 上的 "访达" 中, 找到想要打开的应用. 
 - 请勿使用启动台来执行此操作. 启动台不允许访问快捷菜单. 
 - 按住 `Control` 键点按应用图标, 然后从快捷键菜单中选取 "打开". 点按“打开
 
-### 6. Mac 下好用的输入法： 搜狗输入法--秒杀苹果自带的中英文输入法
+## ▲ Mac 下好用的输入法： 搜狗输入法--秒杀苹果自带的中英文输入法
 
-### 7. 隐藏/显示程序坞快捷键
+## ▲ 隐藏/显示程序坞快捷键
 - `Command + option(alt) + D`
 
-### 7. MacOS Dock 栏自动显示和隐藏取消延迟
+## ▲ MacOS Dock 栏自动显示和隐藏取消延迟
 使用OS X的时候都会选择将Dock隐藏（可以在系统偏好设置—Dock中选择），等使用时将光标向下划Dock会自动弹出显示。这个显示或隐藏会有一点点（大概1秒左右）的延迟，使用下面的方法可以消除这个延迟:
 
 打开--终端(或 iTerm), 输入如下代码
@@ -82,39 +86,39 @@
 `defaults delete com.apple.Dock autohide-delay && killall Dock`
 
 
-### 8. Mac 更该文件的默认显示方式
+## ▲ Mac 更该文件的默认显示方式
 - 在当前文件上单击右键 --> '显示简介' --> 打开方式 (点击选择需要的使用的默认软件) 
   --> 点击 '全部更该' 
 
-### 9. 搜索文件路径:
+## ▲ 搜索文件路径:
 - Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/...`
   并更改文件的话, 只需打开 `Finder`, 按下 `Command + shift + G`,
   在目录中搜索所需要的路径便可. 
 
-### 10. Mac 下的 host 文件查找方式:
+## ▲ Mac 下的 host 文件查找方式:
 - 打开 Finder, 按快捷键组合 `Shift` + `Command` + `G` 查找文件,
   输入 `/etc/hosts` 确认前往.
 
-### 11. 让 Mac 显示文件路径:
+## ▲ 让 Mac 显示文件路径:
 - 下载 `TinkerTools` --> `Finder` --> 勾选 `Show selected path in window title` 
 
-### 12. 显示/隐藏 文件夹中的 默认隐藏文件  
+## ▲ 显示/隐藏 文件夹中的 默认隐藏文件  
 - 使用快捷键：`Command + Shift + .` 来快速（在 Finder 中）显示和隐藏隐藏文件. 
 
-### 13. 在 Finder 的顶部显示文件路径:
+## ▲ 在 Finder 的顶部显示文件路径:
 - 打开终端(Terminal)输入: 
   `defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES`
   便可在 Finder 的顶部显示路径了, 在显示的路径上右键, 还可以直接访问路径中的任意一层.
 - 复制当前文件路径的快捷键: `Option + Command + C`.
 
-### 14. [如何在 Mac 上使用 "活动监视器"](https://support.apple.com/zh-cn/HT201464)  
+## ▲ [如何在 Mac 上使用 "活动监视器"](https://support.apple.com/zh-cn/HT201464)  
 -  "活动监视器" 显示了 Mac 上正在运行的进程, 以便您可以管理这些进程并查看它们对 Mac 活动
   和性能的影响. "活动监视器" 它是一种任务管理器, 可让您查看应用和其他进程对您的 CPU、内存
   、能耗、磁盘和网络使用情况的影响. 
 - 您可以从 "应用程序" 文件夹的 "实用工具" 文件夹中打开 "活动监视器",
   或者使用 "聚焦" 进行查找. 
 
-### 15. Mac 命令行里查看 ip 的命令:
+## ▲ Mac 命令行里查看 ip 的命令:
 - 在终端中输入 `ifconfig` 在给出的信息中心查看 `inet` 后面的 `ip` 便是. 如下:
   ```base
     en0: flags = 8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
@@ -123,15 +127,15 @@
         inet 10.4.23.150 ......
   ```
 
-### 16. Mac 触控板操作：
+## ▲ Mac 触控板操作：
 - 在 "文件夹/文件上" 双手按下触控板既可弹出操作文件的小弹框
 
-### 17. Mac 软件卸载
+## ▲ Mac 软件卸载
 - 1st: 可以使用 `腾讯柠檬` 卸载.
 - 2nd: 更多卸载方式见:
   [视频](https://www.bilibili.com/video/av71604615?from=search&seid=9193268103616972092)
 
-### 18. Mac 分屏
+## ▲ Mac 分屏
 - (1) 系统自带分屏操作: 
     - 分屏在 MacOS 里叫 Split View. 支持Split View 的 app 中, 鼠标长按全屏键
      （就是每个窗口左上角的关闭、最小化、全屏这三个中的第三个）3秒, 就出现啦. 
@@ -142,26 +146,26 @@
         - 左半屏: `Control(^) + Option(⌥) + 左箭头(←)`
         - 右半屏: `Control(^) + Option(⌥) + 左箭头(→)`
 
-### 19. Mac 系统自带截图快捷键
+## ▲ Mac 系统自带截图快捷键
 - `Command + Shift + 3` 截取整个屏幕, 保存图片在桌面
 - `Command + Shift + 4` 选取部分屏幕区域, 保存图片在桌面 
 - 先 `Command + Shift + 4` 再按空格, 可以对指定的窗口或者菜单截屏
 - 以上快捷键, 加上 Ctrl, 可以把截屏保存在剪贴板. 
 
-### 20. Mac 下更习惯用的截图
+## ▲ Mac 下更习惯用的截图
 - (1) QQ 截图
 - (2) iShot (可以截长图)
 
-### 21. 打开 Mac 上允许安装任何来源的应用程序的方法：
+## ▲ 打开 Mac 上允许安装任何来源的应用程序的方法：
 - 打开终端 --> 输入: `sudo spctl --master-disable` 然后回车输入密码. 
 - - 打开偏好设置 --> 安全性与隐私 , 就可以看到有 `任何来源` 的选项了
 
-### 22. 使用 Spotlight 搜搜
+## ▲ 使用 Spotlight 搜搜
 - 打开 spotlight 的快捷键: `Command + 空格键(space bar)`
 - 快速打开 spotlight 中搜索的文件的路径 `Command + 回车键(enter/return)`
 
 
-### 23. Mac 程序界面快捷键: `Command (⌘)`
+## ▲ Mac 程序界面快捷键: `Command (⌘)`
 - 新建窗口：`Command` + `N` (new)
 - 新建标签页：`Command` + `Tab`
 - 软件全屏: `Command` + `Control` + `F`
@@ -186,7 +190,7 @@
     + 展开当前文件夹下的所有文件夹: 把文件展示方式设为 `≡` (详细信息), 然后
       按下 option 间, 点击文件夹前的三角箭头, 便可以打开当前文件夹下的所有文件夹了. 
 
-### 24. Mac 文件管理
+## ▲ Mac 文件管理
 - 文件夹中的 4 种文件显式方式: 
     + 依次为: ![文件展示方式](macos-images/document-display-method.png)
     + 图标
@@ -202,7 +206,7 @@
       如果想打开文件所在的路径, 按下 Command + 双击搜索框下的文件名即可. 
 - 显示文件夹中的隐藏文件快捷键：`shift + command + .`
 
-### 25. Mac Chrome 浏览器常用快捷键:
+## ▲ Mac Chrome 浏览器常用快捷键:
 - Command + L = 光标移动到地址栏
 - Command + R = 刷新页面
 - Command + W = 关闭当前标签
@@ -211,13 +215,13 @@
 - Command + option + i = 开发者工具
 - 空格 = 屏幕下滚一页
 
-### 26. Mac 包管理器
+## ▲ Mac 包管理器
 - 见当前同级目录 `./MacOS 包管理器 Homebrew`
 
-### 27. Mac 下弹出 U盘/SSD
+## ▲ Mac 下弹出 U盘/SSD
 - 选中要弹出的 U盘/SSD 然后按下 `Command` + `E`
 
-### 28. 拷贝文件到移动 SSD
+## ▲ 拷贝文件到移动 SSD
 - 使用 brew 安装 Mounty
   ```shell
     brew cask install mounty
@@ -238,7 +242,7 @@
 
   下次再拔出移动硬盘之前, 一定记得安全删除/弹出.
 
-### 29. 查看 mbp 风扇狂转(5000 ~ 6000 转) 的原因
+## ▲ 查看 mbp 风扇狂转(5000 ~ 6000 转) 的原因
 - (2) 首先, 你应该有一个可以监控风扇转速的软件, 比如: 腾讯的 `Lemon`(免费),
   [Macs fan control](https://www.macbl.com/app/system/macs-fan-control)
   ... 等等, 它们都可以实时显示风扇转速. 
@@ -269,7 +273,7 @@
    只需双击打开查看便知道了, 只需要结束这个进程, CPU 温度下来,
    风扇转速便自然降下来了.
 
-### 30. Mac 无线连接 HP Laser MFP 136nw 打印机
+## ▲ Mac 无线连接 HP Laser MFP 136nw 打印机
 - (1) 首先确保打印机已启用 Wi-Fi Direct(wifi 直连).
 - å(2) 得到 Wi-Fi Direct 名称和密码(网络密钥),
   请按住打印机控制面板上的菜单按钮(`...`), 找到 `4 网络(NewWork)`
@@ -281,8 +285,8 @@
   并在 Mac 上选择打印机与扫描仪(打印与扫描). 选择 + 可显示打印机列表.
   选择打印机后, 等 Mac 自行设置完成后, 即可.
 
-### 31. MacOS Big Sur CORE keygen 无权限打开解决方案
-### 解决方案：
+## ▲ MacOS Big Sur CORE keygen 无权限打开解决方案
+## ▲ 解决方案：
 使用UPX：
 1. 安装upx
 ```ps1con
@@ -295,15 +299,15 @@ sudo upx -d /Applications/CORE\ Keygen.app/Contents/MacOS/CORE\ Keygen
 3. 再打开CORE Keygen.app就可以使用了。
 
 
-### 32. 安装蓝灯后给 github 配置代理
+## ▲ 安装蓝灯后给 github 配置代理
 在 webstorm 拉取代码时提示： fatal: unable to access
 
-### 32. 解决 App 在 macOS Catalina下提示已损坏无法打开解决办法：
+## ▲ 解决 App 在 macOS Catalina下提示已损坏无法打开解决办法：
 在终端中输入以下命令；
 `sudo xattr -d com.apple.quarantine`
 然后打开 访达 - 应用程序 找到对应的应用程序拖进去，注意上面 quarantine 和应用之间有一个空格。
 
-### 33. Mac移动硬盘无法拷贝或删除文件的最佳解决方案
+## ▲ 33. Mac移动硬盘无法拷贝或删除文件的最佳解决方案
 
 点击 **软件列表图标** --> **其他** --> **磁盘工具** --> 左侧垂直栏点击移动硬盘选中，然后点击当前窗口右上角的 **抹去**，在当前较小的弹框的：格式：选择 ExFAT. (注意: 这会格式化硬盘，请提前备份硬盘。)
 
@@ -319,7 +323,7 @@ sudo upx -d /Applications/CORE\ Keygen.app/Contents/MacOS/CORE\ Keygen
 
 ~~好用且稳定的NTFS插件Tuxera NTFS推荐给大家，可以让您完整的读写兼容NTFS格式驱动器，对磁盘进行访问、编辑、存储和传输文件等操作。同时还包括开源磁盘管理器等简单的格式和硬盘维修检查和修复。~~
 
-### 32 巫师后期推荐 5 款 Mac 必备软件
+## ▲ 32 巫师后期推荐 5 款 Mac 必备软件
 - 0:00 介绍
 - 1:59 必装神器 Alfred (任意搜索软件)
 - 5:01 实时状态监控 iStat Menus
@@ -329,7 +333,7 @@ sudo upx -d /Applications/CORE\ Keygen.app/Contents/MacOS/CORE\ Keygen
 - 14:15 截屏神器 Monosnap
 - 17:18 目录自动备份Sync folders Pro
 
-### 33. 提示文件已损坏解决方法
+## ▲ 提示文件已损坏解决方法
 
 先打开 `系统偏好设置 -> 安全与隐私 -> 通用` 选项卡，检查是否已经启用了 `任何来源` 选项。
 
@@ -350,7 +354,7 @@ sudo spctl --master-disable
 恭喜您，`您已成功开启任何来源`。
 
 
-### 34. 关闭百度网盘后台(一到多个)同步进程 baiduNetdiskSync
+## ▲ 关闭百度网盘后台(一到多个)同步进程 baiduNetdiskSync
 打开 Finder, 按快捷键组合 `Shift` + `Command` + `G` 查找文件,
 输入 `/Applications/BaiduNetdisk_mac.app/Contents/PlugIns/ ` 把下面的文件全部删除。
 - 注：每次升级百度网盘后都要再次删除。
