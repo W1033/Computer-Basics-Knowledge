@@ -64,9 +64,14 @@ $ git push origin <src>:<dst>
 $ git remote update origin --prune
 ```
 
+### 分支切换
+
+要切换到一个已存在的分支，你需要使用 `git checkout` 命令，例如从一个分支切换到 master 分支：`git checkout master`
 
 
-## ▲ VSCode-git 中的 U, M 和 D 文件标记含义 
+
+## ▲ VSCode-git 中的 U, M 和 D 文件标记含义
+
 - **M (modified):** 你已经在 github 中添加过该文件，然后你对这个文件进行了修改，就会文件后标记 M
 - **U (untracked):** 你在本地新建了这个文件，还未提交到 github 上，就会标记 U
 - **D (delete):** 你删除了这个文件，vscode-git 会记录下这个状态
