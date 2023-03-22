@@ -155,8 +155,6 @@ fatal: Updating an unborn branch with changes added to the index. (致命的：�
 
 我的解决方法是：如果本地项目(/文件夹)为空，建议先略先略过第 2、3 步，先执行完第 5 步添加完 remote 仓库后 pull 远程文件，更新文件后再执行 `git add .`
 
-
-
 **7. 最后一步上传代码到 github 远程仓库**
 
 ```sh
@@ -165,9 +163,28 @@ git push -u origin master
 # or
 git push -f origin master
 ```
+
 执行完后如果没有异常就说明上传成功了，中间可能会让输入 Username 和 Password，输入 github 的账号和密码即可.
 
+**2023.03.22 added:** 由于 github 的默认分支从 master 改为了 main, 所以在 vscode 的命令行中 `git init` 空仓库后，默认分支在 main, 使用 ssh 方式拉完笔记/代码之后，记得按照下图切换到 master 分支(注：前提是你在线仓库是 master 分支，如果在线仓库主分支是 main 了，那也无需切换了。)
 
+![image-20230322214843922](./readme.assets/image-20230322214843922.png)
+
+
+
+## ▲ 解决fatal: unable to connect to github.com  errno=连接超时
+
+created: 2023.03.22
+
+> https://www.cnblogs.com/happystudyeveryday/p/17015297.html
+
+解决fatal: unable to connect to github.com: github.com[0: 20.205.243.166]: errno=连接超时
+
+解决方法：输入命令
+
+```
+git config --global url.``"https://github.com"``.insteadOf git://github.com
+```
 
 ## ▲ 使用 git pull 强制覆盖本地文件的方式
 
