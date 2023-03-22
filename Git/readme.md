@@ -179,9 +179,39 @@ git reset --hard origin/master
 git pull origin master
 ```
 
+## ▲ git commit之后如何撤销
+
+如果在git commit之后，需要撤回commit一般有以下三种方式
+
+### 1. git reset --soft 版本号
+不删除工作区改动的代码，撤销 commit，不撤销 `git add .`
+
+```shell
+# 回到上一个版本
+git reset --soft HEAD^ 
+```
+
+### 2.git reset --mixed 版本号 
+不删除工作区改动的代码，撤销 commit，撤销 `git add .`
+
+```shell
+# 回到上一个版本
+git reset --mixed HEAD^ 
+```
+
+### 3.git reset --hard 版本号 
+删除工作区的代码，撤销commit，撤销 `git add .` 回到上一次commit的状态
+
+```shell
+# 回到上一个版本
+git reset --hard HEAD^ 
+```
 
 
-## ▲  推送代码报错：Updated were rejected because a pushed branch tip is behind its remote counterpart.
+
+
+
+## ▲ 推送代码报错：Updated were rejected because a pushed branch tip is behind its remote counterpart.
 
 ```
 To github.com:W1033/English-Notes.git
