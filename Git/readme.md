@@ -348,7 +348,8 @@ git pull = git fetch + git rebase
 > 下面的笔记几乎就是上面这个截图的删减版。
 
 ### 1. 检查现有 SSH 密钥
-#### (1) 打开 Git Bash。
+#### (1) 打开终端。（windows: Git Bash）
+
 ##### (2) 输入 `ls -al ~/.ssh` 以查看是否存在现有的 SSH 密钥。
 ```shell
 $ ls -al ~/.ssh
@@ -372,11 +373,12 @@ $ ls -al ~/.ssh
 
 可在本地计算机上生成新的 SSH 密钥。 生成密钥后，可以将密钥添加到您在 GitHub.com 上的帐户，以启用通过 SSH 进行 Git 操作的身份验证。
 
-##### (1) 打开Git Bash。
+##### (1) 打开终端。
 
 ##### (2) 粘贴下面的文本（替换为您的 GitHub 电子邮件地址）。
 ```shell
 $ ssh-keygen -t ed25519 -C "your_email@example.com"
+# ssh-keygen -t ed25519 -C "forownwang@gmail.com"
 ```
 
 这将以提供的电子邮件地址为标签创建新 SSH 密钥。
@@ -393,11 +395,12 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 *Tip： 下面一步不需要，设置了密钥密码之后，每次提交代码到仓库都要输入密码，所以不需要。*
 
-~~##### (3) 在提示符下，键入安全密码(应该是锁屏密码)。~~
+##### (3) 在提示符下，键入安全密码。
 
 ```shell
-~~> Enter passphrase (empty for no passphrase): [Type a passphrase]~~
-~~> Enter same passphrase again: [Type passphrase again]~~
+# 下面 2 个都直接按 enter 不要输入密码
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
 ```
 #### 2.2 将 SSH 密钥添加到 ssh-agent
 ssh-agent： 这是一个在后台运行的程序，它将密钥加载到内存中，因此您不需要每次使用密钥时都输入密码。 最妙的是，你可以选择让服务器访问你的本地 `ssh-agent`，就像它们已经在服务器上运行一样。 这有点像要求朋友输入他们的密码，以便您可以使用他们的计算机。
@@ -459,34 +462,30 @@ $ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
 ##### (4) 将 SSH 密钥添加到 GitHub 上的帐户
 
-1. 将 SSH 公钥复制到剪贴板。
+(1) 将 SSH 公钥复制到剪贴板。
+如果您的 SSH 公钥文件与示例代码不同，请修改文件名以匹配您当前的设置。 在复制密钥时，请勿添加任何新行或空格。
 
-    如果您的 SSH 公钥文件与示例代码不同，请修改文件名以匹配您当前的设置。 在复制密钥时，请勿添加任何新行或空格。
+```shell
+$ pbcopy < ~/.ssh/id_ed25519.pub
+# Copies the contents of the id_ed25519.pub file to your clipboard
+```
+提示：如果 `pbcopy` 不起作用，你可以找到隐藏的 `.ssh` 文件夹，在你最喜欢的文本编辑器中打开该文件，并将其复制到剪贴板。
 
-    ```shell
-    $ pbcopy < ~/.ssh/id_ed25519.pub
-      # Copies the contents of the id_ed25519.pub file to your clipboard
-    ```
+(2) 在任何页面的右上角，单击个人资料照片，然后单击“设置 settings”。
 
-    提示：如果 `pbcopy` 不起作用，你可以找到隐藏的 `.ssh` 文件夹，在你最喜欢的文本编辑器中打开该文件，并将其复制到剪贴板。
+(2) 在边栏的“访问”部分中，单击 “SSH 和 GPG 密钥”。
 
-    1. 在任何页面的右上角，单击个人资料照片，然后单击“设置”。
+(3) 单击“新建 SSH 密钥”或“添加 SSH 密钥 (New SSH key)” 。
 
-    <img src="https://docs.github.com/assets/cb-139735/images/help/settings/userbar-account-settings.png" alt="用户配置文件图标下拉菜单的屏幕截图。 “设置”选项以深橙色边框突出显示。" style="zoom: 50%;" />
+(4) 在 "Title"（标题）字段中，为新密钥添加描述性标签。 例如，如果使用的是个人笔记本电脑，则可以将此密钥称为“个人笔记本电脑”。
 
-2. 在边栏的“访问”部分中，单击 “SSH 和 GPG 密钥”。
+(5) 选择密钥类型（身份验证或签名）。 有关提交签名的详细信息，请参阅“[关于提交签名验证](https://docs.github.com/zh/authentication/managing-commit-signature-verification/about-commit-signature-verification)”。
 
-3. 单击“新建 SSH 密钥”或“添加 SSH 密钥” 。 <img src="https://docs.github.com/assets/cb-28257/images/help/settings/ssh-add-ssh-key-with-auth.png" alt="SSH 密钥按钮" style="zoom:67%;" />
+(6) 将公钥粘贴到“密钥”字段。 <img src="https://docs.github.com/assets/cb-47495/images/help/settings/ssh-key-paste-with-type.png" alt="密钥字段" style="zoom:50%;" />
 
-4. 在 "Title"（标题）字段中，为新密钥添加描述性标签。 例如，如果使用的是个人笔记本电脑，则可以将此密钥称为“个人笔记本电脑”。
+(7) 单击“添加 SSH 密钥 (Add SSH key)”。
 
-5. 选择密钥类型（身份验证或签名）。 有关提交签名的详细信息，请参阅“[关于提交签名验证](https://docs.github.com/zh/authentication/managing-commit-signature-verification/about-commit-signature-verification)”。
-
-6. 将公钥粘贴到“密钥”字段。 <img src="https://docs.github.com/assets/cb-47495/images/help/settings/ssh-key-paste-with-type.png" alt="密钥字段" style="zoom:50%;" />
-
-7. 单击“添加 SSH 密钥”。 ![“添加密钥”按钮](https://docs.github.com/assets/cb-6592/images/help/settings/ssh-add-key.png)
-
-8. 如果出现提示，请确认你的帐户是否拥有 GitHub 访问权限。 有关详细信息，请参阅“[Sudo 模式](https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/sudo-mode)”。
+(8) 如果出现提示，请确认你的帐户是否拥有 GitHub 访问权限。 有关详细信息，请参阅“[Sudo 模式](https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/sudo-mode)”。
 
 
 
