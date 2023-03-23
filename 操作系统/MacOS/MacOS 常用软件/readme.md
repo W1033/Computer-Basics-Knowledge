@@ -46,7 +46,7 @@
 
 ![image-20220320133020018](readme.assets/image-20220320133020018.png)
 
-### iShot (截图工具)
+### iShot Pro (截图工具)
 
 > 下载路径：AppStore 购买
 >
