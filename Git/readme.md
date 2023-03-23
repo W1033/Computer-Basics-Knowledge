@@ -252,8 +252,6 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 
-
-
 ## ▲ I am using Git. I did a pull from a remote repo and got an error message:
 
 ```md
@@ -279,7 +277,7 @@ To solve this:
 
 
 
-## ▲ 关于 `src ref spec master does not match any` 的解决方法
+## ▲ src ref spec master does not match any 的解决方法
 
 ```md
 error: src ref spec master does not match any.  
@@ -290,7 +288,7 @@ error: failed to push some refs to 'ssh://xxxxx.com/project.git'
 
 > Due to the recent "Replacing master with main in GitHub" action, you may notice that there is a `refs/heads/main`. As a result, the following command may change from `git push origin HEAD:master` to `git push origin HEAD:main`
 
-2. You can try `git push origin HEAD:master` as a more local-reference-independent solution. This explicitly states that you want to push the local ref `HEAD` to the remote ref `master` (see the [git-push refspec](https://git-scm.com/docs/git-push#git-push-ltrefspecgt82308203) documentation).
+2. You can try `git push origin HEAD:master` as a more local-reference-independent solution. This explicitly states that you want to push the local ref `HEAD` to the remote ref `master` (see the [git-push ref spec](https://git-scm.com/docs/git-push#git-push-ltrefspecgt82308203) documentation).
 
 
 
