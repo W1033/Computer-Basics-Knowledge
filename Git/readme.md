@@ -108,6 +108,7 @@ git commit -m "注释语句"
 **5. 将本地的仓库关联到github上**
 ```sh
 # url: 可以是 https 或 SSH 
+# git 远程添加源
 git remote add origin url
 ```
 **5.1 如果本地仓库之前已经关联了在线仓库，重新配置的方式**
