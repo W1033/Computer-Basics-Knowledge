@@ -209,7 +209,8 @@ git pull origin master
 git reset --soft HEAD^ 
 ```
 
-### 2.git reset --mixed 版本号 
+### 2.git reset --mixed 版本号
+
 不删除工作区改动的代码，撤销 commit，撤销 `git add .`
 
 ```shell
