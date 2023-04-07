@@ -108,6 +108,7 @@ git commit -m "注释语句"
 **5. 将本地的仓库关联到github上**
 ```sh
 # url: 可以是 https 或 SSH 
+# git 远程添加源
 git remote add origin url
 ```
 **5.1 如果本地仓库之前已经关联了在线仓库，重新配置的方式**
@@ -208,7 +209,8 @@ git pull origin master
 git reset --soft HEAD^ 
 ```
 
-### 2.git reset --mixed 版本号 
+### 2.git reset --mixed 版本号
+
 不删除工作区改动的代码，撤销 commit，撤销 `git add .`
 
 ```shell
@@ -382,6 +384,31 @@ git pull = git fetch + git rebase
 
 
 
+## ▲ 拉取代码时报如下黄色提示：
+
+```md
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+```
+
+> 解决方案：https://stackoverflow.com/questions/62653114/how-can-i-deal-with-this-git-warning-pulling-without-specifying-how-to-reconci
+
+总的来说就是上面 hint 中的 `git config pull.ff only`，然后 push 时候使用 `git push -f origin master`
+
+
+
+
+
 ## ▲ 使用 SSH 拉取和提交代码到 GitHub
 
 您可以使用 Secure Shell Protocol (SSH) 连接到 GitHub ，该协议通过不安全的网络提供安全通道。
@@ -393,15 +420,18 @@ git pull = git fetch + git rebase
 > 下面的笔记几乎就是上面这个截图的删减版。
 
 ### 1. 检查现有 SSH 密钥
+
 #### (1) 打开终端。（windows: Git Bash）
 
 ##### (2) 输入 `ls -al ~/.ssh` 以查看是否存在现有的 SSH 密钥。
+
 ```shell
 $ ls -al ~/.ssh
 # Lists the files in your .ssh directory, if they exist. （列出 .ssh 目录中的文件(如果存在)） 
 ```
 
 #### (3) 检查目录列表以查看是否已经有 SSH 公钥。 默认情况下，GitHub 的一个支持的公钥的文件名是以下之一。
+
 - id_rsa.pub 
 - id_ecdsa.pub
 - id_ed25519.pub
@@ -409,6 +439,7 @@ $ ls -al ~/.ssh
 提示：如果收到错误，指示 `~/.ssh` 不存在，则表明默认位置中没有现有的 SSH 密钥对。 您可以在下一步中创建新的 SSH 密钥对。
 
 #### (4) 生成新的 SSH 密钥或上传现有密钥。
+
 - 如果您没有受支持的公钥和私钥对，或者不希望使用任何可用的密钥对，请生成新的 SSH 密钥。
 - 如果你看到列出了要用于连接到 GitHub 的现有公钥和私钥对（例如，id_rsa.pub 和 id_rsa），则可以将密钥添加到 ssh-代理 。
 
@@ -421,6 +452,7 @@ $ ls -al ~/.ssh
 ##### (1) 打开终端。
 
 ##### (2) 粘贴下面的文本（替换为您的 GitHub 电子邮件地址）。
+
 ```shell
 $ ssh-keygen -t ed25519 -C "your_email@example.com"
 # ssh-keygen -t ed25519 -C "forownwang@gmail.com"
@@ -447,7 +479,9 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com"
 > Enter passphrase (empty for no passphrase): [Type a passphrase]
 > Enter same passphrase again: [Type passphrase again]
 ```
+
 #### 2.2 将 SSH 密钥添加到 ssh-agent
+
 ssh-agent： 这是一个在后台运行的程序，它将密钥加载到内存中，因此您不需要每次使用密钥时都输入密码。 最妙的是，你可以选择让服务器访问你的本地 `ssh-agent`，就像它们已经在服务器上运行一样。 这有点像要求朋友输入他们的密码，以便您可以使用他们的计算机。
 
 ##### (1) 确保 ssh-agent 正在运行。手动启动它的方式如下：
@@ -457,6 +491,7 @@ ssh-agent： 这是一个在后台运行的程序，它将密钥加载到内存�
 $ eval "$(ssh-agent -s)"
 > Agent pid 59566
 ```
+
 根据您的环境，您可能需要使用不同的命令。 例如，在启动 ssh-agent 之前，你可能需要通过运行 sudo -s -H 根访问，或者可能需要使用 exec ssh-agent bash 或 exec ssh-agent zsh 运行 ssh-agent。
 
 ##### (2) 如果你使用的是 macOS Sierra 10.12.2 或更高版本，则需要修改 `~/.ssh/config` 文件以自动将密钥加载到 ssh-agent 中并在密钥链中存储密码。
@@ -486,12 +521,13 @@ IdentityFile ~/.ssh/id_ed25519
 **注意：**
 
 - 如果你选择不向密钥添加密码，应该省略 `UseKeychain` 行。
+
 - 如果看到 `Bad configuration option: usekeychain` 错误，请在配置的 `Host *.github.com` 部分添加额外的一行。
 
-  ```
-    Host github.com
-    IgnoreUnknown UseKeychain
-  ```
+    ```
+      Host github.com
+      IgnoreUnknown UseKeychain
+    ```
 
 ##### (3) 将 SSH 私钥添加到 ssh-agent 并将密码存储在密钥链中。 如果使用其他名称创建了密钥或要添加具有其他名称的现有密钥，请将命令中的 id_ed25519 替换为私钥文件的名称。
 
@@ -514,6 +550,7 @@ $ ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 $ pbcopy < ~/.ssh/id_ed25519.pub
 # Copies the contents of the id_ed25519.pub file to your clipboard
 ```
+
 提示：如果 `pbcopy` 不起作用，你可以找到隐藏的 `.ssh` 文件夹，在你最喜欢的文本编辑器中打开该文件，并将其复制到剪贴板。
 
 (2) 在任何页面的右上角，单击个人资料照片，然后单击“设置 settings”。
@@ -526,19 +563,15 @@ $ pbcopy < ~/.ssh/id_ed25519.pub
 
 (5) 选择密钥类型（身份验证或签名）。 有关提交签名的详细信息，请参阅“[关于提交签名验证](https://docs.github.com/zh/authentication/managing-commit-signature-verification/about-commit-signature-verification)”。
 
-(6) 将公钥粘贴到“密钥”字段。 <img src="https://docs.github.com/assets/cb-47495/images/help/settings/ssh-key-paste-with-type.png" alt="密钥字段" style="zoom:50%;" />
+(6) 将公钥粘贴到“密钥”字段。
+
+<img src="./readme.assets/ssh-key-paste-with-type.png" alt="密钥字段" style="zoom:50%;" />
 
 (7) 单击“添加 SSH 密钥 (Add SSH key)”。
 
 (8) 如果出现提示，请确认你的帐户是否拥有 GitHub 访问权限。 有关详细信息，请参阅“[Sudo 模式](https://docs.github.com/zh/authentication/keeping-your-account-and-data-secure/sudo-mode)”。
 
-
-
-
-
-
-
-### (5) 测试 SSH 连接
+#### 4. 测试 SSH 连接
 
 > https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection
 
@@ -557,27 +590,6 @@ $ git remote set-url origin git@github.com:xxx/xxx.git
 ```
 $ git remote -v
 ```
-
-
-
-## ▲ 拉取代码时报如下黄色提示：
-
-```md
-hint: Pulling without specifying how to reconcile divergent branches is
-hint: discouraged. You can squelch this message by running one of the following
-hint: commands sometime before your next pull:
-hint: 
-hint:   git config pull.rebase false  # merge (the default strategy)
-hint:   git config pull.rebase true   # rebase
-hint:   git config pull.ff only       # fast-forward only
-hint: 
-hint: You can replace "git config" with "git config --global" to set a default
-hint: preference for all repositories. You can also pass --rebase, --no-rebase,
-hint: or --ff-only on the command line to override the configured default per
-hint: invocation.
-```
-
-
 
 
 
