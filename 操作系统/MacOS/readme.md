@@ -102,7 +102,8 @@
 ## ▲ 让 Mac 显示文件路径:
 - 下载 `TinkerTools` --> `Finder` --> 勾选 `Show selected path in window title` 
 
-## ▲ 显示/隐藏 文件夹中的 默认隐藏文件  
+## ▲ 显示/隐藏 文件夹中的 默认隐藏文件
+
 - 使用快捷键：`Command + Shift + .` 来快速（在 Finder 中）显示和隐藏隐藏文件. 
 
 ## ▲ 在 Finder 的顶部显示文件路径:
