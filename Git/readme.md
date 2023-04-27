@@ -230,6 +230,14 @@ git reset --hard HEAD^
 
 
 
+## ▲ 详解 Git 大文件存储（Git LFS）
+
+> 待做笔记：[详解 Git 大文件存储（Git LFS）](https://zhuanlan.zhihu.com/p/146683392)
+
+
+
+
+
 ## ▲ 推送代码报错：Updated were rejected because a pushed branch tip is behind its remote counterpart.
 
 ```
@@ -381,6 +389,8 @@ git pull = git fetch + git rebase
 > 参考文章：https://blog.csdn.net/TomorrowAndTuture/article/details/107677939
 
 ==待做笔记==
+
+> 待做笔记：[详解git rebase，让你走上git大神之路](https://zhuanlan.zhihu.com/p/271677627)
 
 
 
