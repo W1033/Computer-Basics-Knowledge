@@ -1,61 +1,61 @@
-#  Github
-
-
+# Github
 
 ## New Words
 
 - **ambiguous `/æmˈbɪɡjuəs/` --adjective**
-```css
-├── adj
-│   ├── (1) something that is ambiguous is unclear, confusing, or not certain, 
-│   │    especially because it can be understood in more than one way. 模棱两可的; 不明确的
-│   │   ├── OPP(opposite`/'ɒpəzɪt/`) unambiguous: 
-│   │   ├── The language in the Minister’s statement is highly ambiguous.部长的声明措辞很含糊。
-│   │   ├── His role in the affair is ambiguous.他在这起事件中的角色并不明确。
-│   ├── Register(说明)
-│   │   ├── In everyday English, people also use the phrase you can take something two ways instead of saying it is ambiguous: ~What she says is ambiguous.~ ➔ You can take what she says two ways. 她的话模棱两可。在日常英语中﹐人们也会用短语 you can take sth two ways 来代替ambiguous
-```
-
-
-
-
+  
+  ```css
+  ├── adj
+  │   ├── (1) something that is ambiguous is unclear, confusing, or not certain, 
+  │   │    especially because it can be understood in more than one way. 模棱两可的; 不明确的
+  │   │   ├── OPP(opposite`/'ɒpəzɪt/`) unambiguous: 
+  │   │   ├── The language in the Minister’s statement is highly ambiguous.部长的声明措辞很含糊。
+  │   │   ├── His role in the affair is ambiguous.他在这起事件中的角色并不明确。
+  │   ├── Register(说明)
+  │   │   ├── In everyday English, people also use the phrase you can take something two ways instead of saying it is ambiguous: ~What she says is ambiguous.~ ➔ You can take what she says two ways. 她的话模棱两可。在日常英语中﹐人们也会用短语 you can take sth two ways 来代替ambiguous
+  ```
 
 ## ▲ 在 Github 仓库中启用 Web VSCode
 
 在当前仓库中的任何一个页面点击键盘上的 `.` 按键，直接进入 web vscode
-
-
 
 ## ▲ Git 常用命令
 
 **基本命令见同级目录的：`../Git全栈开发使用指南/readme.md`**
 
 1. 初始化仓库
-1. 配置
-1. 增加/删除文件
-1. 代码提交
-1. 分支
-1. 标签
-1. 查看信息
-1. 远程同步
-1. 撤销
+2. 配置
+3. 增加/删除文件
+4. 代码提交
+5. 分支
+6. 标签
+7. 查看信息
+8. 远程同步
+9. 撤销
 
 **详细命令讲解见同级目录的:**
+
 - `../《Pro-Git》/01-起步.md`
 - `../《Pro-Git》/02-Git基础.md`
 
 **简要命令：**、
+
 ```sh
 $ git push origin master
 ```
+
 省略了 `<dst>` 等价于
+
 ```sh
 $ git push origin master:master
 ```
+
 其中 `origin` 指定了你要 `push` 到哪个 `remote`. 一般形式为:
+
 ```sh
 $ git push origin <src>:<dst>
 ```
+
 冒号前面表示 本地分支(local branch) 的名字，冒号后表示 远程仓库(remote repository) 下 branch 的名字。
 注意，如果省略了 `<dst>`, git 会认为你想 push 到 remote repository 下和 local branch 相同名字的 branch.
 
@@ -64,11 +64,9 @@ $ git push origin <src>:<dst>
 $ git remote update origin --prune
 ```
 
-### 分支切换
+## ▲ 分支切换
 
 要切换到一个已存在的分支，你需要使用 `git checkout` 命令，例如从一个分支切换到 master 分支：`git checkout master`
-
-
 
 ## ▲ VSCode-git 中的 U, M 和 D 文件标记含义
 
@@ -76,14 +74,13 @@ $ git remote update origin --prune
 - **U (untracked):** 你在本地新建了这个文件，还未提交到 github 上，就会标记 U
 - **D (delete):** 你删除了这个文件，vscode-git 会记录下这个状态
 
-
-
 ## ▲ 提交代码到 `Github`
 
 **1. 创建 git 仓库**
 **注：** 如果是 Windows 上传代码之前请尽量把本地的 git 升级到最新版本，以防提交的时候出现莫名其妙的问题。
 
 cd 到你的本地项目根目录下，执行 git 命令：
+
 ```sh
 # 把这个目录变成Git可以管理的仓库
 git init
@@ -103,14 +100,17 @@ git add .
 ```sh
 git commit -m "注释语句"
 ```
+
 **4. 去 github 上创建自己的 Repository (也可以使用现有的仓库)**
 
 **5. 将本地的仓库关联到github上**
+
 ```sh
 # url: 可以是 https 或 SSH 
 # git 远程添加源
 git remote add origin url
 ```
+
 **5.1 如果本地仓库之前已经关联了在线仓库，重新配置的方式**
 
 下图以 `Vue-learning` 仓库为例：
@@ -122,11 +122,14 @@ git remote add origin url
 那么在本地仓库的 `.git` (默认隐藏, 点击当前窗口顶部的**查看** --> **隐藏的项目** 勾选) 文件夹内的 `config` 文件便可以看到  `url`  键后面的已有值了，
 
 此时我们使用下面的命令更改 SSH 拉取方式
+
 ```sh
 # 也可以设置为新的 https 地址
 git remote set-url origin git@github.com:W1033/Vue-learning.git
 ```
+
 更改完成后，可以使用如下命令查看当前的 origin 地址：
+
 ```
 $ git remote -v
 ```
@@ -136,9 +139,11 @@ $ git remote -v
 ```sh
 git pull origin master
 ```
+
 如果下拉时提示错误 *Fatal:refusing to merge unrelated histories(拒绝合并最近的历史记录)*，
 
 解决方法，把上面的代码改为:
+
 ```sh
 # allow 前面有两个破折号(dash)
 git pull origin master --allow-unrelated-histories
@@ -171,8 +176,6 @@ git push -f origin master
 
 ![image-20230322214843922](./readme.assets/image-20230322214843922.png)
 
-
-
 ## ▲ 解决fatal: unable to connect to github.com  errno=连接超时
 
 created: 2023.03.22
@@ -202,6 +205,7 @@ git pull origin master
 如果在git commit之后，需要撤回commit一般有以下三种方式
 
 ### 1. git reset --soft 版本号
+
 不删除工作区改动的代码，撤销 commit，不撤销 `git add .`
 
 ```shell
@@ -218,7 +222,8 @@ git reset --soft HEAD^
 git reset --mixed HEAD^ 
 ```
 
-### 3.git reset --hard 版本号 
+### 3.git reset --hard 版本号
+
 删除工作区的代码，撤销commit，撤销 `git add .` 回到上一次commit的状态
 
 ```shell
@@ -226,15 +231,13 @@ git reset --mixed HEAD^
 git reset --hard HEAD^ 
 ```
 
-
-
-
-
 ## ▲ 详解 Git 大文件存储（Git LFS）
 
-> 待做笔记：[详解 Git 大文件存储（Git LFS）](https://zhuanlan.zhihu.com/p/146683392)
+关于 GitHub 上的大文件：https://docs.github.com/zh/repositories/working-with-files/managing-large-files/about-large-files-on-github
 
+MacOS 安装文档：https://docs.github.com/zh/repositories/working-with-files/managing-large-files/installing-git-large-file-storage
 
+详解 Git 大文件存储（Git LFS）：https://zhuanlan.zhihu.com/p/146683392
 
 
 
@@ -253,14 +256,12 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 这个错误在 StackOverflow 上最高赞的回答是这样的:
 
 > 原问答：https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind-its-remot
->
+> 
 > The `-f` **is** actually required because of the rebase. Whenever you do a rebase you would need to do a force push because the remote branch cannot be fast-forwarded to your commit. You'd **always** want to make sure that you do a pull before pushing, but if you don't like to force push to master or dev for that matter, you can create a new branch to push to and then merge or make a PR.
->
+> 
 > (事实上，由于 rebase 的缘故，需要 `-f`。每当你做 rebase 时，你需要做一个强制推送，因为远程分支不能快速转到你的提交。你总是想确保在推送之前做一次拉取，但如果你不喜欢强制推送到 master 或 dev ，你可以创建一个新的分支来推送，然后合并或做一个PR。)
 
 在发生这个错误之前，我确实 merge 了拉取远程仓库产生的 conflict，按照上面的回答，只需要使用 `-f` 强制推送即可：`git push -f origin master`
-
-
 
 ## ▲ I am using Git. I did a pull from a remote repo and got an error message:
 
@@ -268,6 +269,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 Please enter a commit message to explain why this merge is necessary,
 especially if it merges an updated upstream into a topic branch.
 ```
+
 I try to type a message and press Enter but nothing happens.
 
 How do I tell Git/Terminal I am done typing in my message?
@@ -285,8 +287,6 @@ To solve this:
 4. write ":wq" (write & quit)
 5. then press enter
 
-
-
 ## ▲ src ref spec master does not match any 的解决方法
 
 ```md
@@ -300,8 +300,6 @@ error: failed to push some refs to 'ssh://xxxxx.com/project.git'
 
 2. You can try `git push origin HEAD:master` as a more local-reference-independent solution. This explicitly states that you want to push the local ref `HEAD` to the remote ref `master` (see the [git-push ref spec](https://git-scm.com/docs/git-push#git-push-ltrefspecgt82308203) documentation).
 
-
-
 ## ▲ "Remote origin already exists" error
 
 The error `fatal: remote origin already exists` is caused when you attempt to create a link to a remote repository called “origin” when a remote link with that name is already configured.
@@ -313,8 +311,6 @@ You can do that with this command:
 ```shell
 git remote set-url origin https://github.com/your/repository
 ```
-
-
 
 ## ▲ 通过命令行在本地仓库中删除远程 github 仓库中的文件/夹
 
@@ -335,8 +331,6 @@ git remote set-url origin https://github.com/your/repository
   # (3) 推送到远程仓库 (确保当前代码是最新的)
   git push origin master
 ```
-
-
 
 ## ▲ 使用 `Git` 回退到 `Github` 的某个历史版本：
 
@@ -361,11 +355,10 @@ Tip: 可以从 github 的 commits 提交记录对比找到想要的历史版本�
 `git push -f -u origin master` (Tip: `-u` 可以省略)
 
 如果执行完上面的输入后，命令行提示 `Everything up-to-data` 文件并没有提交，原因可能是当前文件夹并没有执行过用 git 提交代码到 github 的操作，可以重新执行下面命令:
+
 - `git add .`
 - `git commit -m "message"`
 - `git push -f origin master`
-
-
 
 ## ▲git pull 和 git pull --rebase 区别理解
 
@@ -381,7 +374,7 @@ git config pull.ff only       # fast-forward only
 ```sh
 git config pull.rebase false  # merge (the default strategy)
 git pull = git fetch + git merge
- 
+
 git config pull.rebase true   # rebase
 git pull = git fetch + git rebase
 ```
@@ -391,8 +384,6 @@ git pull = git fetch + git rebase
 ==待做笔记==
 
 > 待做笔记：[详解git rebase，让你走上git大神之路](https://zhuanlan.zhihu.com/p/271677627)
-
-
 
 ## ▲ 拉取代码时报如下黄色提示：
 
@@ -415,18 +406,14 @@ hint: invocation.
 
 总的来说就是上面 hint 中的 `git config pull.ff only`，然后 push 时候使用 `git push -f origin master`
 
-
-
-
-
 ## ▲ 使用 SSH 拉取和提交代码到 GitHub
 
 您可以使用 Secure Shell Protocol (SSH) 连接到 GitHub ，该协议通过不安全的网络提供安全通道。
 
 > 中文文档链接: https://docs.github.com/cn/authentication/connecting-to-github-with-ssh
->
+> 
 > ![image-20230322152302586](readme.assets/image-20230322152302586.png)
->
+> 
 > 下面的笔记几乎就是上面这个截图的删减版。
 
 ### 1. 检查现有 SSH 密钥
@@ -533,11 +520,11 @@ IdentityFile ~/.ssh/id_ed25519
 - 如果你选择不向密钥添加密码，应该省略 `UseKeychain` 行。
 
 - 如果看到 `Bad configuration option: usekeychain` 错误，请在配置的 `Host *.github.com` 部分添加额外的一行。
-
-    ```
-      Host github.com
-      IgnoreUnknown UseKeychain
-    ```
+  
+  ```
+    Host github.com
+    IgnoreUnknown UseKeychain
+  ```
 
 ##### (3) 将 SSH 私钥添加到 ssh-agent 并将密码存储在密钥链中。 如果使用其他名称创建了密钥或要添加具有其他名称的现有密钥，请将命令中的 id_ed25519 替换为私钥文件的名称。
 
@@ -601,19 +588,18 @@ $ git remote set-url origin git@github.com:xxx/xxx.git
 $ git remote -v
 ```
 
-
-
 ## ▲ 解决git clone速度太慢的问题
 
 > 参考文章：https://segmentfault.com/a/1190000039768491
 
 #### 1. 思路：
+
 git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了。
 
 只要找到这个域名对应的 ip 地址，然后在 hosts 文件中加上 ip –> 域名的映射，刷新 DNS 缓存便可。
 
-
 #### 2. 什么是 Hosts 文件？
+
 一般来说，当用户在电脑浏览器里输入网址(域名)后，系统需要通过查询网络上的 DNS 服务器，才能将域名 (e.g.: https://www.google.com) 解析成对应的 IP 地址，浏览器通过 IP 地址才能找到该网站所在的服务器并进行访问。
 
 而操作系统的 hosts 文件则是有着“类似本地 DNS 服务器”的作用，而且比网络上的 DNS 具有更高的优先级。如果你在 hosts 里面配置了某个域名和IP的对应关系 (比如 127.0.0.1 http://iplaysoft.com)，那么当你在「本机」访问 http://iplaysoft.com 时，系统首先会从 hosts 里面解析出 127.0.0.1 这个 IP，而不会再去查询网络上的 DNS 服务器。注意：hosts 文件仅对本机生效，对其他电脑和网站本身不造成任何影响。
@@ -628,11 +614,11 @@ git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了�
 
 - 2022.11.09 更新：在 ipaddress  中输入 `github.global.ssl.fastly.net` 后查询的 IP 地址有 4 个了。如下：
   
-  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.1.194 |
-  >  | ------------------------------- | ---- | -------------- |
-  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.65.194 |
-  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.129.194 |
-  >  | 🇺🇸 github.global.ssl.fastly.net | A    | 151.101.193.194 |
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.1.194   |
+  > | --------------------------------- | --- | --------------- |
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.65.194  |
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.129.194 |
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.193.194 |
 
 **2022.05.16 添加**
 
@@ -651,18 +637,16 @@ git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了�
 2606:50c0:8003::154
 ```
 
-
-
 #### 4. 打开hosts文件
 
 - Windows 上的 hosts 文件路径在: `C:\Windows\System32\drivers\etc`
 - Linux的hosts文件路径在：`sudo vim /etc/hosts`
 - Mac 中
-    - 点击 "Finder (访达)" 图标打开, 然后点击屏幕上面的 "前往" --> "前往文件夹"
-        输入 `/private/etc/` 点击前往按钮, 即可找到 hosts 文件夹.
-        (或者: - 打开Finder，按快捷键组合 `Shift+Command+G` 查找文件,
-        输入`/etc/hosts` 确认前往.)
-    - 修改: 将hosts文件复制到其它位置（如桌面），之后再打开，编辑并保存后，将其拖拽回原来的文件夹，替换原文件即可。
+  - 点击 "Finder (访达)" 图标打开, 然后点击屏幕上面的 "前往" --> "前往文件夹"
+      输入 `/private/etc/` 点击前往按钮, 即可找到 hosts 文件夹.
+      (或者: - 打开Finder，按快捷键组合 `Shift+Command+G` 查找文件,
+      输入`/etc/hosts` 确认前往.)
+  - 修改: 将hosts文件复制到其它位置（如桌面），之后再打开，编辑并保存后，将其拖拽回原来的文件夹，替换原文件即可。
 
 #### 5. 在hosts文件末尾添加两行(对应上面查到的ip)
 
@@ -680,6 +664,7 @@ git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了�
 ```
 
 #### 6. 保存并 更新DNS
+
 Widows 系统的做法：打开CMD，输入 `ipconfig /flushdns`
 
 CentOS 的做法：在终端输入 `nscd -i hosts`
@@ -698,4 +683,3 @@ MacOS 的刷新方法见这篇文章：https://www.zhihu.com/question/19679715
 7. 输入:wq，保存退出
 ···
 ```
-
