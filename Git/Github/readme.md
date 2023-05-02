@@ -76,7 +76,6 @@ alias code="/Applications/Visual\Studio\Code.app/Contents/Resources/app/bin/code
 
 
 
-
 ##  ▲ Github 搜索小技巧
 
 ### (1) 限定词
@@ -115,3 +114,84 @@ alias code="/Applications/Visual\Studio\Code.app/Contents/Resources/app/bin/code
       `in:description python language:python`
     + 描述 (description) 里面有 python 的并且 2019-12-20 号之后有更新过的  
       `in:description python pushed:>2019-12-20`
+
+
+
+
+
+
+
+## ▲解决 Mac 下使用 V2ray 
+
+提交代码报 `Failed to connect to github.com port 443: Operation timed out` 的问题.
+
+- `V2ray`客户端的代理导致的, webstorm 无法提交代码到 github, 从 `iTerm` 中也可以测试, 测试代码如下:
+
+    ```shell
+      git clone https://chromium.googlesource.com/v8/v8.git
+    ```
+
+    提示错误为: 
+
+    ```base
+      fatal: unable to access 'https://chromium.googlesource.com/v8/v8.git/':
+      Failed to connect to chromium.googlesource.com port 443: Operation timed out
+    ```
+
+- 同时也不知道到底是下面哪一行代码起的作用: 
+    (参考文章为: https://www.zhihu.com/question/26954892)
+
+    ```shell
+      # 查看有没有设置代理的代码(本机上没效果, 但是评论里说这 2 行代码是有效果的.)
+      git config --global http.proxy
+      # 取消代理
+      git config --global --unset http.proxy
+      git config --global --unset https.proxy
+    
+      # 文章里另外一种说:使用以下命令确认系统是否使用了代理
+      env | grep -i proxy (这个为粘贴文章中的: env | grep -i proxy)
+      / - 如果有设置 https 代理, 可以使用命令去除
+      unset https_proxy
+    ```
+
+- 可能需要重启电脑.  
+
+
+
+##  ▲ 把 V2Ray 客户端的代理 IP 添加到 `/Users/WANG/.gitconfig` 中
+
+<p style="border-left:4px solid red; padding:10px 15px; font-style:italic; background-color:#feeeee;">Added: 2023.05.02  Mac 下推荐使用 ClashX，不推荐使用 v2ray 了。</p>
+
+查看电脑顶部的 `V2RayU` 客户端, 右键点击 `查看 config.json`, 在浏览器中打开后会看到
+
+```js
+  inbounds": [
+  {
+    "listen": "127.0.0.1",
+    "protocol": "socks",
+    "settings": {
+      "udp": false,
+      "auth": "noauth"
+    },
+    "port": "1080"
+  },
+  {
+    "listen": "127.0.0.1",
+    "protocol": "http",
+    "settings": {
+      "timeout": 360
+    },
+    "port": "1087"
+  }
+],
+```
+
+(2) 其中 `"protocol": "http"` 即为要设置的 http 代理, 打开 `iTerm` 输入以下命令:
+
+```base
+  git config --global http.proxy 127.0.0.1:1087
+  git config --global https.proxy 127.0.0.1:1087
+```
+
+- Tip: 关于 `V2Ray` 使用的更多教程, 去 google 搜索即可.
+
