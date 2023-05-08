@@ -72,6 +72,22 @@ $ git remote update origin --prune
 
 要切换到一个已存在的分支，你需要使用 `git checkout` 命令，例如从一个分支切换到 master 分支：`git checkout master`
 
+![image-20230508205110592](./readme.assets/image-20230508205110592.png)
+
+
+
+
+
+<img src="./readme.assets/image-20230508215257724.png" alt="image-20230508215257724" style="zoom: 67%;" />
+
+
+
+<img src="./readme.assets/image-20230508215334315.png" alt="image-20230508215334315" style="zoom:67%;" />
+
+> 上图的参考[1] ： https://git-scm.com/book/zh/v2 （注：直接参考的 git pro 哈哈哈哈）
+
+
+
 ## ▲ VSCode-git 中的 U, M 和 D 文件标记含义
 
 - **M (modified):** 你已经在 github 中添加过该文件，然后你对这个文件进行了修改，就会文件后标记 M
@@ -238,6 +254,18 @@ If your upstream branch is not set, try `git pull origin <branch> --rebase` (cre
 
 To set this option globally, use `git config --global pull.rebase true` (credit to @Artur Mustafin below)
 要全局设置此选项，请使用 `git config --global pull.rebase true` （以下归功于@Artur Mustafin）
+
+
+
+## ▲ 使用 git checkout master 切换分支报如下错误：
+
+pathspec: Path specification
+
+Explanation(说明)： 下面的问题出在当晚我把 cct-files 仓库删除重新创建后，默认创建的分支是 main(注: 实际上默认创建的一直都是 main, 但我远程仓库的默认分支是 master) ，我在本地执行完 `git init` 和 `git remote add origin url` 后，使用 git checkout master 想切换到 master 分支，以前都这样操作都可以正常切换过去没，但今天报下面的错误，具体原因不知道为什么，我想有可能是因为当前 cct-files 仓库内有 git LFS 大文件或者当前仓库的文件太多（> 1G），但是具体是什么原因不知道，当然也不排除下面 chatGPT 说的，需要使用 -b 来创建 master 分支，不管怎么说下面的回答是可以解决问题的。
+
+<img src="./readme.assets/image-20230508205228116.png" alt="image-20230508205228116" style="zoom: 50%;" />
+
+
 
 
 
