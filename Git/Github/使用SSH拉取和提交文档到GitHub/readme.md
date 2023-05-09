@@ -54,7 +54,7 @@
 > #	+ remote add origin: 远程添加源
 > #	+ url: 可以是 https 或 SSH 
 > # - 下面命令行的 url 是 SSH，SSH 的配置见当前笔记的下半部分。
-> git remote add origin git@github.com:W1033/CCT-FILES.git
+> git remote add origin url
 > 
 > git push -u origin master
 > ```
@@ -64,7 +64,7 @@
 > ### Push an existing repository from the command line (从本地命令行推送一个已有仓库)
 >
 > ```shell
-> git remote add origin git@github.com:W1033/CCT-FILES.git
+> git remote add origin url
 > git branch -M master
 > git push -u origin master
 > ```
