@@ -1,111 +1,98 @@
-# 使用 SSH 拉取和提交代码到 GitHub
+# 使用 SSH 方式拉取和提交代码到 GitHub
 
 
 
-## ▲ 拉取和提交代码到 Github 步骤
+<p style=" border-left: 4px solid red; padding: 10px 15px; background-color:#feeeee;">注：如果是 Windows 上传代码之前请尽量把本地的 git 升级到最新版本，以防提交的时候出现莫名其妙的问题。</p>
 
-<p style=" border-left: 4px solid red; padding: 10px 15px; background-color:#feeeee;">注：当前笔记是使用 SSH 拉取和提交代码到 Github，SSH 的配置方式见当前笔记的下部</p>
 
-**1. 创建 git 仓库**
-**注：** 如果是 Windows 上传代码之前请尽量把本地的 git 升级到最新版本，以防提交的时候出现莫名其妙的问题。
 
-cd 到你的本地项目根目录下，执行 git 命令：
+<p style="background-color:#f9e2d2; padding:10px 15px;"><strong style="color:#dd5a2b;">备注：</strong>第一部分笔记使用的 SSH 拉取和提交代码到 Github，SSH 的配置方式见当前笔记的下部。</p>
 
-```sh
-# 把这个目录变成Git可以管理的仓库
-git init
-```
 
-**2. 将项目的所有文件添加到仓库中 **
 
-**Notice：如果本地仓库为空，跳过第 2、3 步.**
+## ▲ 拉取和提交文档到 GitHub 在线仓库
 
-```sh
-# . 代表全部. 如果只想添加某个特定的文件，只需要把 . 换成特定的文件名即可  
-git add .
-```
+首先在 www. github.com 创建一个 CCT-FILES 的 公共/私人 仓库， 创建完之后在本地计算机拉取和提交文档到在线仓库。
 
-**3. 将第二步添加的文件先提交(commit)到本地仓库**
+**Reminder:** 此部分的笔记架构来源 GitHub 在线仓库创建完毕之后给的快速启动 (Quick up)。
 
-```sh
-git commit -m "注释语句"
-```
 
-**4. 去 github 上创建自己的 Repository (也可以使用现有的仓库)**
-
-**5. 将本地的仓库关联到github上**
-
-```sh
-# url: 可以是 https 或 SSH 
-# git 远程添加源
-git remote add origin url
-```
-
-**5.1 如果本地仓库之前已经关联了在线仓库，重新配置的方式**
-
-下图以 `Vue-learning` 仓库为例：
-
-<img src="readme.assets/image-20211029155036918.png" alt="image-20211029155036918" style="zoom:76%;" />
-
-如果本地文件夹之前已经用 `git pull origin master` 拉取过在线的仓库了，
-
-那么在本地仓库的 `.git` (默认隐藏, 点击当前窗口顶部的**查看** --> **隐藏的项目** 勾选) 文件夹内的 `config` 文件便可以看到  `url`  键后面的已有值了，
-
-此时我们使用下面的命令更改 SSH 拉取方式
-
-```sh
-# 也可以设置为新的 https 地址
-git remote set-url origin git@github.com:W1033/Vue-learning.git
-```
-
-更改完成后，可以使用如下命令查看当前的 origin 地址：
-
-```
-$ git remote -v
-```
-
-**6. 上传 github 之前，尽量先拉取(pull) 一下代码，以防远程仓库初始化时有 README.md 文档，代码如下：**
-
-```sh
-git pull origin master
-```
-
-如果下拉时提示错误 *Fatal:refusing to merge unrelated histories(拒绝合并最近的历史记录)*，
-
-解决方法，把上面的代码改为:
-
-```sh
-# allow 前面有两个破折号(dash)
-git pull origin master --allow-unrelated-histories
-```
-
-Added：2022.10.02.  下面的错误提示记录。
-
-当天我从 github 创建了一个名为 "1033-english-docs"  的仓库，用来做英语笔记的静态文档以便在线预览，我在本地 Github-Clone 目录下新建了一个和线上同名的文件夹后里面并没有创建文件，接着我执行了第 1、2、3 步，然后执行 `git pull origin master` 后错误提示如下：
-
-```bash
-fatal: Updating an unborn branch with changes added to the index. (致命的：使用添加到索引的更改来更新未出生的分支。)
-# 2023.05.02 此处笔记有待优化
-```
-
-这个问题我知道是什么原因，在 2022.10.02 之前我都是这样操作的，但为什么现在就不行了。。。
-
-我的解决方法是：如果本地项目(/文件夹)为空，建议先略先略过第 2、3 步，先执行完第 5 步添加完 remote 仓库后 pull 远程文件，更新文件后再执行 `git add .`
-
-**7. 最后一步上传代码到 github 远程仓库**
-
-```sh
-# 提示: github 在 2021 年把默认的 master 改为了 main
-git push -u origin master
-# or
-git push -f origin master
-```
-
-执行完后如果没有异常就说明上传成功了，中间可能会让输入 Username 和 Password，输入 github 的账号和密码即可.
-
-**2023.03.22 added:** 由于 github 的默认分支从 master 改为了 main, 所以在 vscode 的命令行中 `git init` 空仓库后，默认分支在 main, 使用 ssh 方式拉完笔记/代码之后，记得按照下图切换到 master 分支(注：前提是你在线仓库是 master 分支，如果在线仓库主分支是 main 了，那也无需切换了。)
-
-<img src="./readme.assets/image-20230322214843922.png" alt="image-20230322214843922" style="zoom: 50%;" />
+> **Quick setup** — if you’ve done this kind of thing before
+>
+> Get started by [creating a new file](https://github.com/W1033/CCT-FILES/new/master) or [uploading an existing file](https://github.com/W1033/CCT-FILES/upload). We recommend every repository include a [README](https://github.com/W1033/CCT-FILES/new/master?readme=1), [LICENSE](https://github.com/W1033/CCT-FILES/new/master?filename=LICENSE.md), and [.gitignore](https://github.com/W1033/CCT-FILES/new/master?filename=.gitignore).
+>
+> 
+>
+> ### Create a new repository on the command line (在本地命令行创建一个新仓库)
+>
+> ```shell
+> 前提：我们先在本地磁盘创建一个 CCT-FILES 文件夹，然后在当前文件夹内打开 Terminal 命令行，或者在 vscode 中打开命令行。
+> 
+> # - 整个命令的含义是：把字符串 "# CCT-FILES" 追加到名为 README.md 文件的末尾。如果该文件不存在，则会自动创建一个新文件。
+> #    + `echo` 是一个命令，用于输出指定的字符串。
+> #    + `>>` 是输出重定向符号，用于将输出内容追加到指定文件的末尾。
+> #    + `README.md` 是一个文件名，表示要追加内容的目标文件。
+> #    + `"# CCT-FILES"` 是要追加到文件末尾的字符串。 
+> echo "# CCT-FILES" >> README.md
+> 
+> # - 把当前文档目录变成 Git 可以管理的仓库
+> git init
+> 
+> # - . 代表全部. 如果只想添加某个特定的文件(e.g. README.md)，只需要把 . 换成特定的文件名即可 
+> git add .
+> 
+> # - 将上一步添加的文件先提交(commit)到本地仓库
+> git commit -m "first commit"
+> 
+> # - 将当前分支重命名为 master。-M 选项用于强制执行（即使有重名的分支存在），并且会更新任何其他参考
+> #  （如其他分支和跟踪分支）来使用新名称。这个命令通常用于将默认分支从 `main` 改为 `master`。 
+> # - 更多 git branch 命令详解见当前仓库：Git\《Pro-Git》\03-分支\readme.md
+> # - 注：一般我们在本地创建完仓库之后，默认就在 main 分支，这一步就是从 main 分支切换到 master。
+> git branch -M master
+> 
+> # - git remote add origin url
+> #	+ remote add origin: 远程添加源
+> #	+ url: 可以是 https 或 SSH 
+> # - 下面命令行的 url 是 SSH，SSH 的配置见当前笔记的下半部分。
+> git remote add origin git@github.com:W1033/CCT-FILES.git
+> 
+> git push -u origin master
+> ```
+>
+> 
+>
+> ### Push an existing repository from the command line (从本地命令行推送一个已有仓库)
+>
+> ```shell
+> git remote add origin git@github.com:W1033/CCT-FILES.git
+> git branch -M master
+> git push -u origin master
+> ```
+>
+> 如果本地文件夹之前已经用 `git pull origin master` 拉取过在线的仓库了，
+>
+> 那么在本地仓库的 `.git` (默认隐藏, 点击当前窗口顶部的**查看** --> **隐藏的项目** 勾选) 文件夹内的 `config` 文件便可以看到  `url`  键后面的已有值了，
+>
+> 此时我们使用下面的命令更改 SSH 拉取方式
+>
+> ```sh
+> # 也可以设置为新的 https 地址
+> git remote set-url origin git@github.com:W1033/Vue-learning.git
+> ```
+>
+> 更改完成后，可以使用如下命令查看当前的 origin 地址：
+>
+> ```shell
+> $ git remote -v
+> ```
+>
+> 
+>
+> ### Import code from another repository
+>
+> You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+>
+> 
 
 
 

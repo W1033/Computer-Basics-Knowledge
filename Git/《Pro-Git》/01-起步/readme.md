@@ -30,27 +30,14 @@
 
 
 ## New Words
-- **centralize [ˈsentrəˌlaɪz] --vt.(使)集中; 使集权.  --vi.集中, 中央集权**
-- **perforce [pə'fɔːs] --adv.必然地；不得已**
-- **database ['deitəbeis] --n.数据库,资料库.**
-    + We planned to build an online database. 我们计划建一个联机数据库.
-- **stage [steɪdʒ] --n.阶段, 舞台, 期. --v.表演**
-    + stage changes 阶段变化
-    + There are no staged changes to commit. 提交没有分阶段的更该. 
-- figure `/'fɪgə/` -n. 图形；数字；人物；画像。
-- **perforce [pɚ'fɔrs] --adv.强制地,强迫地; 必然地; 一定地**
-    + of perforce. 不得已.
-    + by perforce. 强制地
-- **efficient [ɪ'fɪʃ(ə)nt] --adj.有效率的, 能胜任的**
-    + an efficient machine. 高效率的机器
-    + an efficient teacher. 能干的教师
-    + He is efficient at his work. 他在工作方面是有实力的.
-- **basically [ˈbeisikəli] --adv.基本上,根本上,本质上** 
-    + Basically I am independent, efficient and easygoing.
-      基本上我是个思想独立, 工作有效, 待人随和的人.
-- **identical [aɪ'dentɪk(ə)l] --adj.相同的, 一致的**
-    + You look identical with the guy. 你和那个人看起来一模一样耶. 
-    + My opinion is identical with his. 我的意见和他的意见相同. 
+- centralize `/ˈsentrəˌlaɪz/` --vt.(使)集中; 使集权.  --vi.集中, 中央集权
+- perforce `/pə'fɔːs/` --adv.必然地；不得已
+- database `/'deitəbeis/` --n.数据库,资料库.
+- stage `/steɪdʒ/` --n.阶段, 舞台, 期. --v.表演
+- perforce `/pɚ'fɔrs/` --adv.强制地,强迫地; 必然地; 一定地
+- efficient `/ɪ'fɪʃ(ə)nt/` --adj.有效率的, 能胜任的
+- basically `/ˈbeisikəli/` --adv.基本上,根本上,本质上 
+- identical `/aɪ'dentɪk(ə)l/` --adj.相同的, 一致的 
 
 
 ## Content

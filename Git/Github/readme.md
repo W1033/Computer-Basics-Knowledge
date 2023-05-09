@@ -1,197 +1,460 @@
-
-
 # Github
 
+## New Words
+
+- **ambiguous `/æmˈbɪɡjuəs/` --adjective**
+  
+  ```css
+  ├── adj
+  │   ├── (1) something that is ambiguous is unclear, confusing, or not certain, 
+  │   │    especially because it can be understood in more than one way. 模棱两可的; 不明确的
+  │   │   ├── OPP(opposite`/'ɒpəzɪt/`) unambiguous: 
+  │   │   ├── The language in the Minister’s statement is highly ambiguous.部长的声明措辞很含糊。
+  │   │   ├── His role in the affair is ambiguous.他在这起事件中的角色并不明确。
+  │   ├── Register(说明)
+  │   │   ├── In everyday English, people also use the phrase you can take something two ways instead of saying it is ambiguous: ~What she says is ambiguous.~ ➔ You can take what she says two ways. 她的话模棱两可。在日常英语中﹐人们也会用短语 you can take sth two ways 来代替ambiguous
+  ```
 
 
-## ▲ 解决 VSCode 从 github 拉取代码后，中文路径乱码的问题
 
-### 解决办法
 
-```bash
-# 命令行模式输入
-git config --global core.quotepath false
+
+## ▲ 在 Github 仓库中启用 Web VSCode
+
+在当前仓库中的任何一个页面点击键盘上的 `.` 按键，直接进入 web vscode
+
+
+
+## ▲ Git 常用命令
+
+**基本命令见同级目录的：`../Git全栈开发使用指南/readme.md`**
+
+1. 初始化仓库
+2. 配置
+3. 增加/删除文件
+4. 代码提交
+5. 分支
+6. 标签
+7. 查看信息
+8. 远程同步
+9. 撤销
+
+**详细命令讲解见同级目录的:**
+
+- `../《Pro-Git》/01-起步.md`
+- `../《Pro-Git》/02-Git基础.md`
+
+**简要命令：**、
+
+```sh
+$ git push origin master
 ```
 
-### 原理分析
-`core.quotepath` 设为 `false` 的话，就不会对 `0x80` 以上的字符进行 quote, 故中文可以正常显示，此时，如果你查看 git 的配置文件，就会发现在 [core] 的分类下多处一条 `quotepath = false` 的选项.
+省略了 `<dst>` 等价于
 
-### 怎么查看 git 的配置文件
-```
-# win 系统中，此命令需在仓库的文件夹下使用 git bash 命令行窗口查看才行，不知道为啥 vscode 不支持。
-vi ~/.gitconfig
+```sh
+$ git push origin master:master
 ```
 
-————————————————
-原文链接：https://blog.csdn.net/qfeung/article/details/106067094
+其中 `origin` 指定了你要 `push` 到哪个 `remote`. 一般形式为:
 
-
-
-
-
-## ▲ 终端命令行打开 vscode
-
-在指定文件夹内，使用终端命令行打开 vscode
-
-(1) 在当前目录打开 vscode 的命令：`code .`
-
-如果 code 命令无法使用，需要配路径，如下：
-
-打开 bash 或者 zsh 配置文件
-
-```bash
-# bash 用户请使用
-vi ~/.bash_profile 
-
-# zsh 用户请使用
-vi ~/.zshrc
+```sh
+$ git push origin <src>:<dst>
 ```
 
-(2) 按 **i** 键 开始输入
+冒号前面表示 本地分支(local branch) 的名字，冒号后表示 远程仓库(remote repository) 下 branch 的名字。
+注意，如果省略了 `<dst>`, git 会认为你想 push 到 remote repository 下和 local branch 相同名字的 branch.
 
-```ini
-# 设置 vscode 启动命令别名
-alias code="/Applications/Visual\Studio\Code.app/Contents/Resources/app/bin/code"
+```sh
+# 刷新远程分支列表
+$ git remote update origin --prune
 ```
 
-上面命令中双引号内容是我的 vscode 中的 code 命令路径，应换成你自己的。
+## ▲ 分支切换
 
-**Tips**：如果路径里有空格，如 “Visual Studio Code.app” 请在每个空格前加一个反斜杠 '\'。
+要切换到一个已存在的分支，你需要使用 `git checkout` 命令，例如从一个分支切换到 master 分支：`git checkout master`
 
-(3) **Esc** 退出编辑模式
-
-(4)  输入 `:wq` 键 保存退出 vi 模式
-
-
-**赠如下常用 vi 命令:**
-
-- `:wq`  保存后退出 vi，若为 :wq! 则为强制储存后退出（常用）
-- `:w`  保存但不退出（常用）
-- `:w!`  若文件属性为『只读』时，强制写入该档案 
-- `:q `  离开 vi （常用）
-- `:q!`  若曾修改过档案，又不想储存，使用！为强制离开不储存档案。
-- `:e!`  将档案还原到最原始的状态！
+![image-20230508205110592](./readme.assets/image-20230508205110592.png)
 
 
 
 
 
-##  ▲ Github 搜索小技巧
-
-### (1) 限定词
-
-- `in:name` : name 为仓库名
-    + `in:name javascript` 查出仓库名中有 javascript 的项目 
-      (javascript in:name 也可以)
-- `in:description`: description 为仓库项目描述
-    + `in:description ES6` 查找仓库项目描述中有 ES6 关键词 的项目
-- `in:readme`: 查找仓库的 readme.md 文件
-    + `in:readme python` 查找仓库的 readme.md 文件 含有 python 关键词 的项目
-
-### (2) 辅助限定词
-
-- 可以通过限制: 
-    + `size`: 项目大小
-    + `followers`: 拥护者数
-    + `forks`: fork 数
-    + `stars`: star 数
-    + `created`: 创建时间
-    + `pushed`: 更新时间
-    + `language`: 项目所用语言
-    + `topic`: topic 标签
-    + `topics`: top 标签数  
-  来筛选项目，辅助限定词可以多个并用，用空格隔开就行，可以搭配限定词使用，也可单独使用.
-- 下面给出一些使用示例: 
-    + 名字 (name) 里有 python 的并且 stars 大于 3000 的  
-      `in:name python starts:>3000`
-    + 名字 (name) 里有 python 的并且 stars 大于 3000 、forks 大于 200 的  
-      `in:name python starts:>3000 forks:>200`
-    + 详情 (readme) 里面有 python 的并且 stars 大于 3000 的  
-      `in:readme python starts:>3000`
-    + 描述 (description) 里面有 python 的并且 stars 大于 3000 的  
-      `in:description python starts:>3000`
-    + 描述 (description) 里面有 python 的并且是 python 语言的  
-      `in:description python language:python`
-    + 描述 (description) 里面有 python 的并且 2019-12-20 号之后有更新过的  
-      `in:description python pushed:>2019-12-20`
+<img src="./readme.assets/image-20230508215257724.png" alt="image-20230508215257724" style="zoom: 67%;" />
 
 
 
+<img src="./readme.assets/image-20230508215334315.png" alt="image-20230508215334315" style="zoom:67%;" />
+
+> 上图的参考[1] ： https://git-scm.com/book/zh/v2 （注：直接参考的 git pro 哈哈哈哈）
 
 
 
+## ▲ VSCode-git 中的 U, M 和 D 文件标记含义
 
-## ▲解决 Mac 下使用 V2ray 
-
-提交代码报 `Failed to connect to github.com port 443: Operation timed out` 的问题.
-
-- `V2ray`客户端的代理导致的, webstorm 无法提交代码到 github, 从 `iTerm` 中也可以测试, 测试代码如下:
-
-    ```shell
-      git clone https://chromium.googlesource.com/v8/v8.git
-    ```
-
-    提示错误为: 
-
-    ```base
-      fatal: unable to access 'https://chromium.googlesource.com/v8/v8.git/':
-      Failed to connect to chromium.googlesource.com port 443: Operation timed out
-    ```
-
-- 同时也不知道到底是下面哪一行代码起的作用: 
-    (参考文章为: https://www.zhihu.com/question/26954892)
-
-    ```shell
-      # 查看有没有设置代理的代码(本机上没效果, 但是评论里说这 2 行代码是有效果的.)
-      git config --global http.proxy
-      # 取消代理
-      git config --global --unset http.proxy
-      git config --global --unset https.proxy
-    
-      # 文章里另外一种说:使用以下命令确认系统是否使用了代理
-      env | grep -i proxy (这个为粘贴文章中的: env | grep -i proxy)
-      / - 如果有设置 https 代理, 可以使用命令去除
-      unset https_proxy
-    ```
-
-- 可能需要重启电脑.  
+- **M (modified):** 你已经在 github 中添加过该文件，然后你对这个文件进行了修改，就会文件后标记 M
+- **U (untracked):** 你在本地新建了这个文件，还未提交到 github 上，就会标记 U
+- **D (delete):** 你删除了这个文件，vscode-git 会记录下这个状态
 
 
 
-##  ▲ 把 V2Ray 客户端的代理 IP 添加到 `/Users/WANG/.gitconfig` 中
+## ▲ 解决fatal: unable to connect to github.com  errno=连接超时
 
-<p style="border-left:4px solid red; padding:10px 15px; font-style:italic; background-color:#feeeee;">Added: 2023.05.02  Mac 下推荐使用 ClashX，不推荐使用 v2ray 了。</p>
+created: 2023.03.22
 
-查看电脑顶部的 `V2RayU` 客户端, 右键点击 `查看 config.json`, 在浏览器中打开后会看到
+> https://www.cnblogs.com/happystudyeveryday/p/17015297.html
 
-```js
-  inbounds": [
-  {
-    "listen": "127.0.0.1",
-    "protocol": "socks",
-    "settings": {
-      "udp": false,
-      "auth": "noauth"
-    },
-    "port": "1080"
-  },
-  {
-    "listen": "127.0.0.1",
-    "protocol": "http",
-    "settings": {
-      "timeout": 360
-    },
-    "port": "1087"
-  }
-],
+解决fatal: unable to connect to github.com: github.com[0: 20.205.243.166]: errno=连接超时
+
+解决方法：输入命令
+
+```
+git config --global url.``"https://github.com"``.insteadOf git://github.com
 ```
 
-(2) 其中 `"protocol": "http"` 即为要设置的 http 代理, 打开 `iTerm` 输入以下命令:
+## ▲ 使用 git pull 强制覆盖本地文件的方式
 
-```base
-  git config --global http.proxy 127.0.0.1:1087
-  git config --global https.proxy 127.0.0.1:1087
+```sh
+# 如果你不想要本地的所有修改的情况下，这条命令特别好用
+# 请谨慎使用，这条命令会删除你本地仓库的所有内容，如果当前内容还没有同步到远程仓库的话
+git fetch --all
+git reset --hard origin/master
+git pull origin master
 ```
 
-- Tip: 关于 `V2Ray` 使用的更多教程, 去 google 搜索即可.
+## ▲ git commit之后如何撤销
 
+如果在git commit之后，需要撤回commit一般有以下三种方式
+
+### 1. git reset --soft 版本号
+
+不删除工作区改动的代码，撤销 commit，不撤销 `git add .`
+
+```shell
+# 回到上一个版本
+git reset --soft HEAD^ 
+```
+
+### 2.git reset --mixed 版本号
+
+不删除工作区改动的代码，撤销 commit，撤销 `git add .`
+
+```shell
+# 回到上一个版本
+git reset --mixed HEAD^ 
+```
+
+### 3.git reset --hard 版本号
+
+删除工作区的代码，撤销commit，撤销 `git add .` 回到上一次commit的状态
+
+```shell
+# 回到上一个版本
+git reset --hard HEAD^ 
+```
+
+
+
+
+
+## ▲ 推送代码报错：Updated were rejected because a pushed branch tip is behind its remote counterpart.
+
+```
+To github.com:W1033/English-Notes.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'github.com:W1033/English-Notes.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart(副本). Check out this branch and integrate(整合) the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+这个错误在 StackOverflow 上最高赞的回答是这样的:
+
+> 原问答：https://stackoverflow.com/questions/39399804/updates-were-rejected-because-the-tip-of-your-current-branch-is-behind-its-remot
+> 
+> The `-f` **is** actually required because of the rebase. Whenever you do a rebase you would need to do a force push because the remote branch cannot be fast-forwarded to your commit. You'd **always** want to make sure that you do a pull before pushing, but if you don't like to force push to master or dev for that matter, you can create a new branch to push to and then merge or make a PR.
+> 
+> (事实上，由于 rebase 的缘故，需要 `-f`。每当你做 rebase 时，你需要做一个强制推送，因为远程分支不能快速转到你的提交。你总是想确保在推送之前做一次拉取，但如果你不喜欢强制推送到 master 或 dev ，你可以创建一个新的分支来推送，然后合并或做一个PR。)
+
+在发生这个错误之前，我确实 merge 了拉取远程仓库产生的 conflict，按照上面的回答，只需要使用 `-f` 强制推送即可：`git push -f origin master`
+
+
+
+## ▲ Pull 代码报错：Error "Fatal: Not possible to fast-forward, aborting"
+
+*Added: 2023.05.02*
+
+> 笔记来源：https://stackoverflow.com/questions/13106179/error-fatal-not-possible-to-fast-forward-aborting
+
+**Disclaimer**: these commands will bring changes from the remote branch into yours.
+免责声明：这些命令会将远程分支的更改带到您的分支中。
+
+`git pull --rebase`. Unlike the other solution, you don't need to know the name of your destination branch.
+`git pull --rebase` 。与其他解决方案不同，您不需要知道目标分支的名称。
+
+If your upstream branch is not set, try `git pull origin <branch> --rebase` (credit to @Rick in the comments)
+如果您的上游分支未设置，请尝试 `git pull origin <branch> --rebase` （在评论中归功于@Rick）
+
+<p style="border-left:4px solid red; padding:10px 15px; background-color:#feeeee;">Annotation: 当日我使用这行代码解决了这个报错的问题，我的情况是：我先修改了本地仓库的文件，然后执行 add 和 commit 之后再 pull 的时候报上面的错误，上面说的 if your upstream branch is not set 是什么意思我也没有理解，一般情况下我也不太敢 rebase 代码，害怕把本地的改动给 rebase 没有了，但是执行完上面的代码之后，本地的改动还在。具体的原因估计也只能等学些 Pro git 才能搞明白了。</p>
+
+To set this option globally, use `git config --global pull.rebase true` (credit to @Artur Mustafin below)
+要全局设置此选项，请使用 `git config --global pull.rebase true` （以下归功于@Artur Mustafin）
+
+
+
+## ▲ 使用 git checkout master 切换分支报如下错误：
+
+pathspec: Path specification
+
+Explanation(说明)： 下面的问题出在当晚我把 cct-files 仓库删除重新创建后，默认创建的分支是 main(注: 实际上默认创建的一直都是 main, 但我远程仓库的默认分支是 master) ，我在本地执行完 `git init` 和 `git remote add origin url` 后，使用 git checkout master 想切换到 master 分支，以前都这样操作都可以正常切换过去没，但今天报下面的错误，具体原因不知道为什么，我想有可能是因为当前 cct-files 仓库内有 git LFS 大文件或者当前仓库的文件太多（> 1G），但是具体是什么原因不知道，当然也不排除下面 chatGPT 说的，需要使用 -b 来创建 master 分支，不管怎么说下面的回答是可以解决问题的。
+
+<img src="./readme.assets/image-20230508205228116.png" alt="image-20230508205228116" style="zoom: 50%;" />
+
+
+
+
+
+## ▲ I am using Git. I did a pull from a remote repo and got an error message:
+
+```md
+Please enter a commit message to explain why this merge is necessary,
+especially if it merges an updated upstream into a topic branch.
+```
+
+I try to type a message and press Enter but nothing happens.
+
+How do I tell Git/Terminal I am done typing in my message?
+
+I am using Terminal on OS X.
+
+**Answer:**
+It's not a Git error message, it's the editor as git uses your default editor.
+
+To solve this:
+
+1. press "i" (i for insert)
+2. write your merge message
+3. press "esc" (escape)
+4. write ":wq" (write & quit)
+5. then press enter
+
+## ▲ src ref spec master does not match any 的解决方法
+
+```md
+error: src ref spec master does not match any.  
+# 错误：源参考规范主不符合任何内容。
+
+error: failed to push some refs to 'ssh://xxxxx.com/project.git'
+```
+
+1. Try `git show-ref` to see what refs you have. Is there a `refs/heads/master`?
+
+> Due to the recent "Replacing master with main in GitHub" action, you may notice that there is a `refs/heads/main`. As a result, the following command may change from `git push origin HEAD:master` to `git push origin HEAD:main`
+
+2. You can try `git push origin HEAD:master` as a more local-reference-independent solution. This explicitly states that you want to push the local ref `HEAD` to the remote ref `master` (see the [git-push ref spec](https://git-scm.com/docs/git-push#git-push-ltrefspecgt82308203) documentation).
+
+## ▲ "Remote origin already exists" error
+
+The error `fatal: remote origin already exists` is caused when you attempt to create a link to a remote repository called “origin” when a remote link with that name is already configured.
+
+The solution is to update the URL of the remote repository with the name “origin” to the URL of the remote repository you want to add, instead of trying to create a new remote repository with that name.
+
+You can do that with this command:
+
+```shell
+git remote set-url origin https://github.com/your/repository
+```
+
+## ▲ 通过命令行在本地仓库中删除远程 github 仓库中的文件/夹
+
+前几天在 webstorm 中修改了仓库中几个文件夹, 最后提交到 github 后, 有一个
+名为 `《SQL基础教程》` 的文件夹一直存在(注意: 此文件夹内部为空),
+因为 github 网站不提供在线删除的功能,
+所以只能通过命令行来解决, 下面贴出执行命令:
+
+```shell
+  # 打开 iTerm 进入到相对应的本地仓库
+  # (1) 删除本地 git 缓存
+  git rm -r --cached <filename>
+
+  # (2) 重新 track(跟踪) 文件
+  git add -A
+  git commit -m '《SQL基础教程》'
+
+  # (3) 推送到远程仓库 (确保当前代码是最新的)
+  git push origin master
+```
+
+## ▲ 使用 `Git` 回退到 `Github` 的某个历史版本：
+
+**1. 进入到项目文件夹，**
+
+命令行中输入 `git log` 查看所有历史版本，获取 git 的某个历史版本的 commit id, (id 为 40 位的 16 进制数字，通过 SHA1 计算得到). 如果命令行窗口过小，不会一次显示完所有的历史版本，根据提示按下 return 便可以一直回退到最原始的版本。
+
+Tip: 可以从 github 的 commits 提交记录对比找到想要的历史版本。
+
+**1-1. 如果只想显示提交的历史版本的 commit id 号和对应的注释。可以在命令行中输入:**
+
+`git log --pretty=oneline`     
+
+**2. 把本地项目中的文件恢复到历史版本**
+
+`git reset --hard id` (id 即为上面的 40 位随机字符)
+
+执行完 `git reset --hard id` 之后当前本地项目中的内容既是历史版本中的内容了。
+
+**3. 把当前本地得到的历史版本推到远程服务器：**
+
+`git push -f -u origin master` (Tip: `-u` 可以省略)
+
+如果执行完上面的输入后，命令行提示 `Everything up-to-data` 文件并没有提交，原因可能是当前文件夹并没有执行过用 git 提交代码到 github 的操作，可以重新执行下面命令:
+
+- `git add .`
+- `git commit -m "message"`
+- `git push -f origin master`
+
+## ▲git pull 和 git pull --rebase 区别理解
+
+```sh
+[root@master GitTest]# git pull
+warning: Pulling without specifying how to reconcile divergent branches is discouraged. You can squelch this message by running one of the following commands sometime before your next pull:
+
+git config pull.rebase false  # merge (the default strategy)
+git config pull.rebase true   # rebase
+git config pull.ff only       # fast-forward only
+```
+
+```sh
+git config pull.rebase false  # merge (the default strategy)
+git pull = git fetch + git merge
+
+git config pull.rebase true   # rebase
+git pull = git fetch + git rebase
+```
+
+> 参考文章：https://blog.csdn.net/TomorrowAndTuture/article/details/107677939
+
+==待做笔记==
+
+> 待做笔记：[详解git rebase，让你走上git大神之路](https://zhuanlan.zhihu.com/p/271677627)
+
+## ▲ 拉取代码时报如下黄色提示：
+
+```md
+hint: Pulling without specifying how to reconcile divergent branches is
+hint: discouraged. You can squelch this message by running one of the following
+hint: commands sometime before your next pull:
+hint: 
+hint:   git config pull.rebase false  # merge (the default strategy)
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: 
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+```
+
+> 解决方案：https://stackoverflow.com/questions/62653114/how-can-i-deal-with-this-git-warning-pulling-without-specifying-how-to-reconci
+
+总的来说就是上面 hint 中的 `git config pull.ff only`，然后 push 时候使用 `git push -f origin master`
+
+
+
+
+## ▲ 解决git clone速度太慢的问题
+
+> 参考文章：https://segmentfault.com/a/1190000039768491
+
+#### 1. 思路：
+
+git clone 特别慢是因为 `github.global.ssl.fastly.net` 域名被限制了。
+
+只要找到这个域名对应的 ip 地址，然后在 hosts 文件中加上 ip –> 域名的映射，刷新 DNS 缓存便可。
+
+#### 2. 什么是 Hosts 文件？
+
+一般来说，当用户在电脑浏览器里输入网址(域名)后，系统需要通过查询网络上的 DNS 服务器，才能将域名 (e.g.: https://www.google.com) 解析成对应的 IP 地址，浏览器通过 IP 地址才能找到该网站所在的服务器并进行访问。
+
+而操作系统的 hosts 文件则是有着“类似本地 DNS 服务器”的作用，而且比网络上的 DNS 具有更高的优先级。如果你在 hosts 里面配置了某个域名和IP的对应关系 (比如 127.0.0.1 http://iplaysoft.com)，那么当你在「本机」访问 http://iplaysoft.com 时，系统首先会从 hosts 里面解析出 127.0.0.1 这个 IP，而不会再去查询网络上的 DNS 服务器。注意：hosts 文件仅对本机生效，对其他电脑和网站本身不造成任何影响。
+
+> 更多讲述参考：https://zhuanlan.zhihu.com/p/140536871
+
+#### 3. 实施：
+
+在 ipaddress 网站 https://www.ipaddress.com分别搜索：
+
+`github.global.ssl.fastly.net` 和 `github.com`  得到 2 个 IP. 
+
+- 2022.11.09 更新：在 ipaddress  中输入 `github.global.ssl.fastly.net` 后查询的 IP 地址有 4 个了。如下：
+  
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.1.194   |
+  > | --------------------------------- | --- | --------------- |
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.65.194  |
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.129.194 |
+  > | 🇺🇸 github.global.ssl.fastly.net | A   | 151.101.193.194 |
+
+**2022.05.16 添加**
+
+起因是发现在浏览器中预览笔记内的图片都无法打开，通过 google 查到网友说把 `raw.githubusercontent.com` 的 ipaddress 内对应的 IP 添加到 hosts 中，05.16 查询对应的四个 IP 如下：
+
+```md
+# raw.githubusercontent.com resolves to 4 IPv4 addresses and 4 IPv6 addresses:
+
+185.199.108.133
+185.199.109.133
+185.199.110.133
+185.199.111.133
+2606:50c0:8000::154
+2606:50c0:8001::154
+2606:50c0:8002::154
+2606:50c0:8003::154
+```
+
+#### 4. 打开hosts文件
+
+- Windows 上的 hosts 文件路径在: `C:\Windows\System32\drivers\etc`
+- Linux的hosts文件路径在：`sudo vim /etc/hosts`
+- Mac 中
+  - 点击 "Finder (访达)" 图标打开, 然后点击屏幕上面的 "前往" --> "前往文件夹"
+      输入 `/private/etc/` 点击前往按钮, 即可找到 hosts 文件夹.
+      (或者: - 打开Finder，按快捷键组合 `Shift+Command+G` 查找文件,
+      输入`/etc/hosts` 确认前往.)
+  - 修改: 将hosts文件复制到其它位置（如桌面），之后再打开，编辑并保存后，将其拖拽回原来的文件夹，替换原文件即可。
+
+#### 5. 在hosts文件末尾添加两行(对应上面查到的ip)
+
+```access
+# 下面更新日期是 2022.11.09
+
+151.101.1.194 github.global-ssl.fastly.net
+151.101.65.194 github.global-ssl.fastly.net
+151.101.129.194 github.global-ssl.fastly.net
+151.101.193.194 github.global-ssl.fastly.net
+
+140.82.112.4 github.com
+
+# 重点提示：不知道 sb government 对 140.82.112.4:22 做了什么限制，即使添加了 ip,也不可能提交仓库。建议打开 v2r 的全局代理模式即可提交。
+```
+
+#### 6. 保存并 更新DNS
+
+Widows 系统的做法：打开CMD，输入 `ipconfig /flushdns`
+
+CentOS 的做法：在终端输入 `nscd -i hosts`
+
+MacOS 的刷新方法见这篇文章：https://www.zhihu.com/question/19679715
+
+- Tip: MacOS 刷新 DNS 的命令真的是各种各样，给出最多的一句是 `sudo killall -HUP mDNSResponder`(OS > 10.10.4)，由于不知道到底管不管用，所以建议使用下面这种方式修改 hosts 和刷新的方式。
+
+```md
+1. 打开终端
+2. 输入sudo vi /etc/hosts
+3. 输入密码
+4. 进入文件hosts，然后按“i”，进入编辑模式
+5. 把你的host添加到最后
+6. control+c推出编辑模式
+7. 输入:wq，保存退出
+···
+```

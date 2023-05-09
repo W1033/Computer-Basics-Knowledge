@@ -1,18 +1,19 @@
-# Pro Git: everything you need to know about GIT 
+# Pro Git: everything you need to know about GIT
+
 - Scott Chacon and Ben Straub
 
 
 
 > [Pro Git 下载页面](https://git-scm.com/book/zh/v2)
-  
+
 > [Pro Git 在线阅读](https://www.progit.cn/)
 
 > [Pro Git 中文文档翻译仓库](https://github.com/bingohuang/progit2-gitbook/blob/master/01-introduction/sections/about-version-control.adoc)
 
 - Git 源码使用 C 语言编写.
 
-
 ## Book Catalog
+
 1. 起步
     + 1.1 关于版本控制
     + 1.2 Git 简史
