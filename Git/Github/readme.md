@@ -219,7 +219,7 @@ Explanation(说明)： 下面的问题出在当晚我把 cct-files 仓库删除�
 >
 > Git Error 修复：“以下文件的本地更改将被覆盖” Git 错误
 >
-> 
+> <img src="./readme.assets/git-error.webp" alt="image-20230508205228116" style="zoom: 50%;" />
 >
 > The error message “**Your local changes to the following files will be overwritten by merge**” occurs in Git version control mechanism. This error occurs if you have modified a file which also has modifications in the remote repository.
 > Git版本控制机制中会出现“您对以下文件的本地更改将被合并覆盖”的错误消息。如果您修改了一个在远程仓库中也有修改的文件，则会出现此错误。
