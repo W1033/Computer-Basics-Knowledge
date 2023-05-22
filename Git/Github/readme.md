@@ -74,17 +74,17 @@ $ git remote update origin --prune
 
 要切换到一个已存在的分支，你需要使用 `git checkout` 命令，例如从一个分支切换到 master 分支：`git checkout master`
 
-![image-20230508205110592](./readme.assets/image-20230508205110592.png)
+<img src="./readme.assets/image-20230508205110592.png" alt="image-20230508205110592" style="zoom:50%;" />
 
 
 
 
 
-<img src="./readme.assets/image-20230508215257724.png" alt="image-20230508215257724" style="zoom: 67%;" />
+<img src="./readme.assets/image-20230508215257724.png" alt="image-20230508215257724" style="zoom: 50%;" />
 
 
 
-<img src="./readme.assets/image-20230508215334315.png" alt="image-20230508215334315" style="zoom:67%;" />
+<img src="./readme.assets/image-20230508215334315.png" alt="image-20230508215334315" style="zoom: 50%;" />
 
 > 上图的参考[1] ： https://git-scm.com/book/zh/v2 （注：直接参考的 git pro 哈哈哈哈）
 
@@ -155,8 +155,6 @@ git reset --hard HEAD^
 
 
 
-
-
 ## ▲ 推送代码报错：Updated were rejected because a pushed branch tip is behind its remote counterpart.
 
 ```
@@ -210,6 +208,117 @@ pathspec: Path specification
 Explanation(说明)： 下面的问题出在当晚我把 cct-files 仓库删除重新创建后，默认创建的分支是 main(注: 实际上默认创建的一直都是 main, 但我远程仓库的默认分支是 master) ，我在本地执行完 `git init` 和 `git remote add origin url` 后，使用 git checkout master 想切换到 master 分支，以前都这样操作都可以正常切换过去没，但今天报下面的错误，具体原因不知道为什么，我想有可能是因为当前 cct-files 仓库内有 git LFS 大文件或者当前仓库的文件太多（> 1G），但是具体是什么原因不知道，当然也不排除下面 chatGPT 说的，需要使用 -b 来创建 master 分支，不管怎么说下面的回答是可以解决问题的。
 
 <img src="./readme.assets/image-20230508205228116.png" alt="image-20230508205228116" style="zoom: 50%;" />
+
+
+
+## ▲ 拉取代码报错：Local changes to following files will be overwritten
+
+> > 笔记来源：https://appuals.com/how-to-fix-git-error-your-local-changes-to-the-following-files-will-be-overwritten-by-merge/
+>
+> ## Fixed: Fixed: ‘Local changes to following files will be overwritten’
+>
+> Git Error 修复：“以下文件的本地更改将被覆盖” Git 错误
+>
+> <img src="./readme.assets/git-error.webp" alt="image-20230508205228116" style="zoom: 50%;" />
+>
+> The error message “**Your local changes to the following files will be overwritten by merge**” occurs in Git version control mechanism. This error occurs if you have modified a file which also has modifications in the remote repository.
+> Git版本控制机制中会出现“您对以下文件的本地更改将被合并覆盖”的错误消息。如果您修改了一个在远程仓库中也有修改的文件，则会出现此错误。
+>
+> This error message is avoided IF there are no uncommitted files that also have modifications in the remote repository. When experiencing this message, it is best to consult your other team members and ask for their opinion. Whether you want to merge your local changes or keep the version present in the repository, it is best to keep everyone on board.
+> 如果在远程存储库中没有未提交的文件也有修改，则可以避免此错误消息。遇到此消息时，最好咨询您的其他团队成员并征求他们的意见。无论您是想合并本地更改还是将版本保留在存储库中，最好让每个人都参与进来。
+>
+> ### How to fix ‘Your local changes to the following files will be overwritten by merge’?
+>
+> 如何修复“您对以下文件的本地更改将被合并覆盖”？
+>
+> The resolution of this error message depends on what you want to do. You can discard your local changes and pull the ones in the repository or you can save your local changes into a stash and pull the version from the repository. It all depends on your preference.
+> 此错误消息的解决方案取决于您要执行的操作。您可以放弃本地更改并拉取存储库中的更改，或者可以将本地更改保存到存储中并从存储库中拉取版本。这完全取决于您的喜好。
+>
+> Hence, we recommend that you consult with your team members and make sure that you all are on the **same page** before moving forward. If you commit wrongly or push the wrong version, it could affect the entire team.
+> 因此，我们建议您与您的团队成员协商，并确保你们在继续前进之前都在同一页面上。如果您错误地提交或推送了错误的版本，则可能会影响整个团队。
+>
+> #### Method 1: Forcing a pull to overwrite local changes
+>
+>  方法 1：强制拉取以覆盖本地更改
+>
+> If you **don’t care about the changes done locally** and want to obtain the code from the repository, you can force a pull. This will overwrite all the local changes done on your computer a duplicate copy of the version in the repository will appear.
+> 如果您不关心本地所做的更改并希望从存储库中获取代码，您可以强制拉取。这将覆盖在您的计算机上完成的所有本地更改，将出现存储库中版本的副本。
+>
+> Execute the following commands in your IDE:
+> 在您的 IDE 中执行以下命令：
+>
+> ```sh
+> git reset -- hard
+> 
+> git pull
+> ```
+>
+> This will instantly destroy all your local changes so make sure that you know what you are doing and don’t need your local changes.
+> 这将立即破坏您所有的本地更改，因此请确保您知道自己在做什么并且不需要本地更改。
+>
+> #### Method 2: Keeping both changes (local and from the repo)
+>
+>  方法 2：保留两个更改（本地和来自回购）
+>
+> If you want to keep both changes (changes done locally and changes present in the repository), you can add and commit your changes. When you pull, there will obviously be a merge conflict. Here you can use the tools in your IDE (such as Difftool and mergetool) to compare the two pieces of code and determine which changes to keep and which to remove. This is the middle way; no changes will be lost until you manually remove them.
+> 如果您想保留这两项更改（本地完成的更改和存储库中存在的更改），您可以添加并提交您的更改。当你拉的时候，显然会出现合并冲突。在这里，您可以使用您的 IDE 中的工具（例如 Difftool 和 mergetool）来比较两段代码，并确定保留哪些更改以及删除哪些更改。这是中道；在您手动删除它们之前，不会丢失任何更改。
+>
+> ```sh
+> git add $the_file_under_error
+> 
+> git commit
+> 
+> git pull
+> ```
+>
+> When you get a merge conflict, pop those conflict resolving tools and check line by line.
+> 当您遇到合并冲突时，弹出那些冲突解决工具并逐行检查。
+>
+> #### Method 3: Keeping both changes BUT not committing 方法 3：保留两个更改但不提交
+>
+> This situation happens from time to time where developers are not ready to commit because there is some partly broken code which you are debugging. Here we can stash the changes safely, pull the version from the repository, and then unstash your code.
+> 这种情况时常发生，开发人员还没有准备好提交，因为您正在调试一些部分损坏的代码。在这里我们可以安全地存储更改，从存储库中提取版本，然后取消存储您的代码。
+>
+> ```sh
+> git stash save --keep-index
+> ```
+>
+> or
+>
+> ```sh
+> git stash
+> git pull
+> 
+> git stash pop
+> ```
+>
+> If there are some conflicts after you pop the stash, you should resolve them in the usual way. You can also use the command:
+> 如果弹出存储后有一些冲突，你应该以通常的方式解决它们。您还可以使用以下命令：
+>
+> ```sh
+> git stash apply
+> ```
+>
+> instead of pop if you are not ready to lose the stashed code due to conflicts.
+> 如果您还没有准备好因冲突而丢失隐藏的代码，而不是弹出。
+>
+> If merge doesn’t seem like a viable option for you, consider doing a rebase. Rebasing is the process of moving or combining a sequence of commits to a new base commit. In the case of rebasing, change the code to:
+> 如果合并对您来说似乎不是一个可行的选择，请考虑进行变基。变基是将一系列提交移动或组合到新的基础提交的过程。在变基的情况下，将代码更改为：
+>
+> ```sh
+> git stash
+> 
+> git pull --rebase origin master
+> 
+> git stash pop
+> ```
+>
+> #### Method 4: Make changes to ‘specific’ parts of your code 方法 4：更改代码的“特定”部分
+>
+> If you want to make changes to specific parts of the code and don’t want to replace everything, you can **commit** everything that you don’t want to overwrite and then follow method 3. You can use the following command for the changes which you want to overwrite from the version present in the repository:
+> 如果您想更改代码的特定部分并且不想替换所有内容，您可以提交您不想覆盖的所有内容，然后按照方法 3。您可以使用以下命令进行更改想要从存储库中存在的版本覆盖：
+
+
 
 
 
