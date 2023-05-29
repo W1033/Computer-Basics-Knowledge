@@ -112,6 +112,8 @@ created: 2023.03.22
 git config --global url.``"https://github.com"``.insteadOf git://github.com
 ```
 
+
+
 ## ▲ 使用 git pull 强制覆盖本地文件的方式
 
 ```sh
@@ -122,7 +124,9 @@ git reset --hard origin/master
 git pull origin master
 ```
 
-## ▲ git commit之后如何撤销
+
+
+## ▲ 删除本地 Git 仓库中的某个提交（commit）
 
 如果在git commit之后，需要撤回commit一般有以下三种方式
 
@@ -152,6 +156,40 @@ git reset --mixed HEAD^
 # 回到上一个版本
 git reset --hard HEAD^ 
 ```
+
+
+
+如果要删除本地 Git 仓库中的某个提交（commit），您可以使用以下命令：
+
+**(1) 回到上一个版本：删除工作区的代码，撤销 commit 和 `git add .`，回到上一次 commit 的状态。**
+
+```sh
+git reset --hard HEAD~1
+```
+
+其中，`HEAD~1`表示将会重置到最近的前一个提交。如果想要重置到更早的提交，请将数字 1 更改为相应的值。
+
+需要注意的是，这个命令将会永久性地删除提交，并清除该提交及其后的所有更改。请确保在执行此操作之前进行备份，并且谨慎使用该命令。
+
+**(2) 回到上一个版本：只撤销最近的**
+
+除了上面的方法，如果您只是想撤销最近的一次提交而不删除它，请使用以下命令：
+
+```sh
+git reset --soft HEAD~1
+```
+
+它将回滚到最近的一次提交，并将它们作为更改保留在本地代码库中。这意味着您可以修改或添加新的文件，并重新提交它们。
+
+总之，无论哪种情况，撤消提交都需要谨慎行事，并确保您了解每条指令的含义和影响。
+
+
+
+
+
+
+
+
 
 
 
