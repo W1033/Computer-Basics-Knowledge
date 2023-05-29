@@ -128,38 +128,7 @@ git pull origin master
 
 ## ▲ 删除本地 Git 仓库中的某个提交（commit）
 
-如果在git commit之后，需要撤回commit一般有以下三种方式
-
-### 1. git reset --soft 版本号
-
-不删除工作区改动的代码，撤销 commit，不撤销 `git add .`
-
-```shell
-# 回到上一个版本
-git reset --soft HEAD^ 
-```
-
-### 2.git reset --mixed 版本号
-
-不删除工作区改动的代码，撤销 commit，撤销 `git add .`
-
-```shell
-# 回到上一个版本
-git reset --mixed HEAD^ 
-```
-
-### 3.git reset --hard 版本号
-
-删除工作区的代码，撤销commit，撤销 `git add .` 回到上一次commit的状态
-
-```shell
-# 回到上一个版本
-git reset --hard HEAD^ 
-```
-
-
-
-如果要删除本地 Git 仓库中的某个提交（commit），您可以使用以下命令：
+如果要删除（/撤销）本地 Git 仓库中的 commit 提交，有下面 3 种方式：
 
 **(1) 回到上一个版本：删除工作区的代码，撤销 commit 和 `git add .`，回到上一次 commit 的状态。**
 
@@ -171,9 +140,7 @@ git reset --hard HEAD~1
 
 需要注意的是，这个命令将会永久性地删除提交，并清除该提交及其后的所有更改。请确保在执行此操作之前进行备份，并且谨慎使用该命令。
 
-**(2) 回到上一个版本：只撤销最近的**
-
-除了上面的方法，如果您只是想撤销最近的一次提交而不删除它，请使用以下命令：
+**(2) 回到上一个版本：不删除本地工作区改动的代码，只撤销最近的 commit，不撤销 `git add .`**
 
 ```sh
 git reset --soft HEAD~1
@@ -181,15 +148,11 @@ git reset --soft HEAD~1
 
 它将回滚到最近的一次提交，并将它们作为更改保留在本地代码库中。这意味着您可以修改或添加新的文件，并重新提交它们。
 
-总之，无论哪种情况，撤消提交都需要谨慎行事，并确保您了解每条指令的含义和影响。
+**(3) 回到上一个版本：不删除工作区改动的代码，撤销 commit 和 `git add .`**
 
-
-
-
-
-
-
-
+```
+git reset --mixed HEAD~1
+```
 
 
 
