@@ -488,9 +488,8 @@ git pull = git fetch + git rebase
 ## ▲ 拉取代码时报如下黄色提示：
 
 ```md
-hint: Pulling without specifying how to reconcile divergent branches is
-hint: discouraged. You can squelch this message by running one of the following
-hint: commands sometime before your next pull:
+hint: Pulling without specifying(vt.详细说明；规定；指定) how to reconcile(vt.调和，和解) divergent(不同的；分歧的) branches is discouraged(使气馁；阻止). You can squelch(v. 压制；镇压；使无声无息) this message by running one of the following commands sometime before your next pull:
+(不指定如何调和不同的分支进行拉取是不被鼓励的。您可以通过在下一次拉取之前运行以下命令之一来压制此消息：)
 hint: 
 hint:   git config pull.rebase false  # merge (the default strategy)
 hint:   git config pull.rebase true   # rebase
@@ -502,9 +501,7 @@ hint: or --ff-only on the command line to override the configured default per
 hint: invocation.
 ```
 
-> 解决方案：https://stackoverflow.com/questions/62653114/how-can-i-deal-with-this-git-warning-pulling-without-specifying-how-to-reconci
-
-总的来说就是上面 hint 中的 `git config pull.ff only`，然后 push 时候使用 `git push -f origin master`
+解决方法就是上面 hint 中的 3 个 `git config pull.xxxx`，然后 push 时候使用 `git push -f origin master`
 
 
 
