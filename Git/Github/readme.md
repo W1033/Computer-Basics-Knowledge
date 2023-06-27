@@ -180,7 +180,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 
-## ▲ Pull 代码报错：Error "Fatal: Not possible to fast-forward, aborting"
+## ▲ Pull 代码报错：Error "fatal: Not possible to fast-forward, aborting."
 
 *Added: 2023.05.02*
 
