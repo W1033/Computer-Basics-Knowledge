@@ -180,7 +180,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 
-## ▲ Pull 代码报错：Error "Fatal: Not possible to fast-forward, aborting"
+## ▲ Pull 代码报错：Error "fatal: Not possible to fast-forward, aborting."
 
 *Added: 2023.05.02*
 
@@ -199,6 +199,40 @@ If your upstream branch is not set, try `git pull origin <branch> --rebase` (cre
 
 To set this option globally, use `git config --global pull.rebase true` (credit to @Artur Mustafin below)
 要全局设置此选项，请使用 `git config --global pull.rebase true` （以下归功于@Artur Mustafin）
+
+
+
+
+
+## ▲ Rebase 语法及使用场景
+
+*added: 2023.06.28*
+
+**ChatGPT:** "rebase" 是 Git 版本控制系统中的一种操作，用于将一个分支上的提交移动到另一个分支上。它的汉语对应译为 "变基"。rebase 操作是将一系列提交复制到目标分支上，并在目标分支上应用这些提交，使得目标分支看起来像是基于源分支的最新代码进行开发的。
+
+**rebase 的语法为:**
+
+```sh
+git rebase <目标分支>
+```
+
+**使用场景:**
+
+(1) 合并分支：当你想要将一个分支的更改合并到另一个分支时，可以使用 rebase。首先，你切换到目标分支，然后运行 rebase 命令，将源分支上的提交应用到目标分支上。
+```sh
+git checkout <目标分支>
+git rebase <源分支>
+```
+
+(2) 保持提交历史整洁：有时，为了保持提交历史的整洁和有条理，你可能想要整理提交历史。使用 rebase 可以将多个连续的小提交合并为一个更大的提交或者将多个无关的提交重新排序。
+```sh
+git rebase -i <目标分支>
+```
+这将打开一个交互式的界面，允许你对提交进行编辑、合并、重新排序等操作。
+
+需要注意的是，当使用 rebase 操作时，由于对提交进行了修改，可能会改变提交的哈希值，因此在共享分支上进行 rebase 操作时需要格外小心。当你对已经推送到共享分支上的提交执行 rebase 操作时，可能需要使用 `git push --force` 命令来强制推送更改，这可能会影响其他团队成员的工作。
+
+
 
 
 
