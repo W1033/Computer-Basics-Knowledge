@@ -2,6 +2,17 @@
 
 
 
+> ## 计算机组成详解（运算器、控制器、存储器、I/O部件）
+>
+> https://blog.csdn.net/qq_34745941/article/details/128174979
+>
+> 待做笔记
+
+
+
+
+
+
 目录
 
 - [0 参考资料](https://www.cnblogs.com/gnivor/p/15679241.html#0-参考资料)
@@ -30,13 +41,16 @@ CPU组成 https://wenku.baidu.com/view/410842cd2cc58bd63186bd6f.html
 
 CPU中的主要寄存器 https://blog.csdn.net/kwame211/article/details/77773621
 
-
 ## 1 运算器、控制器、寄存器
 
 CPU内部主要由运算器、控制器、寄存器三大部分组成。
 
+Combinator, controller, register
+
 **运算器** 负责算术运算（+ - * / 基本运算和附加运算）和逻辑运算（包括 移位、逻辑测试或比较两个值等）。
+
 **控制器** 负责应对所有的信息情况，调度运算器把计算做好。
+
 **寄存器** 它们可用来暂存指令、数据和地址。既要对接控制器的命令，传达命令给运算器；还要帮运算器记录处理完或者将要处理的数据。
 
 ![CPU组成](readme.assets/689056-20211213001833220-675196650.png)
