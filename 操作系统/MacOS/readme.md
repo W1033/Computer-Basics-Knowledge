@@ -320,6 +320,7 @@ sudo upx -d /Applications/CORE\ Keygen.app/Contents/MacOS/CORE\ Keygen
 在 webstorm 拉取代码时提示： fatal: unable to access
 
 ## ▲ 解决 App 在 macOS Catalina下提示已损坏无法打开解决办法：
+
 在终端中输入以下命令；
 `sudo xattr -d com.apple.quarantine`
 然后打开 访达 - 应用程序 找到对应的应用程序拖进去，注意上面 quarantine 和应用之间有一个空格。
@@ -361,6 +362,16 @@ sudo spctl --master-disable
 ```
 
 打开`终端`：将刚刚复制的命令粘贴到终端中。然后按下键盘的回车键（return），输入密码，恭喜您，`您已成功开启任何来源`。
+
+
+
+> macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结
+>
+> https://sysin.org/blog/macos-if-crashes-when-opening/
+
+
+
+
 
 
 ## ▲ 关闭百度网盘后台(一到多个)同步进程 baiduNetdiskSync
