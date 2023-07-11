@@ -19,7 +19,25 @@
 11. 删除文件夹命令 `rmdir`
 
 
+
+## ▲ Win11 界面还原成 Win10 的方式
+
+*Added: 2023.07.11*
+
+使用 Explore Patcher (浏览器补丁程序)，下载地址如下：
+
+> https://github.com/valinet/ExplorerPatcher
+
+使用教程如下:
+
+> https://www.51cto.com/article/707228.html
+
+
+
+
+
 ## ▲ Windows 系统截屏快捷键
+
 - win10 系统截屏快捷键: Win+PrtSc
 - win7: 点击左下角 `开始` 图标 --> 所有程序 --> 附件 --> 截图工具
 
