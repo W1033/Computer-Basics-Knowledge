@@ -202,6 +202,14 @@ To set this option globally, use `git config --global pull.rebase true` (credit 
 
 
 
+*Added: 2023.07.30*
+
+> >  链接同上，但是是链接中的另外一个回答，回答截图如下：
+>
+> ![image-20230730224358754](./readme.assets/image-20230730224358754.png)
+>
+> 当前回答解决了问题，我用了 `git merge origin/master` 来合并了当前仓库和远程仓库中的冲突。
+
 
 
 ## ▲ Rebase 语法及使用场景
