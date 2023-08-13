@@ -363,6 +363,20 @@ sudo spctl --master-disable
 
 打开`终端`：将刚刚复制的命令粘贴到终端中。然后按下键盘的回车键（return），输入密码，恭喜您，`您已成功开启任何来源`。
 
+### 2. 移除应用的安全隔离属性
+
+打开 “终端” 执行如下命令（根据提示输入您的密码即可）：
+
+```shell
+sudo xattr -dr com.apple.quarantine /Applications/name.app
+```
+
+`/Applications/name.app` 如果不知道该如何输入，将 App 直接拖拽 `sudo xattr -rd com.apple.quarantine `（中间有个空格）后面即可。
+
+一般情况下，多余的扩展属性都可以清除（个别应用例外）：
+
+可以直接输入：`sudo xattr -cr /Applications/*`
+
 
 
 > macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结

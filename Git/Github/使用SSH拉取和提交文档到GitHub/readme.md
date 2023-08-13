@@ -59,39 +59,62 @@
 > git push -u origin master
 > ```
 >
-> 
+> > Added: 2023.08.13
+> > 
+> > 如果在本地 00_GITHUB-CLONE  文件夹下直接创建了一个 "Node.js" 的文件夹，直接拉去远程 Node.js 仓库，但是并没有在当前本地 Node.js 文件夹中创建 `readme.md` 文档，那么正确的拉取远程仓库的方式为：
+> > 
+> > ```shell 
+> > git init
+> > 
+> > git branch -M master
+> > 
+> > git remote add origin git@github.com:W1033/Node.js.git
+> > 
+> > git pull origin master
+> > ```
+> > 
+> > 注意：不能使用 `git add .` 和 `git commit -m "xxx"` ，如果先提交了空白到本地，那么在下面使用 `git pull origin master` 拉取远程代码时就会报如下的错误：
+> > ```
+> > fatal: Updating an unborn branch with changes added to the index.
+> > 致命错误：将更改添加到索引中的未出生分支进行更新。
+> > ```
+> >
 >
+
+
+
+
 > ### Push an existing repository from the command line (从本地命令行推送一个已有仓库)
 >
 > ```shell
-> git remote add origin url
+>git remote add origin url
 > git branch -M master
-> git push -u origin master
+>git push -u origin master
 > ```
 >
 > 如果本地文件夹之前已经用 `git pull origin master` 拉取过在线的仓库了，
->
+> 
 > 那么在本地仓库的 `.git` (默认隐藏, 点击当前窗口顶部的**查看** --> **隐藏的项目** 勾选) 文件夹内的 `config` 文件便可以看到  `url`  键后面的已有值了，
->
+> 
 > 此时我们使用下面的命令更改 SSH 拉取方式
->
+> 
 > ```sh
 > # 也可以设置为新的 https 地址
 > git remote set-url origin git@github.com:W1033/Vue-learning.git
 > ```
->
+> 
 > 更改完成后，可以使用如下命令查看当前的 origin 地址：
->
+> 
 > ```shell
 > $ git remote -v
 > ```
->
 > 
->
+> 
+> 
 > ### Import code from another repository
->
+> 
 > You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
->
+> 
 > 
 
 
