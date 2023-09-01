@@ -16,21 +16,30 @@
 11. 创建文件夹 `mkdir`
 12. 返回到当前文件的根目录 `cd\`
 13. 返回到上级目录: `cd..`
-11. 删除文件夹命令 `rmdir`
+14. 删除文件夹命令 `rmdir`
+
+
+
+
+
+## ▲ Win11 "显示更多选项" 关闭
+
+
+
 
 
 
 ## ▲ Win11 界面还原成 Win10 的方式
 
-*Added: 2023.07.11*
+~~*Added: 2023.07.11*~~
 
-使用 Explore Patcher (浏览器补丁程序)，下载地址如下：
+~~使用 Explore Patcher (浏览器补丁程序)，下载地址如下：~~
 
-> https://github.com/valinet/ExplorerPatcher
+> ~~https://github.com/valinet/ExplorerPatcher~~
 
-使用教程如下:
+~~使用教程如下:~~
 
-> https://www.51cto.com/article/707228.html
+> ~~https://www.51cto.com/article/707228.html~~
 
 
 
