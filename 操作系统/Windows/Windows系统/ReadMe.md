@@ -22,9 +22,18 @@
 
 
 
-## ▲ Win11 "显示更多选项" 关闭
+## ▲ Win11 关闭 "显示更多选项"
 
+点击 `Windows` 图标，在弹框中输入 cmd, 右键以管理员身份运行：
 
+```sh
+    # 第一步 copy 下面的命令，按 enter 执行
+    reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+
+    # 第二步，copy 之后 run, 然后 enter 执行
+    # 即：重启资源管理器
+    taskkill /f /im explorer.exe & start explorer.exe
+```
 
 
 
