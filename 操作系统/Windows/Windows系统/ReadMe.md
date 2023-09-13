@@ -16,21 +16,39 @@
 11. 创建文件夹 `mkdir`
 12. 返回到当前文件的根目录 `cd\`
 13. 返回到上级目录: `cd..`
-11. 删除文件夹命令 `rmdir`
+14. 删除文件夹命令 `rmdir`
+
+
+
+
+
+## ▲ Win11 关闭 "显示更多选项"
+
+点击 `Windows` 图标，在弹框中输入 cmd, 右键以管理员身份运行：
+
+```sh
+    # 第一步 copy 下面的命令，按 enter 执行
+    reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+
+    # 第二步，copy 之后 run, 然后 enter 执行
+    # 即：重启资源管理器
+    taskkill /f /im explorer.exe & start explorer.exe
+```
+
 
 
 
 ## ▲ Win11 界面还原成 Win10 的方式
 
-*Added: 2023.07.11*
+~~*Added: 2023.07.11*~~
 
-使用 Explore Patcher (浏览器补丁程序)，下载地址如下：
+~~使用 Explore Patcher (浏览器补丁程序)，下载地址如下：~~
 
-> https://github.com/valinet/ExplorerPatcher
+> ~~https://github.com/valinet/ExplorerPatcher~~
 
-使用教程如下:
+~~使用教程如下:~~
 
-> https://www.51cto.com/article/707228.html
+> ~~https://www.51cto.com/article/707228.html~~
 
 
 

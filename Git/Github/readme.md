@@ -70,6 +70,20 @@ $ git push origin <src>:<dst>
 $ git remote update origin --prune
 ```
 
+
+
+## ▲git 中文路径乱码处理
+
+```shell
+#支持中文路径名
+
+git config --global core.quotepath false
+```
+
+
+
+
+
 ## ▲ 分支切换
 
 要切换到一个已存在的分支，你需要使用 `git checkout` 命令，例如从一个分支切换到 master 分支：`git checkout master`
