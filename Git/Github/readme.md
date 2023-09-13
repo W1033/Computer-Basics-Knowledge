@@ -180,6 +180,92 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 
+
+
+## ▲ Pull 代码报错：
+
+```sh
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+```
+
+> 详细讲解件：https://stackoverflow.com/questions/2452226/master-branch-and-origin-master-have-diverged-how-to-undiverge-branches/2452610#2452610
+>
+> 下面的笔记来自上面链接的精简：
+>
+> #### Merge
+>
+> Use the `git merge` command:
+>
+> ```
+> $ git merge origin/main
+> 
+> # old repositories
+> $ git merge origin/master
+> ```
+>
+> This tells Git to integrate the changes from `origin/main` into your work and create a merge commit.
+> The graph of history now looks like this:
+>
+> ```
+> ... o ---- o ---- A ---- B  origin/main (upstream work)
+>                    \      \
+>                     C ---- M  main (your work)
+> ```
+>
+> The new merge, commit `M`, has *two* parents, each representing one path of development that led to the content stored in that commit.
+>
+> Note that the history behind `M` is now non-linear.
+>
+> 
+>
+> #### Rebase
+>
+> Use the `git rebase` command:
+>
+> ```
+> $ git rebase origin/main
+> 
+> # old repositories
+> $ git rebase origin/master
+> ```
+>
+> This tells Git to replay commit `C` (your work) as if you had based it on commit `B` instead of `A`.
+> CVS and Subversion users routinely rebase their local changes on top of `upstream` work when they update before commit.
+> Git just adds explicit separation between the commit and rebase steps.
+>
+> The graph of history now looks like this:
+>
+> ```
+> ... o ---- o ---- A ---- B  origin/main (upstream work)
+>                           \
+>                            C'  main (your work)
+> ```
+>
+> Commit `C'` is a new commit created by the `git rebase` command.
+> It is different from `C` in two ways:
+>
+> 1. It has a different history: `B` instead of `A`.
+> 2. Its content accounts for changes in both `B` and `C`; it is the same as `M` from the merge example.
+>
+> Note that the history behind `C'` is still linear.
+> We have chosen (for now) to allow only linear history in `cmake.org/cmake.git`.
+> This approach preserves the CVS-based workflow used previously and may ease the transition.
+> An attempt to push `C'` into our repository will work (assuming you have permissions and no one has pushed while you were rebasing).
+>
+> The `git pull` command provides a shorthand way to `fetch` from `origin` and `rebase` local work on it:
+>
+> ```
+> $ git pull --rebase
+> ```
+>
+> This combines the above `fetch` and `rebase` steps into one command.
+>
+> 
+
+
+
 ## ▲ Pull 代码报错：Error "fatal: Not possible to fast-forward, aborting."
 
 *Added: 2023.05.02*
@@ -190,10 +276,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 免责声明：这些命令会将远程分支的更改带到您的分支中。
 
 `git pull --rebase`. Unlike the other solution, you don't need to know the name of your destination branch.
-`git pull --rebase` 。与其他解决方案不同，您不需要知道目标分支的名称。
+(`git pull --rebase` 。与其他解决方案不同，您不需要知道目标分支的名称。)
 
 If your upstream branch is not set, try `git pull origin <branch> --rebase` (credit to @Rick in the comments)
-如果您的上游分支未设置，请尝试 `git pull origin <branch> --rebase` （在评论中归功于@Rick）
+(如果您的上游分支未设置，请尝试 `git pull origin <branch> --rebase` （在评论中归功于@Rick）)
 
 <p style="border-left:4px solid red; padding:10px 15px; background-color:#feeeee;">Annotation: 当日我使用这行代码解决了这个报错的问题，我的情况是：我先修改了本地仓库的文件，然后执行 add 和 commit 之后再 pull 的时候报上面的错误，上面说的 if your upstream branch is not set 是什么意思我也没有理解，一般情况下我也不太敢 rebase 代码，害怕把本地的改动给 rebase 没有了，但是执行完上面的代码之后，本地的改动还在。具体的原因估计也只能等学些 Pro git 才能搞明白了。</p>
 
