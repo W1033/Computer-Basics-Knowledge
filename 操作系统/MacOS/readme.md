@@ -221,7 +221,6 @@ Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/.
 - 左半屏: `Control(^) + Option(⌥) + 左箭头(←)`
 - 右半屏: `Control(^) + Option(⌥) + 左箭头(→)`
 
-
 ## ▲ Mac 系统自带截图快捷键
 
 `Command + Shift + 3` 截取整个屏幕, 保存图片在桌面
