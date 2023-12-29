@@ -20,6 +20,10 @@
 
 排气孔和排气管相连通，(注: 上面的截图应该是 3D 图的半截面，排气孔和排气管相连接不太直观)
 
+- > 完整的动画示例见这个视频：[【中英双字】瓦特蒸汽机原理 牵引发动机是如何工作的](https://www.bilibili.com/video/BV1hq4y1w7JM/?spm_id_from=333.337.search-card.all.click&vd_source=e92153ec1930505e455be52646a78b7c)
+    >
+    > 
+
 ![image-20220412211645892](readme.assets/image-20220412211645892.png)
 
 从而实现气体排出，
