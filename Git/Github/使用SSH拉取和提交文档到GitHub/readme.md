@@ -232,7 +232,7 @@ IdentityFile ~/.ssh/id_ed25519
 
 **注意：**
 
-- 如果你选择不向密钥添加密码，应该省略 `UseKeychain` 行。
+- 如果你选择不向密钥添加密码，应该省略 `UseKeychain` 行。(注: 如果执行下面 (3) 将 SSH 私钥添加到 ssh-agent ...，那 UseKeychain yes 就要取消注释）
 
 - 如果看到 `Bad configuration option: usekeychain` 错误，请在配置的 `Host *.github.com` 部分添加额外的一行。
   
