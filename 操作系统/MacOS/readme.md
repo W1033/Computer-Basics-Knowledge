@@ -72,9 +72,13 @@
 | 显示资源库 | 打开 Finder，按住 Option 键，并在菜单栏单击“前往”按钮，将出现“资 源库”的快捷跳转链接。 |
 | 全屏预览 | 选中一个文件后按 `Option + 空格键` 即可直接以全屏模式预览文件。比如一个txt文档 |
 
+## ▲ 开启新 "访达" 窗口时更改默认显示的 "最近使用" 标签页
+
+<img src="./readme.assets/image-20240112160218240.png" alt="image-20240112160218240" style="zoom:50%;" />
+
 ## ▲ Mac 系统缩放
 
-<img src="readme.assets/image-20230312115455318.png" alt="image-20230312115455318" style="zoom:67%;" />
+<img src="readme.assets/image-20230312115455318.png" alt="image-20230312115455318" style="zoom: 50%;" />
 
 
 ## ▲ Mac 一键返回到桌面
