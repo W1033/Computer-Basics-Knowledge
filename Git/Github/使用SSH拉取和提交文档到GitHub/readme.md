@@ -117,10 +117,6 @@
 > 
 > 
 
-
-
-
-
 ## ▲ 配置 SSH
 
 您可以使用 Secure Shell Protocol (SSH) 连接到 GitHub ，该协议通过不安全的网络提供安全通道。
@@ -302,3 +298,19 @@ $ git remote set-url origin git@github.com:xxx/xxx.git
 ```
 $ git remote -v
 ```
+
+
+
+## ▲ 配置完 SSH 之后，拉取私人仓库报错
+
+前提：问题出在 2024.01.12 用公司 M3 MBP 拉取私人仓库时报错（错误如下），但在拉取私人仓库之前已经配置好 SSH，并成功拉取了两个自己的公共仓库。
+
+```md
+kex_exchange_identification: Connection closed by remote host
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+解决参考：https://github.com/orgs/community/discussions/55269#discussioncomment-5891234
