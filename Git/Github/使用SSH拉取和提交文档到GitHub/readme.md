@@ -60,19 +60,20 @@
 > ```
 >
 > > Added: 2023.08.13
-> > 
+> >
 > > 如果在本地 00_GITHUB-CLONE  文件夹下直接创建了一个 "Node.js" 的文件夹，直接拉去远程 Node.js 仓库，但是并没有在当前本地 Node.js 文件夹中创建 `readme.md` 文档，那么正确的拉取远程仓库的方式为：
-> > 
+> >
 > > ```shell 
 > > git init
 > > 
 > > git branch -M master
 > > 
+> > # remote add origin 远程添加 origin
 > > git remote add origin git@github.com:W1033/Node.js.git
 > > 
 > > git pull origin master
 > > ```
-> > 
+> >
 > > 注意：不能使用 `git add .` 和 `git commit -m "xxx"` ，如果先提交了空白到本地，那么在下面使用 `git pull origin master` 拉取远程代码时就会报如下的错误：
 > > ```
 > > fatal: Updating an unborn branch with changes added to the index.
@@ -80,6 +81,26 @@
 > > ```
 > >
 >
+> > Added: 2024.01.15
+> >
+> > 关于上面 *Added: 2023.08.13* 遇到的错误。
+> >
+> > 原因描述：我使用公司 M3 mbp 执行上面第二行 `git branch -M master` 命令时，遇到如下的错误
+> >
+> > ```sh
+> > error: refname refs/heads/master not found
+> > fatal: Branch rename failed
+> > ```
+> >
+> > 解决方法如下：使用 
+> >
+> > ```sh
+> > # 新建一个分支，并切换到该分支
+> > $ git checkout -b [branch]
+> > ```
+> >
+> > 下图来自：https://stackoverflow.com/questions/18382986/git-rename-local-branch-failed
+> > ![image-20240115105206833](./readme.assets/image-20240115105206833.png)
 
 
 
