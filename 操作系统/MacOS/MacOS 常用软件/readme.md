@@ -2,93 +2,51 @@
 
 
 
-##  ▲ 2022.10.08 看到的不错软件
-
-### **Shazam**
-
-苹果旗下「听歌识曲」是我接触所有**同类中最好的**，看电影时挂在后台，想要识别点击即可，可以通过 App Store 下载，**免费**。
-
-### Runcat
-
-非常有趣的菜单栏工具，当电脑 **CPU 占用率越高其动作越快**，可以选择多种「跑者」。商店可以下载，**免费**
-
-###  Tickeys
-
-打字音效，码字太无聊，这款配音软件有点意思。谷歌搜索下载，**免费。**
-
-### **Maczip**
-
-非常好用的 Mac 解压缩软件，各类都试过唯独喜欢这个，之前叫 eZip 改名后 UI 也美了好多。谷歌搜索下载，**免费。**
-
-### **Gifski**
-
-可以将视频转化成 GIF，非常好用。商店可以下载，**免费。**
-
-### **PhtotScape X**
-
-图片快速编辑软件，适合新媒体工作者，商店可以下载，**免费有内购。**
-
-### Resilio Sync
-
-这个算是「去中心化」文件同步分享工具，免费版只能下载他人全部文件，Pro 可以选择性下载同步，密钥您自己搜。谷歌搜索下载**，免费。**
-
-### **Downie 4**
-
-视频下载神器，支持平台更多，口碑更好。它姊妹 Permute 是非常不错的格式转换工具。**二者都需付费**。谷歌搜索下载，**视频下载的话还可以通过浏览器嗅探**，看这篇浏览器基础插件篇。
+*Added: 2024.01.17*
 
 
 
+## 系统辅助软件
 
+| 软件名            | 软件类别              | 安装/下载                | 备注                         |
+| :--------------  | -------------------- | ---------------------- | ----------------------------- |
+| Scroll Reverser  |                      | [官网](https://pilotmoon.com/scrollreverser/)，免费 |                 |
+| 右键助手专业版     |                      | Macked 网站下载破解版       |                 |
+| ClashX / V2rayU  | VPN                  |        |                 |
+| Magnet           | 分屏软件              | Apple Store (已购买)        |                 |
+| Maczip           | 压缩软件              | 谷歌搜索下载，**免费。**    | 非常好用的 Mac 解压缩软件。          |
+| App Cleaner      | 删除软件              | Macked 网站下载破解版       |                 |
+| Lemon 腾讯柠檬    | 安全、清内存、删软件    | Chrome，免费                |                 |
+| ScreenFlow       | 录屏软件              |        |                 |
+| 自动切换输入法     |                      | Apple Store (已购买)  | 和 iShot Pro 是一家国内开发商        |
+| iShot Pro       | 截图                  | Apple Store (已购买)   | 官网使用说明：https://www.better365.cn/ishot.html<br />注：iShot 自带的 OCR 没有白描准确。 |
+| 白描             | ORC 光学字符识别       | Apple Store (已购买)   | OCR (optical`/ˈɑːptɪkl/` character recognition 光学字符识别) |
+|                 |                      |        |                 |
+|                 |                      |        |                 |
 
-## ▲ 自己已安装的软件
+## 音视频软件
 
+| 软件名       | 软件类别 | 安装/下载       | 备注 |
+| :----------- | -------- | --------------- | ---- |
+| INNA         | 视频播放  | Github           |      |
+| **Downie 4** | 视频下载  | Chrome 搜破解版    |      |
+| Premute      | 视频转换  | Chrome 搜破解版    |      |
+| 4kdownloader |          |                 |      |
+|              |          |                 |      |
 
+## 其它常用软件
 
-![image-20220320133020018](readme.assets/image-20220320133020018.png)
-
-### iShot Pro (截图工具)
-
-> 下载路径：AppStore 购买
->
-> 官网使用说明：https://www.better365.cn/ishot.html
->
-> **`请一定要去官网看使用解说`**
->
-> 截图快捷键： `Option + A`
-
-注：iShot 截图自带 OCR (optical`/ˈɑːptɪkl/` character recognition 光学字符识别) 文字识别功能，截图的文字可以很容易得到。(tip：诚实的说 iShot 的 OCR 没有 白描准确。)
-
-### 白描（OCR 光学字符）
-
-### Magnet (分屏软件)
-
-### IINA (视频播放软件)
-
-### V2rayU (VPN 软件)
-
-### Typora (markdown 编辑器)
-
-### INNA 视频播放
-
-### ScreenFlow 录屏
-
-### Premute 视频转换
-
-### Downie 下载所有网站的视频
-
-![image-20220320133040062](readme.assets/image-20220320133040062.png)
-
-![image-20220320133059664](readme.assets/image-20220320133059664.png)
-
-### OnyX （mac系统维护工具）
-
->  下载：https://www.macwk.com/soft/onyx
-
-
-
-
-
-
-
-
+|       软件名         | 软件类别        | 安装/下载        | 备注                |
+| ------------------ | --------------- | ----------------- | -------------------------- |
+| Visual Studio Code | 编辑器           |                   |        |
+| Typora             | Markdown 编辑器  |                   |        |
+| Office 2021        | Office          | 阿里云盘：`Office 2021_Mac` |  |
+| Gifski             | GIF             |                   |        |
+| Resilio Sync       | 文件分享         | 谷歌搜索下载，免费。 | 「去中心化」文件同步分享工具。    |
+| Piciew             | 图片预览         | Apple Store，已购买正版。 |  |
+| Photoshop          | 图片编辑         | Adobe Creative Cloud，已购买正版，一年。 |        |
+| Capture One        | 图片编辑         | 破解版             |        |
+|                    |                 |                   |        |
+|                    |                 |                    |        |
+|                    |                 |                    |        |
 
