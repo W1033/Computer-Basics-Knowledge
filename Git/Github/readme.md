@@ -300,13 +300,13 @@ If your upstream branch is not set, try `git pull origin <branch> --rebase` (cre
 To set this option globally, use `git config --global pull.rebase true` (credit to @Artur Mustafin below)
 要全局设置此选项，请使用 `git config --global pull.rebase true` （以下归功于@Artur Mustafin）
 
-
+------
 
 *Added: 2023.07.30*
 
 > >  链接同上，但是是链接中的另外一个回答，回答截图如下：
 >
-> ![image-20230730224358754](./readme.assets/image-20230730224358754.png)
+> <img src="./readme.assets/image-20230730224358754.png" alt="image-20230730224358754" style="zoom:50%;" />
 >
 > 当前回答解决了问题，我用了 `git merge origin/master` 来合并了当前仓库和远程仓库中的冲突。
 
