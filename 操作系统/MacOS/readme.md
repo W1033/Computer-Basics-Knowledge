@@ -43,7 +43,7 @@
 
 | 单词 | 美式发音 | 词类 + 汉语释义     |
 | ---- | -------- | ------------------- |
-| quit | /kwɪt/   | v. 退出；离开；停止 |
+| quit | `/kwɪt/` | v. 退出；离开；停止 |
 |      |          |                     |
 
 | 新建访达窗口 | `Command` + `N` (new) |
@@ -176,15 +176,26 @@ Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/.
 ## ▲ Mac 下的 host 文件查找方式:
 打开 Finder, 按快捷键组合 `Shift` + `Command` + `G` 查找文件, 输入 `/etc/hosts` 确认前往.
 
+## ▲ 在访达中显示文件路径:
 
-## ▲ 让 Mac 显示文件路径:
-下载 `TinkerTools` --> `Finder` --> 勾选 `Show selected path in window title` 
+<img src="./readme.assets/image-20240121223049026.png" alt="image-20240121223049026" style="zoom: 40%;" />
 
+
+
+## ▲ 访达（Finder）中如何让文件按照数字大小排序？
+
+访达 -> 显示 -> 查看显示选项 -> 排序方式：种类。
+
+可以看到 mp4 视频的文件名是按照数字大小排序了。
+
+<img src="./readme.assets/image-20240121223903688.png" alt="image-20240121223903688" style="zoom:46%;" />
 
 ## ▲ 显示/隐藏 文件夹中的 默认隐藏文件
+
 使用快捷键：`Command + Shift + .` 来快速（在 Finder 中）显示和隐藏隐藏文件. 
 
 ## ▲ 在 Finder 的顶部显示文件路径:
+
 打开终端(Terminal)输入: `defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES` 便可在 Finder 的顶部显示路径了, 在显示的路径上右键, 还可以直接访问路径中的任意一层.
 
 复制当前文件路径的快捷键: `Option + Command + C`.
@@ -210,16 +221,15 @@ Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/.
 在 "文件夹/文件上" 双手按下触控板既可弹出操作文件的小弹框
 
 ## ▲ Mac 软件卸载
-`腾讯柠檬` / `App Cleaner & Uninstall` / `CleanMyMac` 
+`腾讯柠檬` / `App Cleaner & Uninstall` 
 
-三个人选其一，但是只有腾讯柠檬是免费的，后面两个我自己使用的是破解版的 App Cleaner & Uninstall 
-
+腾讯柠檬是免费的，App Cleaner & Uninstall 从 https://macked.app/programs 下载破解版的 
 
 ## ▲ Mac 分屏
 
 (1) 系统自带分屏操作: 分屏在 MacOS 里叫 Split View. 支持 Split View 的 app 中, 鼠标长按全屏键（就是每个窗口左上角的关闭、最小化、全屏这三个中的第三个）3秒, 就出现啦. 
 
-(2) 更方便的操作是使用分屏软件 `Magnet` (magnet `/ˈmæɡnɪt/` n. 磁铁)，注意这个软件是收费的，如果不想使用付费下载，可以从 [XClient 这里](https://xclient.info/s/magnet.html#versions) 下载，但是软件本身也不贵，建议购买正版。
+(2) 更方便的操作是使用分屏软件 `Magnet` (magnet `/ˈmæɡnɪt/` n. 磁铁)，注意这个软件是收费的，如果不想使用付费下载，可以从 https://macked.app/magnet-pro.html 下载，但是软件本身也不贵，建议购买正版。
 
 软件快捷键说明: 
 - 左半屏: `Control(^) + Option(⌥) + 左箭头(←)`
@@ -240,6 +250,7 @@ Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/.
  iShot Pro (可以截长图)，但是 pro 版是收费的，app store 中 iShot 是免费的。
 
 ## ▲ 打开 Mac 上允许安装任何来源的应用程序的方法：
+
 打开终端 --> 输入: `sudo spctl --master-disable` 然后回车输入密码. 
 
 - 打开偏好设置 --> 安全性与隐私 , 就可以看到有 `任何来源` 的选项了
@@ -250,23 +261,33 @@ Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/.
 
 快速打开 spotlight 中搜索的文件的路径 `Command + 回车键(enter/return)
 
-
 ## ▲ Mac 文件管理
-- 文件夹中的 4 种文件显式方式: 
-    + 依次为: ![文件展示方式](macos-images/document-display-method.png)
-    + 图标
-    + 列表
-    + 分栏
-    + 封面流
-- 快速预览当前文件:
-    + 鼠标移动到当前文件上, 点击键盘的 `空格键` 就可以快速预览当前文件；还可以点击上下左右键快速切换文件, 找到当前需要的文件后, 再次点击空格即可关闭预览. 
-- "文件/夹"重命名: 当前文件/夹点击选中后, 点击回车键(enter)即可快速修改文件/夹
+
+文件夹中的 4 种文件显式方式如下图，依次为：
+
+![image-20240121221923604](./readme.assets/image-20240121221923604.png)
+
+1. 图标
+
+2. 列表
+
+3. 分栏
+
+4. 画廊
+
+    
+
+**快速预览当前文件**:
+
++ 鼠标移动到当前文件上, 点击键盘的 `空格键` 就可以快速预览当前文件；还可以点击上下左右键快速切换文件, 找到当前需要的文件后, 再次点击空格即可关闭预览. 
+
+- "文件/文件夹"重命名: 当前文件/夹点击选中后, 点击回车键(enter)即可快速修改文件或文件夹名。
 - Spotlight 聚焦搜索 ('command + 空格' 唤醒聚焦搜索):
-    - 输入搜索找到搜索内容后, 点击一下时打开；
-      如果想打开文件所在的路径, 按下 Command + 双击搜索框下的文件名即可. 
+    - 输入搜索找到搜索内容后, 点击一下时打开；如果想打开文件所在的路径, 按下 Command + 双击搜索框下的文件名即可. 
 - 显示文件夹中的隐藏文件快捷键：`shift + command + .`
 
 ## ▲ Mac Chrome 浏览器常用快捷键:
+
 - Command + L = 光标移动到地址栏
 - Command + R = 刷新页面
 - Command + W = 关闭当前标签
@@ -277,46 +298,13 @@ Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/.
 
 ## ▲ Mac 包管理器
 
-- 见当前同级目录 `./MacOS 包管理器 Homebrew`
+见当前同级目录 `./MacOS 包管理器 Homebrew`
 
 ## ▲ Mac 下弹出 U盘/SSD
-- 选中要弹出的 U盘/SSD 然后按下 `Command` + `E`
 
-## ▲ 拷贝文件到移动 SSD
-- 使用 brew 安装 Mounty
-  ```shell
-    brew cask install mounty
-  ```
-- 打开软件如果挂载提示: The volume UNTITLED is not re-mountable in read/write mode. Probably it was not clean unmounted before. (卷不能在 读/写
-  模式下重新挂载. 可能是因为先前没有完全卸载(安全删除)).
-  
-  这里的意思是说磁盘在 Win 下没有安全删除就拔除来了, 导致文件系统中有错误区块, 所以在 Mac 中不能挂载成读写模式. 到 Windows 下, 打开 Dos 命令行, 输入:
-  ```dos
-    chkdsk /f (tip: 就是 f, 不是移动硬盘所在盘符)
-  ```
-  然后回车, 退出 esc / Y 我在 Windows 10 上运行以上命令是不行的, 提示我卷在另外一个设备使用, 但是我用火绒安全弹出移动硬盘后, 再次拿到 Mac 上便是可以使用 Mounty 加载了...
-  
-  下次再拔出移动硬盘之前, 一定记得安全删除/弹出.
+直接在需要弹出的 SSD 上邮件，选择 "推出 XXX"；或选中要弹出的 U盘/SSD 然后按下 `Command` + `E`
 
-## ▲ 查看 mbp 风扇狂转(5000 ~ 6000 转) 的原因
-- (2) 首先, 你应该有一个可以监控风扇转速的软件, 比如: 腾讯的 `Lemon`(免费), [Macs fan control](https://www.macbl.com/app/system/macs-fan-control)... 等等, 它们都可以实时显示风扇转速. 
-- (2) 从 `启动台` 找到 `活动监视器`, 然后点击顶部的 `cpu` 模块,查看每个软件(进程)对 CPU 的使用情况, 一般超过 100% 的都会导致 CPU 负载过大, CPU 超负荷工作就会发热, 紧跟着风扇高速狂转加以散热.
-  
-  <img src="./macos-images/activity-monitor.png"
-        style="margin-left: 0; border-radius: 4px; width: 66%;
-                box-shadow: 1px 1px 3px 2px #e5e5e5">
-  
-  对于一般的软件直接双击在弹框中点击退出即可, 但如果是像浏览器这样开了多个标签页, 直接退出的话, 所有页面都会关闭; 那么对于浏览器导致的 CPU 高速运转该怎么解决呢? 
-  
-  对于这个问题, 我们先来分析一下, 在浏览器中哪些情况会导致 CPU 使用率过高?
-    + (1) 第一种情况可能就是, 某个页面中运行了恶意 JavaScript 脚本;
-    + (2) 第二种可能就是在浏览器中安装了恶意插件.
-  
-  对于上面 2 种情况, 我们可以通过这种方式解决, 首先点击浏览器顶部的 `窗口` --> `任务管理器`, 查看每个标签和 CPU 的占用情况, 如果发现像下图这样占用了 294% CPU 的进程, 肯定就是问题所在了.
-  
-  <img src="./macos-images/task-control.png" style="margin-left: 0; border-radius: 4px; width: 66%; box-shadow: 1px 1px 3px 2px #e5e5e5">
-  
-   那么, 如何知道这个占用了很高 CPU 使用率的进程是什么呢? 只需双击打开查看便知道了, 只需要结束这个进程, CPU 温度下来, 风扇转速便自然降下来了.
+
 
 ## ▲ Mac 无线连接 HP Laser MFP 136nw 打印机
 
@@ -373,11 +361,11 @@ sudo spctl --master-disable
 
 
 
-## ▲ 33. Mac移动硬盘无法拷贝或删除文件的最佳解决方案
+## ▲ Mac移动硬盘无法拷贝或删除文件的最佳解决方案
 
-点击 **软件列表图标** --> **其他** --> **磁盘工具** --> 左侧垂直栏点击移动硬盘选中，然后点击当前窗口右上角的 **抹去**，在当前较小的弹框的：格式：选择 ExFAT. (注意: 这会格式化硬盘，请提前备份硬盘。)
+~~点击 **软件列表图标** --> **其他** --> **磁盘工具** --> 左侧垂直栏点击移动硬盘选中，然后点击当前窗口右上角的 **抹去**，在当前较小的弹框的：格式：选择 ExFAT. (注意: 这会格式化硬盘，请提前备份硬盘。)~~
 
-Q：移动硬盘 / U盘插入Mac，可以打开里面的文件，却不能拷贝/删除/新建文件夹。怎么解决呢？
+**Q：移动硬盘 / U盘插入Mac，可以打开里面的文件，却不能拷贝/删除/新建文件夹。怎么解决呢？**
 
 出现这种情况很有可能是因为你的硬盘是 NTFS 格式。
 
@@ -391,17 +379,6 @@ Q：移动硬盘 / U盘插入Mac，可以打开里面的文件，却不能拷贝
 | ------- | ------------- | --------------- |
 | paragon | `/ˈpærəɡən/`  | n. 模范；典范   |
 | texture | `/ˈtɛkstʃər/` | n. 质地；纹理   |
-
-
-
-## ▲ 巫师后期推荐的几款 Mac 必备软件
-
-- 必装神器 Alfred (任意搜索软件)
-- 实时状态监控 iStat Menus
-- 窗口吸附 Magnet
-- 容器软件 Dropover
-- MacOS深度定制 TinkerTool
-- 目录自动备份Sync folders Pro
 
 
 
