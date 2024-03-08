@@ -17,6 +17,86 @@
 
 
 
+## ▲ 拉取 github 仓库报错：
+
+错误如下：
+
+```md
+kex_exchange_identification: Connection closed by remote host
+Connection closed by 140.82.114.4 port 22
+fatal: Could not read from remote repository.
+```
+
+首先问了一下 ChatGPT 4.0，他的回答如下：
+
+> 你遇到的错误信息 "kex_exchange_identification: Connection closed by remote host" 表明你本地机器和 GitHub 服务器之间的 SSH 连接存在问题。这个错误通常发生在 SSH 密钥交换出现问题时。
+>
+> 以下是解决此问题的一些步骤：
+>
+> 1. **检查 SSH 配置**：确保你的 SSH 配置设置正确。确保你的 GitHub 账户关联了正确的 SSH 密钥，并且公钥已经添加到 GitHub 账户的设置中。
+>
+> 2. **验证 SSH 密钥权限**：确保 SSH 密钥文件的权限设置正确。私钥（`id_rsa`）的权限应设置为 `600`（仅对所有者可读和可写）。
+>
+>    你可以使用以下命令设置正确的权限：
+>    ```bash
+>    chmod 600 ~/.ssh/id_rsa
+>    ```
+>
+> 3. **检查 SSH 连接**：使用以下命令测试你与 GitHub 服务器的 SSH 连接：
+>    
+>    ```bash
+>    ssh -T git@github.com
+>    ```
+>    这个命令应该建立连接并显示一条消息，确认你已成功验证身份。
+>    
+> 4. **防火墙或网络问题**：如果你身处防火墙之后或者使用受限制的网络，可能连接会被阻止。检查防火墙设置，或尝试使用不同的网络看是否问题仍然存在。
+>
+> 5. **GitHub 状态**：有时，GitHub 的服务器可能会出现临时问题。你可以在他们的状态页面上检查 GitHub 服务的状态。
+>
+> 6. **更新 SSH 客户端**：确保你的 SSH 客户端已经更新到最新版本。有时，过时的 SSH 客户端版本可能会导致兼容性问题。
+>
+> 7. **检查 SSH 配置文件**：验证你的 SSH 配置文件（`~/.ssh/config`）是否有任何可能干扰连接到 GitHub 的冲突设置。
+>
+> 8. **查看 SSH 日志**：检查 SSH 日志，以获取可能提供有关连接失败原因的更详细的错误消息。你可以在 Linux 系统中通常在 `/var/log/auth.log` 找到 SSH 日志。
+>
+> 通过遵循这些步骤，你应该能够诊断和解决从 GitHub 拉取代码时遇到的 "kex_exchange_identification: Connection closed by remote host" 错误。
+>
+> 参考资料：
+> - GitHub SSH 故障排除指南：https://docs.github.com/en/github/authenticating-to-github/troubleshooting-ssh
+> - GitHub 状态页面：https://www.githubstatus.com/
+>
+
+我使用上面的第 3 步的 `ssh -T git@github.com` 命令，在当前仓库测试的结果是这样的，即下图红色方框内的：
+
+```md
+kex_exchange_identification: Connection closed by remote host
+Connection closed by 198.18.0.71 port 22
+```
+
+<img src="./readme.assets/image-20240308212406978.png" alt="image-20240308212406978" style="zoom:50%;" />
+
+然后我直接在在谷歌里搜索："错误：kex_exchange_identification: Connection closed by remote host
+Connection closed by 198.18.0.71 port 22"，在检索页面的第一个 StackOverflow 的见面中见到如下回答：
+
+> 原文：https://stackoverflow.com/questions/10127818/ssh-exchange-identification-connection-closed-by-remote-host-under-git-bash
+
+<img src="./readme.assets/image-20240308212939287.png" alt="image-20240308212939287" style="zoom:50%;" />
+
+原因请看上图的评论，所以这个没有什么好说的，按照截图修改就行了，我自己电脑的 `~/.ssh/config` 文件修改后为：
+
+```bash
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+IgnoreUnknown UseKeychain
+AddKeysToAgent yes
+IdentityFile ~/.ssh/id_ed25519
+```
+
+最后添加完之后再使用上面 ChatGPT 回答中的第 3 步 `ssh -T git@github.com` 命令测试，出现如下提示几表示可以正常访问了。
+
+<img src="./readme.assets/image-20240308213746849.png" alt="image-20240308213746849" style="zoom:50%;" />
+
 
 
 ## ▲ 在 Github 仓库中启用 Web VSCode
