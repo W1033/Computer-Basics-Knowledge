@@ -17,6 +17,55 @@
 
 
 
+## ▲ 提交代码时 git pull origin master  没有执行完毕就直接执行了 git push origin master 出现的错误
+
+*Added: 2024.3.18* 
+
+原因：如标题所示，直接在命令行里写完 `git pull origin master` 后立马就写了 `git push origin master`  pull 的命令没有执行，直接执行了 git push,  终端内的执行图是下面着这样：
+
+<img src="./readme.assets/image-20240318121024059.png" alt="image-20240318121024059" style="zoom:50%;" />
+
+> <span style="color:#b5b405;">hint: You have divergent branches and need to specify how to reconcile them. You can do so by running one of the following commands sometime before your next pull:</span>
+>
+> 提示：您有分叉的分支，需要指定如何协调它们。您可以在下次拉取之前运行以下命令之一：
+
+此时如果再次 `git push origin master` 就会报如下的错误：
+
+<img src="./readme.assets/image-20240318141451024.png" alt="image-20240318141451024" style="zoom:50%;" />
+
+如果我们此时使用 `git show-ref` 查看不同，会显示如下：
+
+```git
+a9ffeee5cec7009ccf223ee6282320ac18dffa1d refs/heads/master
+681daa0f2ddafebc064debeacf0565f7ccd3330c refs/remotes/origin/master
+```
+
+此时需要做的就是 merge 合并冲突，因为当前仓库已经提交了，但是并没有成功，使用 `git merge origin/master` 来合并冲突，图示如下：
+
+<img src="./readme.assets/image-20240318141937833.png" alt="image-20240318141937833" style="zoom:50%;" />
+
+> `git merge origin/master` 是一个 Git 命令，用于将远程主分支（通常称为 `master` 或 `main`）的最新更改合并到当前工作分支中。这里，`origin/master` 表示远程仓库 `origin` 的 `master` 分支。下面是这个命令的详细解释：
+>
+> - `git`: 这是调用 Git 程序的命令。
+> - `merge`: 这个子命令用于合并两个或多个开发历史。
+> - `origin/master`: 指定要合并的分支。在这个例子中，它引用远程仓库 `origin` 中的 `master` 分支。
+>
+> 当你执行 `git merge origin/master` 时，Git 会尝试自动合并远程分支 `master` 的更改到你当前所在的本地分支。合并过程中可能会出现以下几种情况：
+>
+> 1. **无冲突自动合并**：如果远程分支的更改与你的本地分支不冲突，Git 将自动合并这些更改。
+> 2. **冲突需要手动解决**：如果远程分支的更改与本地分支在相同的文件中有不同的更改，会产生冲突，需要手动解决后才能完成合并。
+>
+> “Merge made by the 'ort' strategy” 表示 Git 使用了 'ort' 策略*`(1)`*来合并分支。'ort' 策略是 Git 用于处理合并的一种内部机制，旨在优化合并过程，减少合并冲突的发生。
+>
+> 总的来说，`git merge origin/master` 命令用于将远程主分支的更新合并到你的当前分支，以确保你的工作是基于最新的项目状态。
+>
+>
+> (1) `ort` 策略是 Git 合并策略中的一种，其中 `ort` 代表 "Ostensibly Recursive's Twin"。这是 Git 中较新的合并策略之一，旨在取代老旧的 `recursive` 合并策略。`ort` 策略在处理合并冲突和计算合并结果时更高效，尤其是在处理大型项目或复杂的合并历史时。它旨在改进性能并减少错误，同时保持与 `recursive` 策略相似的合并结果。
+>
+> "Ostensibly Recursive's Twin" 可以翻译为“表面上递归的双胞胎”。这里的“表面上”指的是它看起来和旧的递归策略类似，但实际上已经做了改进和优化。
+
+
+
 ## ▲ 拉取 github 仓库报错：
 
 错误如下：
@@ -192,7 +241,7 @@ git config --global core.quotepath false
 
 
 
-## ▲ 解决fatal: unable to connect to github.com  errno=连接超时
+## ▲ 解决 fatal: unable to connect to github.com  errno=连接超时
 
 created: 2023.03.22
 
