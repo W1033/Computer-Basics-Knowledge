@@ -10,6 +10,25 @@
 
 
 
+## ▲ 拉取 github 仓库到本地
+
+1. 打开终端，cd到自己想要存放项目的文件夹：`$ cd /Users/ioskaifa/Desktop`
+
+2. 输入git clone url, url为你要拉取的项目地址：
+
+    ```sh
+    # 项目地址可以是下图的 https/ssh
+    $ git clone + 你要拉取的项目地址
+    ```
+
+    <img src="./readme.assets/image-20240321140038112.png" alt="image-20240321140038112" style="zoom:50%;" />
+
+3. 项目拉取成功
+
+
+
+
+
 ## ▲ 拉取和提交文档到 GitHub 在线仓库
 
 首先在 www. github.com 创建一个 CCT-FILES 的 公共/私人 仓库， 创建完之后在本地计算机拉取和提交文档到在线仓库。
