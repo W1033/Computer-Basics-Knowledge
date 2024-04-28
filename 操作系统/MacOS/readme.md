@@ -169,7 +169,22 @@ Hint: 我个人建议使用 - 搜狗/百度输入法
 
 
 
+## ▲ 苹果电脑格式化移动硬盘为 ExFAT
+
+### Mac 上的“磁盘工具”中可用的分区方案
+
+在 Mac 上的“磁盘工具”中抹掉和格式化储存设备时，系统会提示你选取要使用的方案。“磁盘工具”支持以下方案：
+
+- *GUID 分区图：*为所有基于 Intel 和 Apple 芯片的 Mac 电脑选取此选项。部分基于 Microsoft Windows 的较新电脑还可以使用此方案。
+- *主引导记录：*为兼容所有基于 Microsoft Windows 的电脑选取此选项。
+- *Apple 分区图：*为兼容基于 PowerPC 的早期 Mac 电脑选取此选项。
+
+<img src="./readme.assets/image-20240428093946653.png" alt="image-20240428093946653" style="zoom:40%;" />
+
+
+
 ## ▲ 搜索文件路径:
+
 Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/...` 并更改文件的话, 只需打开 `Finder`, 按下 `Command + shift + G`, 在目录中搜索所需要的路径便可.
 
 
