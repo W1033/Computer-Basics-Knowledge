@@ -50,3 +50,27 @@
 |                    |                 |                    |        |
 |                    |                 |                    |        |
 
+
+
+## 达芬奇 18.6.6 破解版安装教程
+
+*Added: 2024.05.24*
+
+Resolve 18.6.6 的安装程序在阿里云盘（注：安装包内包含 "破解补丁" 和 "blackmagic.lic" 即 licenses），安装包的下载是从咸鱼购买了一天  https://mac.macsc.com/ 网站的会员，从这里下载的，但是写笔记的当天 (05.24) 网站已经下架了，不知道是不是达芬奇现在查盗版比较严格了。。。
+
+安装步骤：
+
+1、打开 18.6.6 的安装包先正常安装 Install Resolve 18.6.6.pkg，完成之后先运行 DaVinci Resolve ，正常打开后会让你输入激活码，到此时关闭程序。
+
+2、打开安装包里的 "破解补丁.dmg" 
+
+(1) 把 Resolve 拖转到右侧的 MacOS 文件夹。
+
+(2) 接着点击访达，打开窗口之后按下 `Command + Shift + G` 打开路径弹框，粘贴 license 路径，如下：
+>  /Library/Application Support/Blackmagic Design/DaVinci Resolve/.license/
+
+接着把 blackmagic.lic文件直接拖进去就行了。
+
+- 注：上面的这个笔记来自：https://mac.shuiche.cc/info/86 。
+
+到此时即安装完毕。
