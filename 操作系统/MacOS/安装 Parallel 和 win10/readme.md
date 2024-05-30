@@ -1,7 +1,14 @@
 # Parallels Desktop 19.1.0 破解版
 
-*Edited: 2024.03.18*
+*Upated: 2024.05.30*
 
+5 月 30 号这天我看 macked 官网已经不建议下载 19.1.0-54729 了，我在自己的 mac studio 上下载的是 ：https://download.parallels.com/desktop/v19/19.3.0-54924/ParallelsDesktop-19.3.0-54924.dmg 和破解补丁(https://macked.app/parallels-desktop.html#:~:text=54924%20%E6%BF%80%E6%B4%BB%E5%B7%A5%E5%85%B7-,%E7%89%88%E6%9C%AC,-%3A%205.1.1%20SIP%20ON)
+
+<img src="./readme.assets/image-20240530200940049.png" alt="image-20240530200940049" style="zoom:50%;" />
+
+
+
+*Edited: 2024.03.18*
 
 
 > 笔记来源：https://macked.app/parallels-desktop.html
