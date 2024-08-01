@@ -419,7 +419,7 @@ sudo spctl --master-disable
 
 插件安装后，在「系统偏好设置」里面可以查看到。
 
-我自己是从闲鱼购买的 Paragon Software 的 NTFS for mac, 因为 Texture NTFS 太贵。
+我自己是从闲鱼购买了 Paragon 和 Texture, 2023.11.06 闲鱼购买了 Texture, 激活码见 Google Keep 笔记。
 
 | 单词    | 美式发音      | 词类 + 汉语释义 |
 | ------- | ------------- | --------------- |
