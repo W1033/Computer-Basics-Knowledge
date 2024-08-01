@@ -72,6 +72,37 @@
 | 显示资源库 | 打开 Finder，按住 Option 键，并在菜单栏单击“前往”按钮，将出现“资 源库”的快捷跳转链接。 |
 | 全屏预览 | 选中一个文件后按 `Option + 空格键` 即可直接以全屏模式预览文件。比如一个txt文档 |
 
+
+
+
+
+## ▲ 在 Mac 上设置远程登录
+
+```md
+笔记来源：https://support.apple.com/zh-cn/guide/mac-help/mchlp1066/mac
+Add: 2024.08.01
+```
+
+1. 在 Mac 上，选取苹果菜单 <img src="https://help.apple.com/assets/65A8106E7C69B635140E606E/65A81072C0272B1FFA02DE51/zh_CN/2f77cc85238452e25cb517130188bf99.png" alt="img" style="zoom:50%;" /> >“系统设置”，点按边栏中的 “通用” <img src="https://help.apple.com/assets/65A8106E7C69B635140E606E/65A81072C0272B1FFA02DE51/zh_CN/7c4faef8373d3d73052729c76d485046.png" alt="img" style="zoom:50%;" />，然后点按右侧的 “共享”。（你可能需要向下滚动。）
+
+2. 打开 “远程登录”，然后点按右侧的 “信息” 按钮 <img src="https://help.apple.com/assets/65A8106E7C69B635140E606E/65A81072C0272B1FFA02DE51/zh_CN/974db3c051f6ac0adaddf1e2fec1001e.png" alt="img" style="zoom:50%;" />。
+
+3. 按需打开 “允许远程用户对磁盘进行完全访问”。
+
+4. 点按 “允许访问” 弹出式菜单，然后执行以下一项操作：
+
+    - *允许所有人登录你的电脑：*点按 “允许访问” 旁边的弹出式菜单，然后选取 “所有用户”。
+
+    - *选取可登录你电脑的用户：*点按 “允许访问” 旁边的弹出式菜单，选取 “仅这些用户”，点按列表底部的添加按钮 <img src="https://help.apple.com/assets/65A8106E7C69B635140E606E/65A81072C0272B1FFA02DE51/zh_CN/a2ef32e34a5573d192b10d340a4f46b1.png" alt="img" style="zoom:50%;" />，选择可远程登录的用户，然后点按 “选择”。
+
+        “用户与群组” 包含你 Mac 上的所有用户。“网络用户” 和 “网络群组” 包含你网络上的所有人。
+
+        若要从列表中移除用户，请选择用户，然后点按移除按钮 <img src="./readme.assets/e9a8ab65e535ed110ae953650c55ee0c.png" alt="img" style="zoom:50%;" />。
+
+
+
+
+
 ## ▲ 开启新 "访达" 窗口时更改默认显示的 "最近使用" 标签页
 
 <img src="./readme.assets/image-20240112160218240.png" alt="image-20240112160218240" style="zoom:50%;" />
@@ -80,8 +111,8 @@
 
 <img src="readme.assets/image-20230312115455318.png" alt="image-20230312115455318" style="zoom: 50%;" />
 
-
 ## ▲ Mac 一键返回到桌面
+
 Method (1)：快捷键返回桌面: `Fn + F11`
 
 Method (2)：在 macOS 14 系统之后，直接在 Docker(程序坞) 边上的空白点击一下桌面，也可以快速回到桌面。
