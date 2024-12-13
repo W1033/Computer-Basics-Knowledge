@@ -445,12 +445,11 @@ sudo spctl --master-disable
 
 插件安装后，在「系统偏好设置」里面可以查看到。
 
-我自己是从闲鱼购买了 Paragon 和 Texture, 2023.11.06 闲鱼购买了 Texture, 激活码见 Google Keep 笔记。
+我自己是从闲鱼购买了 Paragon 和 Tuxera, 2023.11.06 闲鱼购买了 Tuxera, 激活码见 Google Keep 笔记。
 
 | 单词    | 美式发音      | 词类 + 汉语释义 |
 | ------- | ------------- | --------------- |
 | paragon | `/ˈpærəɡən/`  | n. 模范；典范   |
-| texture | `/ˈtɛkstʃər/` | n. 质地；纹理   |
 
 
 
