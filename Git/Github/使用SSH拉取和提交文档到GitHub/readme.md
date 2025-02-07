@@ -87,7 +87,7 @@
 > > 
 > > git branch -M master
 > > 
-> > # remote add origin 远程添加 origin
+> > # remote add origin 远程添加 origin, 即 SSH 地址
 > > git remote add origin git@github.com:W1033/Node.js.git
 > > 
 > > git pull origin master
