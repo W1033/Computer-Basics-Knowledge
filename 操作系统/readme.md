@@ -77,10 +77,18 @@ Xander: 这些快捷键，对应的 A、I 、E 等这些字母，在设计的时
 1. **系统信息工具**
     - 按下 `Win + R` 打开运行窗口，输入 `msinfo32` 后回车
     - 在「系统摘要」中找到 **系统型号** 字段[1](https://blog.csdn.net/xitongzhijianet/article/details/124455784)[2](https://www.sohu.com/a/823935805_267471)[5](https://www.160.com/article/7373.html)[6](https://blog.csdn.net/wyxtx/article/details/130826163)
-2. **DirectX诊断工具**
+2. **DirectX 诊断工具**
+    
     - 按下 `Win + R` 输入 `dxdiag` 回车
-    - 在「系统」选项卡查看 **系统型号**[4](https://jingyan.baidu.com/article/22a299b5f0957adf18376a7d.html)[7](https://jingyan.baidu.com/article/f25ef2543ce932082d1b8225.html)
+    - 进入 DirectX 诊断工具，在「系统」选项卡查看 **系统型号**[4](https://jingyan.baidu.com/article/22a299b5f0957adf18376a7d.html)[7](https://jingyan.baidu.com/article/f25ef2543ce932082d1b8225.html)
+    
+    > **设备ID是指硬件设备的唯一标识符，用于区分不同的设备。**
+    >
+    > **而产品ID则是指特定产品的唯一标识符，用于区分不同的型号或版本**。 
+    >
+    > 设备ID通常由厂商自行分配，并且是硬件设备的固有属性。 产品ID则由厂商自行确定，并且可能因不同型号或版本而不同。
 3. **设置界面**
+    
     - `Win + i` 打开设置 →「系统」→「关于」
     - 在「设备规格」中查看型号信息[2](https://www.sohu.com/a/823935805_267471)[5](https://www.160.com/article/7373.html)[8](https://www.160.com/article/5361.html)
 
