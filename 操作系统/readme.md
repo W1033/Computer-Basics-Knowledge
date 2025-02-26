@@ -61,6 +61,91 @@ Xander: 这些快捷键，对应的 A、I 、E 等这些字母，在设计的时
 
 
 
+
+## ▲ windows 系统如何查看电脑的型号？
+
+> [!Note]
+>
+> Added: 2025.02.26
+>
+> Source: Perplexity
+
+在Windows系统中，可通过多种方式快速查看电脑型号。以下是经过验证的常用方法，适用于Win10/Win11系统：
+
+### 一、图形界面操作
+
+1. **系统信息工具**
+    - 按下 `Win + R` 打开运行窗口，输入 `msinfo32` 后回车
+    - 在「系统摘要」中找到 **系统型号** 字段[1](https://blog.csdn.net/xitongzhijianet/article/details/124455784)[2](https://www.sohu.com/a/823935805_267471)[5](https://www.160.com/article/7373.html)[6](https://blog.csdn.net/wyxtx/article/details/130826163)
+2. **DirectX诊断工具**
+    - 按下 `Win + R` 输入 `dxdiag` 回车
+    - 在「系统」选项卡查看 **系统型号**[4](https://jingyan.baidu.com/article/22a299b5f0957adf18376a7d.html)[7](https://jingyan.baidu.com/article/f25ef2543ce932082d1b8225.html)
+3. **设置界面**
+    - `Win + i` 打开设置 →「系统」→「关于」
+    - 在「设备规格」中查看型号信息[2](https://www.sohu.com/a/823935805_267471)[5](https://www.160.com/article/7373.html)[8](https://www.160.com/article/5361.html)
+
+### 二、命令行工具
+
+1. **命令提示符**
+
+    ```
+    bash
+    wmic csproduct get name
+    ```
+
+    （同时获取序列号可执行 `wmic csproduct get name, identifyingnumber`）[1](https://blog.csdn.net/xitongzhijianet/article/details/124455784)[3](https://www.51cto.com/article/644821.html)[6](https://blog.csdn.net/wyxtx/article/details/130826163)
+
+2. **Windows PowerShell**
+
+    ```powershell
+    Get-CimInstance -ClassName Win32_ComputerSystem
+    ```
+
+    或
+
+    ```powershell
+    Get-CimInstance -ClassName Win32_bios
+    ```
+
+### 三、其他方式
+
+- **设备标签**：查看笔记本底部的型号标签（部分台式机在机箱侧面）
+- **BIOS界面**：开机时按F2/Del键进入BIOS查看硬件信息[8](https://www.160.com/article/5361.html)
+
+> 提示：带管理员权限运行命令提示符/PowerShell可获得更完整信息。若需导出配置报告，在系统信息工具中使用「文件→导出」功能[5](https://www.160.com/article/7373.html)[6](https://blog.csdn.net/wyxtx/article/details/130826163)。
+
+### Citations:
+
+1. https://blog.csdn.net/xitongzhijianet/article/details/124455784
+2. https://www.sohu.com/a/823935805_267471
+3. https://www.51cto.com/article/644821.html
+4. https://jingyan.baidu.com/article/22a299b5f0957adf18376a7d.html
+5. https://www.160.com/article/7373.html
+6. https://blog.csdn.net/wyxtx/article/details/130826163
+7. https://jingyan.baidu.com/article/f25ef2543ce932082d1b8225.html
+8. https://www.160.com/article/5361.html
+9. https://www.crucial.tw/articles/pc-users/how-to-check-computer-specs
+10. https://ofeyhong.pixnet.net/blog/post/205817446
+11. https://www.160.com/article/7711.html
+12. https://jingyan.baidu.com/article/e73e26c0e8ed3465acb6a701.html
+13. [https://support.microsoft.com/zh-cn/windows/%E6%9F%A5%E6%89%BE%E6%9C%89%E5%85%B3%E8%AE%BE%E5%A4%87%E7%9A%84%E4%BF%A1%E6%81%AF-a66d52c8-3323-44fd-8f34-a9497bb935e1](https://support.microsoft.com/zh-cn/windows/查找有关设备的信息-a66d52c8-3323-44fd-8f34-a9497bb935e1)
+14. https://www.asus.com/tw/support/faq/1030673/
+15. https://jingyan.baidu.com/article/4d58d54167ddf1dcd5e9c064.html
+16. https://www.honor.com/cn/support/content/zh-cn15838269/
+
+------
+
+来自 Perplexity 的回答: [pplx.ai/share](https://www.perplexity.ai/search/pplx.ai/share)
+
+
+
+
+
+
+
+
+
+
 ## ▲ 命令行快捷键
 
 ### `Ctrl+C`
@@ -78,3 +163,12 @@ PING example.com (93.184.216.34) 56(84) bytes of data.
 
 ### `Ctrl+Z`
 通常用于将进程放入后台并挂起。如果您在运行一个长时间的命令或程序，而不希望在等待它完成时保持终端窗口打开，可以按下 `Ctrl+Z` 将该进程挂起，并将其放入后台执行。您可以使用 `jobs` 命令查看所有正在后台运行的进程。
+
+
+
+
+
+
+
+
+
