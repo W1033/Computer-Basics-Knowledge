@@ -1,24 +1,23 @@
 # MacOS 包管理器 Homebrew
 
-> Homebrew 官网：https://brew.sh/index_zh-cn
+> [!Note]
+> 
+> Created: Unknow、No record.
+> 
+> Updated: 2025.04.12
 
+
+
+> Homebrew 官网：https://brew.sh/zh-cn/
 
 ## New Words
-### homebrew `/'həum'bru:/`
-```css
-├── noun
-│   ├── 家酿啤酒(beer made at home), 自酿（啤）酒
-```
 
-### cask `/kæsk/`
-```css
-├── noun [countable]
-│   ├── 〔装酒或其他液体的〕小木桶﹔一桶之量 (a round wooden container used for 
-│   │    storing wine or other liquids, or the amount of liquid that it contains)
-│   │   ├── a cask of rum. 一桶朗姆酒 
-```
 
- 
+| 单词           | 美式发音              | 词性 + 汉语释义 | 例句 |
+|--------------|-------------------|----------------|--------------|
+| homebrew | `/ˈhoʊmbruː/` | n. 自制啤酒；自酿酒 <br>adj. 自制的；自酿的 |  |
+| cask         | `/kæsk/`          | n. 木桶；酒桶 | → Wooden Cask: 木桶<br />→ a cask of rum. <br />一桶朗姆酒 |
+|  |  |  |  |
 
 
 
@@ -30,31 +29,35 @@ macOS 和 Linux 缺失软件包的管理器.(The Missing Package Manager for mac
 
 ### 1. 安装和卸载方式
 #### 1.1 安装 
-一般情况下如果网络没有受到限制，通过 Homebrew 官网里如下的命令行就可以正常安装，
+一般情况下如果网络没有受到限制，通过 Homebrew 官网里如下的命令行就可以正常安装，(注：~~如果使用下面的官网命令请直接打开全局 proxy~~)
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-但是在国内你懂的。。。下面这种镜像版本更快让你成功安装，下面的安装方式来源终于知乎的这篇文章 [Homebrew国内如何自动安装（国内地址）（Mac & Linux）](https://zhuanlan.zhihu.com/p/111014448)，但是为了预防原文丢失，我就备份了 Mac 下的安装方式：
+如果您使用的是 macOS，请尝试我们新的 `.pkg` 安装器。从 [Homebrew 最新的 GitHub 发行版](https://github.com/Homebrew/brew/releases/latest)下载。
 
-**苹果电脑 常规安装脚本（推荐 完全体 几分钟安装完成）：**
+- ==-- 2025.04.12: macOS 请直接使用上面的安装包安装。==
+
+~~但是在国内你懂的。。。下面这种镜像版本更快让你成功安装，下面的安装方式来源终于知乎的这篇文章 [Homebrew国内如何自动安装（国内地址）（Mac & Linux）](https://zhuanlan.zhihu.com/p/111014448)，但是为了预防原文丢失，我就备份了 Mac 下的安装方式：~~
+
+~~**苹果电脑 常规安装脚本（推荐 完全体 几分钟安装完成）：**~~
 
 ```bash
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 ```
 
-**苹果电脑 极速安装脚本（精简版 几秒钟安装完成）：**
+~~**苹果电脑 极速安装脚本（精简版 几秒钟安装完成）：**~~
 
 ```bash
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)" speed
 ```
 
 
-#### 1.2 卸载
-把上面的安装方式命令里的 `install.sh` 换成 `uninstall.sh` 即可。 
+#### ~~1.2 卸载~~
+~~把上面的安装方式命令里的 `install.sh` 换成 `uninstall.sh` 即可。~~ 
 
-卸载完成后进入 `/usr/local` 目录下再把 Homebrew 文件夹删除就算清除干净了。
+~~卸载完成后进入 `/usr/local` 目录下再把 Homebrew 文件夹删除就算清除干净了。~~
 
 
 
