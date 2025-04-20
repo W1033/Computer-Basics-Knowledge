@@ -433,6 +433,26 @@ sudo spctl --master-disable
 
 
 
+## ▲ Mac 视频壁纸存放路径
+
+> [!Note]
+>
+> Added: 2025.04.20
+
+首先，我们需要找到存放壁纸的文件夹。在 macOS 14 中，视频壁纸存放在`/Library/Application Support/com.apple.idleassetsd/Customer/`路径下，而高清 4K 视频壁纸则存放在`/Library/Application Support/com.apple.idleassetsd/Customer/4KSDR240FPS`文件夹中。
+
+接下来，我们将通过以下步骤来删除不需要的壁纸：
+
+1. 打开 Finder 应用程序。你可以通过点击屏幕左上角的苹果图标，在下拉菜单中选择“Finder”来打开它。
+2. 在 Finder 的菜单栏中，点击“前往”选项，然后选择“前往文件夹”。你也可以使用快捷键 Shift + Command + G 来快速打开路径选择窗口。
+3. 在弹出的路径选择窗口中，输入壁纸存放路径`/Library/Application Support/com.apple.idleassetsd/Customer/4KSDR240FPS`。请注意，输入路径时务必保持大小写正确，并使用英文输入法。
+4. 按下回车键后，你将看到 4K 动态壁纸的存储位置。在此处，你可以预览并选择不需要的壁纸文件进行删除。
+5. 删除壁纸文件后，别忘了重启电脑。这样，在系统设置中，被删除的壁纸将会变回未下载的状态，你可以通过点击它重新进行下载。
+
+需要注意的是，在删除壁纸时，请务必不要删除文件夹`/Library/Application Support/com.apple.idleassetsd/Customer/`本身或其上一层的文件。这些文件对于系统的正常运行至关重要。
+
+
+
 ## ▲ Mac 上移动硬盘无法拷贝或删除文件的最佳解决方案
 
 ~~点击 **软件列表图标** --> **其他** --> **磁盘工具** --> 左侧垂直栏点击移动硬盘选中，然后点击当前窗口右上角的 **抹去**，在当前较小的弹框的：格式：选择 ExFAT. (注意: 这会格式化硬盘，请提前备份硬盘。)~~
