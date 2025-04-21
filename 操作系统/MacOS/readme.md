@@ -417,6 +417,48 @@ sudo spctl --master-disable
 
 打开`终端`：将刚刚复制的命令粘贴到终端中。然后按下键盘的回车键（return），输入密码，恭喜您，`您已成功开启任何来源`。
 
+> [!Note]
+>
+> Updated: 2025.04.21
+>
+> Source: ChatGPT 4o
+>
+> 你看到的提示：
+>
+> > **Globally disabling the assessment system needs to be confirmed in System Settings.**
+>
+> 是 macOS 系统自 macOS Ventura (13) 起引入的一种**安全机制升级**，它不再允许你仅通过命令行直接完全关闭 Gatekeeper（评估系统），即使你使用 `sudo spctl --master-disable` 这样的命令，也必须**在“系统设置”中手动确认**一次。
+>
+> ------
+>
+> ###  什么是 assessment system？
+>
+> 就是 Apple 的**安全评估系统**（Gatekeeper），用于阻止未签名的 App 启动，以保护用户免受恶意软件侵害。
+>
+> ------
+>
+> ### 如何解决（完整步骤如下）：
+>
+> #### **1. 尝试通过命令行启用“任何来源”选项**：
+>
+> ```
+> sudo spctl --master-disable
+> ```
+>
+> 但这条命令现在可能不会直接生效，系统会提示你：需要到“系统设置”确认。
+>
+> ------
+>
+> #### **2. 打开系统设置中确认允许“任何来源”应用程序**：
+>
+> 1. 打开【系统设置】（System Settings）
+> 2. 点击左侧【隐私与安全性】（Privacy & Security）
+> 3. 往下滚动，在【安全性】部分找到“允许从以下位置下载的 App”（Allow applications downloaded from）
+> 4. **如果你看到 “任何来源（Anywhere）” 的选项，请选择它。**
+>     - 这时候系统会弹出确认框，点击“允许”或“仍然打开”。
+>
+> ==如果没有看到“任何来源”，你可能需要**先运行上面的命令行**，然后刷新这个设置界面。== (笔者注：最重要的就是这一步，执行上面的 sudo 命令后刷新设置界面，也就是点一下其他选项，然后再回到 隐私与安全，再次点击下拉就会有 任何来源 的选项了。)
+
 ### 2. 移除应用的安全隔离属性
 
 在终端中输入以下命令：`sudo xattr -d com.apple.quarantine`
@@ -430,6 +472,8 @@ sudo spctl --master-disable
 > macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结
 >
 > https://sysin.org/blog/macos-if-crashes-when-opening/
+
+
 
 
 
