@@ -17,6 +17,48 @@
 
 
 
+## ▲ 本地分支如果未提交到远程仓库是什么状态
+
+> [!Note]
+>
+> Added: 2025.05.20
+>
+> Answered: Gemini 2.5 pro (preview)
+
+比如在 `English-Notes` 仓库下，在命令行中输入 `git log` 显示的分支状态如下：
+
+> [!Tip]
+>
+> Git 查看当前分支的版本历史的命令，见同仓库：[显示当前分支的版本历史](../Git全栈开发使用指南/readme.md#my-stable-git-log-anchor)
+
+<img src="./readme.assets/unnamed.png" alt="unnamed" style="zoom: 50%;" />
+
+> 图片中红框标出的两项是 Git 版本控制系统中常见的指针或引用，它们代表了仓库中特定的提交节点。
+>
+> 1. **(HEAD -> master)**
+>     - `HEAD`：在 Git 中，`HEAD` 是一个特殊的指针，它通常指向当前工作分支的最新提交。当你进行新的提交时，`HEAD` 会随之移动到这个新的提交上。简单来说，`HEAD` 代表你当前所在的位置。
+>     - `master`：`master` 是 Git 仓库中默认的主分支名称。当然，现在更推荐使用 `main` 作为主分支的名称。
+>     - `-> master`：这个箭头表示 `HEAD` 当前正指向 `master` 分支。这意味着你目前检出（checked out）的是 `master` 分支，并且你所做的任何新提交都将添加到 `master` 分支上。
+> 2. **(origin/master)**
+>     - `origin`：`origin` 是 Git 中远程仓库的默认名称。当你从一个远程仓库克隆（clone）项目时，Git 会自动将这个远程仓库命名为 `origin`。
+>     - `master`：同样，这里的 `master` 指的是名为 `master` 的分支。
+>     - `origin/master`：这代表了名为 `origin` 的远程仓库上的 `master` 分支的最新状态。这个指针记录了你最后一次与远程仓库同步（例如通过 `git fetch` 或 `git pull`）时，远程 `master` 分支的位置。它不会随着你本地的提交而移动，只会在你与远程仓库交互时更新。
+>
+> **总结来说：**
+>
+> - `commit 078298b176babd0bac95238763ed36815f57aedb (HEAD -> master)` 这一行表示：
+>     - `078298...` 是这次提交的唯一哈希值（commit hash）。
+>     - 你当前的工作目录正处于 `master` 分支的这个提交上 (`HEAD` 指向 `master`)。
+>     - 这次提交的作者是 `W1033 <forownwang@gmail.com>`。
+>     - 提交日期是 `Mon May 19 17:03:00 2025 +0800`。
+> - `commit b833e73a4e9543fd6abaa058b8a42092ad6757cd (origin/master)` 这一行表示：
+>     - `b833e7...` 是另一次提交的唯一哈希值。
+>     - 这个提交是你本地仓库记录的远程仓库 `origin` 上 `master` 分支的最新提交。
+>     - 这次提交的作者和日期也显示在下方。
+>
+> 从图中可以看出，你本地的 `master` 分支 (`HEAD -> master`) 比远程的 `origin/master` 分支领先一次提交 (`commit 078298...` 是更新的提交 )。这意味着你在本地做了一次提交，但还没有把它推送到远程仓库。
+
+
 ## ▲ 提交代码时 git pull origin master  没有执行完毕就直接执行了 git push origin master 出现的错误
 
 *Added: 2024.3.18* 
