@@ -17,7 +17,7 @@
 
 
 
-## ▲ 本地分支如果未提交到远程仓库是什么状态
+## ▲ 本地分支未 push 到远程仓库和 push 到远程仓库的状态显示
 
 > [!Note]
 >
@@ -57,6 +57,37 @@
 >     - 这次提交的作者和日期也显示在下方。
 >
 > 从图中可以看出，你本地的 `master` 分支 (`HEAD -> master`) 比远程的 `origin/master` 分支领先一次提交 (`commit 078298...` 是更新的提交 )。这意味着你在本地做了一次提交，但还没有把它推送到远程仓库。
+
+执行 `git push origin master` 之后为下面这样：
+
+<img src="./readme.assets/image-20250520095756594.png" alt="image-20250520095756594" style="zoom:50%;" />
+
+> 在这种状态下，`(HEAD -> master, origin/master)` 表示：
+>
+> - **`HEAD -> master`**: 和之前一样，`HEAD` 指向你本地的 `master` 分支。这意味着你当前检出的是 `master` 分支，并且这是你正在工作的分支。
+> - **`origin/master`**: 这代表名为 `origin` 的远程仓库上的 `master` 分支。
+>
+> 关键在于，现在 `HEAD -> master` 和 `origin/master` **都指向同一个提交** (`commit 51ed64dbc9300ae7a10d46aa6ab784ecc951f5d7`)。
+>
+> 这通常意味着以下几种情况之一：
+>
+> 1. **你刚刚克隆（clone）了远程仓库**：当你克隆一个仓库时，你的本地 `master` 分支会自动跟踪远程的 `master` 分支，并且它们会指向相同的最新提交。
+> 2. **你刚刚拉取（pull）了远程仓库的最新更改**：如果你执行了 `git pull` ( 或者 `git fetch` 后跟 `git merge origin/master` 或 `git rebase origin/master`)，并且远程仓库没有新的提交，或者你本地已经是最新的，那么 `HEAD -> master` 和 `origin/master` 都会指向最新的共同提交。
+> 3. **你刚刚推送（push）了本地的提交到远程仓库**：如果你在本地做了一些提交，然后成功地将这些提交推送到了 `origin/master`，那么你本地的 `master` 和远程的 `origin/master` 就会同步，指向相同的最新提交。
+>
+> **总结来说：**
+>
+> `commit 51ed64dbc9300ae7a10d46aa6ab784ecc951f5d7 (HEAD -> master, origin/master)` 这一行表示：
+>
+> - `51ed64...` 是这次提交的唯一哈希值。
+> - 你当前的工作目录正处于 `master` 分支的这个提交上 (`HEAD` 指向 `master`)。
+> - 这个提交同时也是你本地仓库记录的远程仓库 `origin` 上 `master` 分支的最新提交 (`origin/master`)。
+> - 这意味着你本地的 `master` 分支与远程的 `origin/master` 分支在这一点上是完全同步的。
+>
+> 根据截图中的日期 (`Tue May 20 09:55:41 2025`)，这很可能是你刚刚进行了一次同步操作（比如 `git pull` 或 `git push`），或者你刚刚克隆了这个仓库，并且没有新的本地提交。
+
+
+
 
 
 ## ▲ 提交代码时 git pull origin master  没有执行完毕就直接执行了 git push origin master 出现的错误
