@@ -39,41 +39,6 @@
 
 
 
-## ▲ Linux 常用命令
-
-> [!Tip]
->
-> Updated: 2025.06.25
->
-> Source: [Linux 命令参考](https://i.linuxtoy.org/docs/guide/ch02s02.html)
->
-> Edited: Gemini 2.5 pro
-
-| 命令 (Command) | 英文释义 (Description)                          | 中文说明与备注 (Notes)                                       |
-| -------------- | ----------------------------------------------- | ------------------------------------------------------------ |
-| `ls`           | **L**i**s**t directory contents                 | 列出当前目录下的文件和文件夹。                               |
-| `pwd`          | **P**rint **W**orking **D**irectory             | 显示当前所在的目录路径。                                     |
-| `cd`           | **C**hange **D**irectory                        | 切换目录。用法如下：  • `cd ..`：返回上层目录。<br> • `cd /`：返回到根目录。<br> • `cd ~`：进入当前用户的家目录。<br> • `cd -`：返回到上次所在的目录。<br> • `cd <路径>`：切换到指定路径，如 `cd /Applications`。 |
-| `mkdir`        | **M**a**k**e **Dir**ectory                      | 创建一个新目录。                                             |
-| `rm`           | **R**e**m**ove                                  | 删除一个或多个文件。                                         |
-| `rmdir`        | **R**e**m**ove **Dir**ectory                    | 删除一个 **空** 目录。                                       |
-| `cp`           | **C**o**p**y                                    | 复制文件或目录。                                             |
-| `mv`           | **M**o**v**e                                    | 移动或重命名文件 / 目录。                                    |
-| `ps`           | **P**rocess **S**tatus                          | 显示当前正在运行的进程列表。                                 |
-| `grep`         | **G**lobal **R**egular **E**xpression **P**rint | 在文件或输出中搜索匹配的文本行（支持正则表达式）。           |
-| `find`         | **Find** a file                                 | 在文件系统中实时查找文件（精确，但速度较慢）。               |
-| `locate`       | **Locate** a file                               | 从系统数据库缓存中查找文件（速度快，但可能不是最新的）。     |
-| `man`          | **Man**ual                                      | 显示命令的帮助手册，是 Linux 下的 " 说明书 "。               |
-| `clear`        | **Clear** the screen                            | 清空终端屏幕。                                               |
-| `less`         | **Less** is more                                | 分页查看文件内容，比 `more` 命令功能更强大。                 |
-| `nano`         | **N**ano's **ANO**ther editor                   | 一个简单易用的命令行文本编辑器。                             |
-| `view`         | **View** a file                                 | 以只读模式启动 `vim` 编辑器，防止意外修改文件。              |
-| `sudo`         | **S**uper **U**ser **Do**                       | 以超级用户（root）的权限执行指定的命令。                     |
-| `su`           | **S**witch **U**ser                             | 切换用户账号（若不指定用户名，则默认为 root）。              |
-
-
-
-
 
 ## ▲ Linux 或类 Linux 系统中, 打开终端显示的默认路径是什么?
 
