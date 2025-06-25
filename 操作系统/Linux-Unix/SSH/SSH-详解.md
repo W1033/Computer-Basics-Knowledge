@@ -32,8 +32,9 @@
 
 
 ## 前置知识
+
 ### `Shell` 是什么?
-- 见当前仓库的: `./Linux-Learning/Shell/Shell-Readme.md`
+- 见当前仓库的: `../Shell/Shell-Readme.md`
 
 
 ## 内容(Content)
