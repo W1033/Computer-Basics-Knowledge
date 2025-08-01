@@ -51,7 +51,7 @@
 | 新建标签页 | `Command` + `Tab` |
 | 软件全屏 | `Command` + `Control` + `F` |
 | 关闭程序 | `Command` + `Q` (quit) |
-| 关闭当前窗口 / 关闭程序内部的多个标签页 | `Command` + `W` |
+| 关闭当前窗口 / 关闭程序内部的多个标签页 | `Command` + `W`（**Window** ( 窗口 ) ） |
 | 隐藏当前窗口 | `Command` + `H` |
 | 最小化当前窗口 | `Command` + `M`(Mini size 最小化) |
 | 切换程序 | `Command` + `Tab` |
