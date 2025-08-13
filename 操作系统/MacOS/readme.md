@@ -10,7 +10,47 @@
 | cask    | `/kæsk/`       | n. 木桶；装酒的木桶<br />I need a cask of wine and some apples. 我需要一桶酒和一些苹果. |
 
 
+
+## ▲ 删除 macOS 一个文件夹下所有的 .DS_Store 文件
+
+> [!Note]
+>
+> *Added: 2025.08.13*
+>
+> *Source: Gemini 2.5 Pro - 对话：`删除 macOS .DS_Store 文件`*
+
+从你的终端提示符 `ctsw@CTSW-M3 Computer-Basics-Knowledge %` 可以看出，你**已经**通过 `cd` 命令进入了 `Computer-Basics-Knowledge` 这个文件夹。
+
+### 正确的做法
+
+当你想对**当前所在**的目录进行操作时，你应该使用一个点 `.` 来代表“当前目录”。
+
+所以，正确的命令应该是：
+
+**`find . -name ".DS_Store"`**
+
+### 请按下面的步骤来做：
+
+1. **确认你还在 `Computer-Basics-Knowledge` 目录里** ( 你的终端提示符已经确认了这一点 )。
+
+2. 执行正确的检查命令 ( 用 . 代替文件夹名字 ):
+
+    `find . -name ".DS_Store"`
+
+    这次它应该就能正确地列出所有需要被删除的文件了。
+
+3. 检查无误后，执行正确的删除命令：
+
+    `find . -name ".DS_Store" -delete`
+
+**总结一下关键点**：`find` 命令的第一个参数是**路径**。如果你已经 `cd` 进入了目标文件夹，那么就用 `.` 来告诉 `find` 命令“就从这里开始找”。
+
+
+
+
+
 ## ▲ Mac 键盘符号说明:
+
 | **`⌘`** |  Command |
 | :-: |   ---   |
 | **`⇧`** |  Shift |
