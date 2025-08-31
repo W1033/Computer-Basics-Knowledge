@@ -99,7 +99,7 @@ iTerm2 的界面配置参考视频
   字体安装在: Powerline fonts installed to `/Users/WANG/Library/Fonts`
 - 然后到 `iterm2`, 打开 `Preferences` --> `Profiles` --> `Text` --> `Font`,
   自定义更该如下图(tip: 根据自己的喜好更该).
-  <img src="./macos-images/iterm-setting.png">
+  <img src="./readme.assets/iterm-setting.png">
 
 ### 6. 配置主题 `agnoster`
 - 装好之后就可以换到 `agnoster` 主题，`Oh My Zsh` 一般自带有这个主题.
