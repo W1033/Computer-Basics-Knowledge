@@ -17,6 +17,256 @@
 
 
 
+
+
+
+
+## ▲ Git  Push 被拒绝, Pull 失败的解决方法
+
+> [!Tip]
+>
+> *Added: 2025.09.01*
+>
+> Source: Gemini  对话 `Git 推送被拒绝的解决办法`
+
+原因：*Gemini， 我昨晚在家里的 mac studio 更新了笔记，当时已经 `git add .` 和 `git commit -m "2025.08.31"` 了，但是忘记 `git push origin master` 了，今天白天上班我用公司的 macbook pro 又更新了仓库文档笔记，提交到 github 了，现在我 push 被 reject, 但是  pull 又报错 "fatal: Not possible to fast-forward, aborting." ；我应该如何解决啊，请帮我解答一下，我会把你的回答记到笔记上，谢谢，辛苦你啦。错误见下图：*
+
+<img src="./readme.assets/image-20250901201957293.png" alt="image-20250901201957293" style="zoom:40%;" />
+
+```markdown
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'github.com:W1033/English-Notes.git'
+hint: Updates were rejected because the remote contains work that you do not have locally. This is usually caused by another repository pushing to the same ref. You may want to first integrate the remote changes  (e.g., 'git pull ...') before pushing again. See the 'Note about fast-forwards' in 'git push --help' for details.
+
+! [被拒绝] master -> master (需先获取)
+错误：推送部分引用至 'github.com:W1033/English-Notes.git' 失败
+提示：更新被拒绝，因为远程仓库包含了本地没有的工作。这通常是由于另一个仓库推送到了相同的引用。在再次推送前，你可能需要先整合远程的变更（例如，执行 'git pull ...'）。详情请参阅 'git push --help' 中的 '关于快进推送的说明'。
+
+
+remote: Enumerating objects: 22, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 12 (delta 9), reused 12 (delta 9), pack-reused 0 (from 0)
+Unpacking objects: 100% (12/12), 37.50 KiB | 147.00 KiB/s, done.
+From github.com:W1033/English-Notes
+ * branch            master     -> FETCH_HEAD
+   70b41ed..e961fcf  master     -> origin/master
+fatal: Not possible to fast-forward, aborting.
+
+远程：正在枚举对象：22个，完成。
+远程：正在计数对象：100%（22/22），完成。
+远程：正在压缩对象：100%（2/2），完成。
+远程：总计12个（差异9个），复用12个（差异9个），打包复用0个（来自0个）
+正在解包对象：100%（12/12），37.50 KiB | 147.00 KiB/秒，完成。
+来自github.com:W1033/English-Notes
+ * 分支 master -> FETCH_HEAD
+ 70b41ed..e961fcf master -> origin/master
+致命错误：无法快进，中止。
+```
+
+**Gemini: **
+
+您好，请别担心，您遇到的这个问题是使用 Git 时非常经典且常见的一个场景。这并不是错误操作，而是 Git 为了保护您的代码历史不被意外覆盖而设计的正常行为。您的描述非常清晰，这让我能准确地帮您分析和解决。
+
+### 问题根源分析
+
+这个问题的内核原因是：**您本地（Mac Studio）和远程（GitHub）的提交历史在同一个起点上走向了不同的方向，也就是所谓的“历史分叉 (Diverged History)”。**
+
+我们可以把提交历史想象成一条线：
+
+1. **初始状态**：您的 Mac Studio 和 GitHub 上的 `master` 分支都指向同一个提交，我们称之为 `Commit A`。
+    - `GitHub: ... -> Commit A`
+    - `Mac Studio: ... -> Commit A`
+2. **您在公司操作**：您在公司的 MacBook Pro 上提交了新的笔记（我们称之为 `Commit B`）并推送到了 GitHub。现在 GitHub 的历史向前走了一步。
+    - `GitHub: ... -> Commit A -> Commit B`
+    - `Mac Studio: ... -> Commit A` ( 家里的电脑对此一无所知 )
+3. **您在家里的操作**：您昨晚在 Mac Studio 上提交了 `2025.08.31` ( 我们称之为 `Commit C`)，但没有推送。所以您本地的历史也向前走了一步，但是走向了和 `Commit B` 不同的方向。
+    - `GitHub: ... -> Commit A -> Commit B`
+    - `Mac Studio: ... -> Commit A -> Commit C`
+
+现在，`Commit B` 和 `Commit C` 都是基于 `Commit A` 的新提交。当您今天试图在 Mac Studio 上 `git push` 时，Git 发现您想用 `Commit C` 覆盖 GitHub 上的 `Commit B`，为了防止数据丢失，它拒绝了您的推送（`! [rejected]`）。
+
+接着您尝试 `git pull`，`git pull` 的默认行为是 `fetch` ( 抓取 ) + `merge` ( 合并 )。Git 抓取了 `Commit B`，然后试图将 `Commit B` 和 `Commit C` 合并，但发现这两条历史线已经分叉，无法进行“快进式合并 (Fast-forward)”，所以它中止了操作并提示 `fatal: Not possible to fast-forward, aborting.`。
+
+### 解决方案
+
+要解决这个问题，您需要将分叉的两条历史线重新集成到一起。主要有两种方法：`Rebase` ( 变基 ) 和 `Merge` ( 合并 )。对于个人笔记这种线性工作流，我更推荐使用 `Rebase`，因为它能让您的提交历史保持为一条直线，非常清晰。
+
+### 方案一：使用 `Rebase` ( 变基 ) ( 推荐 )
+
+**原理**：`Rebase` 的意思是“重新设置基础”。它会先将您在本地的提交 (Commit C) 暂时“收起来”，然后拉取远端的最新提交 (Commit B)，最后再将您本地的提交 (Commit C) 应用在远端提交的后面。
+
+历史变化过程：
+
+A -> C + A -> B  => A -> B -> C'
+
+`C'` 是一个新的提交，但内容和您原来的 `C` 完全一样。
+
+**操作步骤**：
+
+1. 在您的项目目录中，执行以下命令。这个命令包含了拉取和变基两个动作：
+
+    Bash
+
+    ```
+    git pull --rebase origin master
+    ```
+
+2. 执行后，Git 会自动完成上述的“收起 -> 拉取 -> 应用”过程。如果没有文档冲突，它会直接成功。
+
+3. 现在，您本地的历史记录已经包含了远端的所有更新，并且您自己的提交也完好地接在了最后。您可以检查一下日志确认：
+
+    Bash
+
+    ```
+    git log --oneline --graph
+    ```
+
+4. 最后，将整理好的历史推送到 GitHub。这次推送会以 "fast-forward" 模式成功。
+
+    Bash
+
+    ```
+    git push origin master
+    ```
+
+### 方案二：使用 `Merge` ( 合并 ) ( 备选方案 )
+
+**原理**：`Merge` 会将远端的历史和您本地的历史进行合并，并创建一个全新的“合并提交 (Merge Commit)”来记录这次合并操作。
+
+历史变化过程：
+
+它会创建一个 Commit D，这个提交同时拥有 Commit B 和 Commit C 两个父提交。历史图看起来会有分叉和汇合。
+
+**操作步骤**：
+
+1. 首先，获取远端仓库的最新历史，但先不合并。
+
+    Bash
+
+    ```
+    git fetch origin
+    ```
+
+2. 然后，手动将远端的 `master` 分支合并到您本地的 `master` 分支。
+
+    Bash
+
+    ```
+    git merge origin/master
+    ```
+
+    执行后，Git 可能会弹出一个编辑器让您填写合并提交的信息，通常直接保存并退出即可。
+
+3. 合并完成后，同样地，将包含了合并提交的新历史推送到 GitHub。
+
+    Bash
+
+    ```
+    git push origin master
+    ```
+
+### **关于可能出现的“冲突 (Conflict)”**
+
+无论您使用 `Rebase` 还是 `Merge`，如果“公司电脑的提交”和“家里电脑的提交”修改了**同一个文档的同一行**，Git 将无法自动决定使用哪个版本，此时就会发生**合并冲突**。
+
+如果发生冲突，终端会提示您：`CONFLICT (content): Merge conflict in <file_name>`。
+
+您需要手动解决冲突：
+
+1. 打开提示有冲突的文档。
+
+2. 在文档中找到类似下面的标记：
+
+    ```
+    <<<<<<< HEAD
+    这是您在家里 Mac Studio 上做的修改。
+    =======
+    这是您在公司 MacBook Pro 上做的修改，并且已经推送到 GitHub。
+    >>>>>>> some-commit-hash...
+    ```
+
+3. 您需要手动编辑这部分内容，决定最终保留哪些内容。删除 `<<<<<<< HEAD`，`=======`，和 `>>>>>>> ...` 这些特殊标记。
+
+4. 保存文档后，将文档标记为已解决状态：
+
+    Bash
+
+    ```
+    git add .
+    ```
+
+5. **继续后续操作**：
+
+    - 如果您之前用的是 `Rebase`，则执行：`git rebase --continue`
+    - 如果您之前用的是 `Merge`，则执行：`git commit` ( 通常 Git 已经准备好了提交信息，您只需保存即可 )
+
+6. 解决所有冲突后，再执行最后的 `git push origin master`。
+
+### 总结
+
+对于您当前的情况，最直接、最推荐的解决命令是：
+
+Bash
+
+```
+# 步骤一：拉取远程更新并把你的本地提交应用在最新版本之后
+git pull --rebase origin master
+
+# (如果出现冲突，先解决冲突，然后 git add .，再 git rebase --continue)
+
+# 步骤二：将整理好的、包含所有历史的本地分支推送到远程
+git push origin master
+```
+
+希望这个解释对您有帮助！把这个过程记录下来是个非常好的习惯，这是每一位使用 Git 的开发者都会反复遇到的场景。
+
+---
+
+
+
+**ASK:** *Gemini, 谢谢你的详细讲解，我个人更喜欢第二个 merge 的方式，但是我有个疑问，如果文档有冲突，vscode 文档名会变红给出冲突提示吗？还是说只在 vscode 的终端中给出冲突提示？*
+
+**Gemini:**
+
+您提的这个问题非常好，这关系到日常开发中的实际体验。
+
+是的，当 Git `merge` 发生冲突时，VS Code 会在多个地方给出非常直观的、可视化的提示，而**不仅仅是在终端里**。这正是 VS Code 作为 Git 强大的图形化客户端的优势之一。
+
+具体来说，您会看到以下几种提示：
+
+1. **文档列表中的颜色和标记**：
+    - 在 VS Code 左侧的“源代码管理”(Source Control) 面板（就是那个分叉图标）中，所有存在冲突的文档名都会**以红色或橙色高亮显示**，并且旁边会有一个 `C` 字母标记，代表 "Conflict"。
+    - 在文档资源管理器 (Explorer) 中，冲突的文档名也会变色，通常是红色。
+2. **文档内容中的可视化编辑器**：
+    - 当您打开那个有冲突的文档时，VS Code 会自动识别出冲突区域，并提供一个特别的“合并冲突编辑器”(Merge Conflict Editor)。
+    - 您会清晰地看到类似这样的界面：
+        - `<<<<<<< HEAD (Current Change)` 下面是您本地的修改（即您在 Mac Studio 上做的修改）。
+        - `>>>>>>> INCOMING CHANGE` 下面是远端拉下来的修改（即您在公司 MacBook Pro 上做的修改）。
+        - 在每个冲突块的上方，VS Code 会提供几个可点击的按钮 / 链接，例如：
+            - **Accept Current Change** ( 接受当前更改 )
+            - **Accept Incoming Change** ( 接受传入的更改 )
+            - **Accept Both Changes** ( 接受双方的更改 )
+            - **Compare Changes** ( 比较差异 )
+    - 这种可视化的方式让您无需手动去删除 `<<<<<<<`, `=======`, `>>>>>>>` 这些标记。您只需要点击按钮，选择您想要保留的版本，VS Code 就会自动帮您整理好代码。当然，您也可以直接在编辑器里手动修改，达到一个最终你想要的效果。
+3. **概览标尺 (Overview Ruler) 中的提示**：
+    - 在编辑器右侧的滚动条区域，也会有红色的标记指示出文档中冲突的具体位置，方便您快速跳转。
+
+**总结一下流程就是：**
+
+1. 您在终端执行 `git merge origin/master`。
+2. 终端提示 `CONFLICT`。
+3. 您切换到 VS Code 界面，会立刻在左侧的源代码管理面板看到标红的、带 `C` 标记的文档。
+4. 您点击该文档，在编辑器中利用 VS Code 提供的 "Accept Current/Incoming/Both" 按钮来解决冲突。
+5. 解决完所有冲突并保存文档后，回到源代码管理面板，点击文档名旁边的 `+` 号（等同于执行 `git add <file_name>`），将解决后的文档暂存起来。
+6. 当所有冲突文档都暂存后，VS Code 会提示您可以输入提交信息来完成这次合并提交。您填写信息并提交。
+7. 最后，执行 `git push`。
+
+所以，请放心使用 `merge` 的方式。VS Code 提供了非常强大和友好的支持，让解决冲突这个过程变得直观和简单很多。
+
+
+
+
 ## ▲ 本地分支未 push 到远程仓库和 push 到远程仓库的状态显示
 
 > [!Note]
@@ -96,7 +346,7 @@
 
 原因：如标题所示，直接在命令行里写完 `git pull origin master` 后立马就写了 `git push origin master`  pull 的命令没有执行，直接执行了 git push,  终端内的执行图是下面着这样：
 
-<img src="./readme.assets/image-20240318121024059.png" alt="image-20240318121024059" style="zoom:50%;" />
+<img src="./readme.assets/image-20240318121024059.png" alt="image-20240318121024059" style="zoom:40%;" />
 
 > <span style="color:#b5b405;">hint: You have divergent branches and need to specify how to reconcile them. You can do so by running one of the following commands sometime before your next pull:</span>
 >
@@ -290,17 +540,9 @@ git config --global core.quotepath false
 
 要切换到一个已存在的分支，你需要使用 `git checkout` 命令，例如从一个分支切换到 master 分支：`git checkout master`
 
-<img src="./readme.assets/image-20230508205110592.png" alt="image-20230508205110592" style="zoom:50%;" />
+<img src="./readme.assets/image-20230508205110592.png" alt="image-20230508205110592" style="zoom:40%;" /><img src="./readme.assets/image-20230508215257724.png" alt="image-20230508215257724" style="zoom: 40%;" />
 
-
-
-
-
-<img src="./readme.assets/image-20230508215257724.png" alt="image-20230508215257724" style="zoom: 50%;" />
-
-
-
-<img src="./readme.assets/image-20230508215334315.png" alt="image-20230508215334315" style="zoom: 50%;" />
+<img src="./readme.assets/image-20230508215334315.png" alt="image-20230508215334315" style="zoom: 40%;" />
 
 > 上图的参考[1] ： https://git-scm.com/book/zh/v2 （注：直接参考的 git pro 哈哈哈哈）
 
@@ -479,38 +721,6 @@ and have 1 and 1 different commits each, respectively.
 > This combines the above `fetch` and `rebase` steps into one command.
 >
 > 
-
-
-
-## ▲ Pull 代码报错：Error "fatal: Not possible to fast-forward, aborting."
-
-*Added: 2023.05.02*
-
-> 笔记来源：https://stackoverflow.com/questions/13106179/error-fatal-not-possible-to-fast-forward-aborting
-
-**Disclaimer**: these commands will bring changes from the remote branch into yours.
-免责声明：这些命令会将远程分支的更改带到您的分支中。
-
-`git pull --rebase`. Unlike the other solution, you don't need to know the name of your destination branch.
-(`git pull --rebase` 。与其他解决方案不同，您不需要知道目标分支的名称。)
-
-If your upstream branch is not set, try `git pull origin <branch> --rebase` (credit to @Rick in the comments)
-(如果您的上游分支未设置，请尝试 `git pull origin <branch> --rebase` （在评论中归功于@Rick）)
-
-<p style="border-left:4px solid red; padding:10px 15px; background-color:#feeeee;">Annotation: 当日我使用这行代码解决了这个报错的问题，我的情况是：我先修改了本地仓库的文件，然后执行 add 和 commit 之后再 pull 的时候报上面的错误，上面说的 if your upstream branch is not set 是什么意思我也没有理解，一般情况下我也不太敢 rebase 代码，害怕把本地的改动给 rebase 没有了，但是执行完上面的代码之后，本地的改动还在。具体的原因估计也只能等学些 Pro git 才能搞明白了。</p>
-
-To set this option globally, use `git config --global pull.rebase true` (credit to @Artur Mustafin below)
-要全局设置此选项，请使用 `git config --global pull.rebase true` （以下归功于@Artur Mustafin）
-
-------
-
-*Added: 2023.07.30*
-
-> >  链接同上，但是是链接中的另外一个回答，回答截图如下：
->
-> divergent<img src="./readme.assets/image-20230730224358754.png" alt="image-20230730224358754" style="zoom:50%;" />
->
-> 当前回答解决了问题，我用了 `git merge origin/master` 来合并了当前仓库和远程仓库中的冲突。
 
 
 
@@ -786,6 +996,7 @@ error: failed to push some refs to 'ssh://xxxxx.com/project.git'
 > Due to the recent "Replacing master with main in GitHub" action, you may notice that there is a `refs/heads/main`. As a result, the following command may change from `git push origin HEAD:master` to `git push origin HEAD:main`
 
 2. You can try `git push origin HEAD:master` as a more local-reference-independent solution. This explicitly states that you want to push the local ref `HEAD` to the remote ref `master` (see the [git-push ref spec](https://git-scm.com/docs/git-push#git-push-ltrefspecgt82308203) documentation).
+2. 
 
 ## ▲ "Remote origin already exists" error
 
@@ -819,6 +1030,7 @@ git remote set-url origin https://github.com/your/repository
   git push origin master
 ```
 
+
 ## ▲ 使用 `Git` 回退到 `Github` 的某个历史版本：
 
 **1. 进入到项目文件夹，**
@@ -847,7 +1059,7 @@ Tip: 可以从 github 的 commits 提交记录对比找到想要的历史版本�
 - `git commit -m "message"`
 - `git push -f origin master`
 
-## ▲git pull 和 git pull --rebase 区别理解
+## ▲ git pull 和 git pull --rebase 区别理解
 
 ```sh
 [root@master GitTest]# git pull
