@@ -11,6 +11,28 @@
 
 
 
+
+
+## ▲ 打开 `允许安装任何来源` 的应用程序的方法：
+
+打开终端 --> 输入: 
+
+````shell
+sudo spctl --master-disable
+````
+
+然后回车输入密码；再次打开 ·偏好设置 --> 安全性与隐私 , 就可以看到有 `任何来源` 的选项了
+
+
+
+## ▲ 使用 Spotlight 搜搜
+
+打开 spotlight 的快捷键: `Command + 空格键(space bar)`
+
+快速打开 spotlight 中搜索的文件的路径 `Command + 回车键(enter/return)
+
+
+
 ## ▲ 删除 macOS 一个文件夹下所有的 .DS_Store 文件
 
 > [!Note]
@@ -361,17 +383,7 @@ Mac 下 `/usr/local/...` 默认是隐藏状态, 所以需要打开 `/usr/local/.
 
  iShot Pro (可以截长图)，但是 pro 版是收费的，app store 中 iShot 是免费的。
 
-## ▲ 打开 Mac 上允许安装任何来源的应用程序的方法：
 
-打开终端 --> 输入: `sudo spctl --master-disable` 然后回车输入密码. 
-
-- 打开偏好设置 --> 安全性与隐私 , 就可以看到有 `任何来源` 的选项了
-
-## ▲ 使用 Spotlight 搜搜
-
-打开 spotlight 的快捷键: `Command + 空格键(space bar)`
-
-快速打开 spotlight 中搜索的文件的路径 `Command + 回车键(enter/return)
 
 ## ▲ Mac 文件管理
 
