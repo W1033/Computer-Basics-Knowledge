@@ -53,9 +53,9 @@
 
 | **`⌘`** |  Command |
 | :-: |   ---   |
-| **`⇧`** |  Shift |
-| **`⌥`** |  Alt/Option |
-| **`⌃`** |  Control |
+| ==**`⌥`**== | **Option** / **Alt** |
+| ==**`⇧`**== | **Shift** |
+| **`⌃`** | **Control** |
 | **`⇪`** |  Caps Lock |
 | **`↩`** |  Return/Enter |
 | **`⌫`** |  Delete |
