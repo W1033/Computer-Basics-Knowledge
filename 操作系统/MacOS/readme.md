@@ -77,7 +77,7 @@ sudo spctl --master-disable
 | :-: |   ---   |
 | ==**`⌥`**== | **Option** / **Alt** |
 | ==**`⇧`**== | **Shift** |
-| **`⌃`** | **Control** |
+| **==`⌃`==** | **Control** |
 | **`⇪`** |  Caps Lock |
 | **`↩`** |  Return/Enter |
 | **`⌫`** |  Delete |
